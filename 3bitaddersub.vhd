@@ -1,16 +1,3 @@
--------------------------------------------------------------------------------
--- Title         : 3-bit Adder/Subtractor
--- Project       : VHDL Synthesis Overview
--------------------------------------------------------------------------------
--- File          : threeBitAdderSubtractor.vhd
--- Author        : Rami Abielmona
--- Created       : 2003/05/17
--- Last modified : 2024/10/02
--------------------------------------------------------------------------------
--- Description  : This file creates a 3-bit binary full adder/subtractor. The 
---                operationFlag selects between addition (0) and subtraction (1).
--------------------------------------------------------------------------------
-
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 
@@ -54,7 +41,7 @@ BEGIN
 
 	-- Instantiation for the least significant bit (bit 0)
 	add0: oneBitAdderSubtractor
-	PORT MAP (i_CarryIn => '0', -- Carry-in for the least significant bit is 0
+	PORT MAP (i_CarryIn => operationFlag, -- Carry-in for the least significant bit is the operationFlag
 			  operationFlag => operationFlag,
 			  i_Ai => i_Ai(0),
 			  i_Bi => i_Bi(0),
