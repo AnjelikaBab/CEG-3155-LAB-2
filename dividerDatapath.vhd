@@ -150,7 +150,7 @@ BEGIN
 
     int_sign_in <= INA(3) XOR INB(3);
     sign_reg: enardFF_2
-        PORT MAP (i_resetBar => not_greset, 
+        PORT MAP (i_resetBar => '1', 
                 i_d => int_sign_in, 
                 i_enable => ldSign, 
                 i_clock => clk, 

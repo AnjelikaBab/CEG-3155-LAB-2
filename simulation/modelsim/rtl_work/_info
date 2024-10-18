@@ -4,7 +4,7 @@ K3
 cModel Technology
 Z0 dC:\Users\arnav\Desktop\CEG-3155-LAB-2\simulation\modelsim
 Edividercontrolpath
-Z1 w1729285542
+Z1 w1729289834
 Z2 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
 Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
 Z4 dC:\Users\arnav\Desktop\CEG-3155-LAB-2\simulation\modelsim
@@ -15,7 +15,7 @@ L4
 VLek^nJ7GRAjJaVeNHJbcz3
 Z7 OV;C;10.1d;51
 31
-Z8 !s108 1729287651.435000
+Z8 !s108 1729289841.168000
 Z9 !s90 -reportprogress|300|-93|-work|work|-O0|C:/Users/arnav/Desktop/CEG-3155-LAB-2/dividerControlpath.vhd|
 Z10 !s107 C:/Users/arnav/Desktop/CEG-3155-LAB-2/dividerControlpath.vhd|
 Z11 o-93 -work work -O0
@@ -28,7 +28,7 @@ R3
 DEx4 work 18 dividercontrolpath 0 22 Lek^nJ7GRAjJaVeNHJbcz3
 l26
 L13
-VY=h3XU7c7mbcacmFg`0N20
+VTCQXldQC1DQ6I8dNh[O6f2
 R7
 31
 R8
@@ -36,10 +36,10 @@ R9
 R10
 R11
 R12
-!s100 L?``5c<2YoQ]ma2l5PCL=3
+!s100 FDRc>X=jL:]I5Ec1C`W=N0
 !i10b 1
 Edividerdatapath
-Z13 w1729287646
+Z13 w1729289264
 R2
 R3
 R4
@@ -50,7 +50,7 @@ L4
 V9TC1=Ak>@XXzcCAD;joEz0
 R7
 31
-Z16 !s108 1729287651.514000
+Z16 !s108 1729289841.264000
 Z17 !s90 -reportprogress|300|-93|-work|work|-O0|C:/Users/arnav/Desktop/CEG-3155-LAB-2/dividerDatapath.vhd|
 Z18 !s107 C:/Users/arnav/Desktop/CEG-3155-LAB-2/dividerDatapath.vhd|
 R11
@@ -63,7 +63,7 @@ R3
 DEx4 work 15 dividerdatapath 0 22 9TC1=Ak>@XXzcCAD;joEz0
 l84
 L16
-VkI1=h7S[QQ:eJC5f3Hj8W2
+VzbL5;iimbZV>=SWE]`5Zc2
 R7
 31
 R16
@@ -71,7 +71,7 @@ R17
 R18
 R11
 R12
-!s100 lY3zl0J<:VhOPA0[=XzSX1
+!s100 lci3iVN<<Kg5K7fgkaazi3
 !i10b 1
 Edividertoplevel
 Z19 w1729283839
@@ -85,7 +85,7 @@ L4
 VDOAbd`LYWXAYFR`3lJC_<3
 R7
 31
-Z22 !s108 1729287651.598000
+Z22 !s108 1729289841.342000
 Z23 !s90 -reportprogress|300|-93|-work|work|-O0|C:/Users/arnav/Desktop/CEG-3155-LAB-2/dividerTopLevel.vhd|
 Z24 !s107 C:/Users/arnav/Desktop/CEG-3155-LAB-2/dividerTopLevel.vhd|
 R11
@@ -120,7 +120,7 @@ L31
 VefK2f?3R7`bZO40Rc84Mm0
 R7
 31
-Z28 !s108 1729287651.679000
+Z28 !s108 1729289841.419000
 Z29 !s90 -reportprogress|300|-93|-work|work|-O0|C:/Users/arnav/Desktop/CEG-3155-LAB-2/enardFF_2.vhd|
 Z30 !s107 C:/Users/arnav/Desktop/CEG-3155-LAB-2/enardFF_2.vhd|
 R11
@@ -155,7 +155,7 @@ L4
 V1CodOzcnWmcE13?d``V[40
 R7
 31
-Z34 !s108 1729287651.763000
+Z34 !s108 1729289841.545000
 Z35 !s90 -reportprogress|300|-93|-work|work|-O0|C:/Users/arnav/Desktop/CEG-3155-LAB-2/mux21.vhd|
 Z36 !s107 C:/Users/arnav/Desktop/CEG-3155-LAB-2/mux21.vhd|
 R11
@@ -190,7 +190,7 @@ L4
 V2_nZOhOBN18jK@ML_0n^X0
 R7
 31
-Z40 !s108 1729287651.838000
+Z40 !s108 1729289841.643000
 Z41 !s90 -reportprogress|300|-93|-work|work|-O0|C:/Users/arnav/Desktop/CEG-3155-LAB-2/mux41.vhd|
 Z42 !s107 C:/Users/arnav/Desktop/CEG-3155-LAB-2/mux41.vhd|
 R11
@@ -225,7 +225,7 @@ L4
 VBK@g4UmbVIO2F:_QO^>S:3
 R7
 31
-Z46 !s108 1729287651.917000
+Z46 !s108 1729289841.724000
 Z47 !s90 -reportprogress|300|-93|-work|work|-O0|C:/Users/arnav/Desktop/CEG-3155-LAB-2/nBitAdderSubtractor.vhd|
 Z48 !s107 C:/Users/arnav/Desktop/CEG-3155-LAB-2/nBitAdderSubtractor.vhd|
 R11
@@ -260,7 +260,7 @@ L4
 V@6U`_MN33]m]PHC2HflIW0
 R7
 31
-Z52 !s108 1729287652.002000
+Z52 !s108 1729289841.801000
 Z53 !s90 -reportprogress|300|-93|-work|work|-O0|C:/Users/arnav/Desktop/CEG-3155-LAB-2/nBitIncrementer.vhd|
 Z54 !s107 C:/Users/arnav/Desktop/CEG-3155-LAB-2/nBitIncrementer.vhd|
 R11
@@ -295,7 +295,7 @@ L4
 V;?fFMOWQoMzmhXimRV1^d1
 R7
 31
-Z58 !s108 1729287652.082000
+Z58 !s108 1729289841.880000
 Z59 !s90 -reportprogress|300|-93|-work|work|-O0|C:/Users/arnav/Desktop/CEG-3155-LAB-2/nbitmux21.vhd|
 Z60 !s107 C:/Users/arnav/Desktop/CEG-3155-LAB-2/nbitmux21.vhd|
 R11
@@ -330,7 +330,7 @@ L4
 Vc271kFDhl6IKGBJhCH?`J2
 R7
 31
-Z64 !s108 1729287652.152000
+Z64 !s108 1729289841.973000
 Z65 !s90 -reportprogress|300|-93|-work|work|-O0|C:/Users/arnav/Desktop/CEG-3155-LAB-2/nbitmux41.vhd|
 Z66 !s107 C:/Users/arnav/Desktop/CEG-3155-LAB-2/nbitmux41.vhd|
 R11
@@ -365,7 +365,7 @@ L4
 VkF8FVK2AB2BAUM0<iLAeR2
 R7
 31
-Z70 !s108 1729287652.224000
+Z70 !s108 1729289842.051000
 Z71 !s90 -reportprogress|300|-93|-work|work|-O0|C:/Users/arnav/Desktop/CEG-3155-LAB-2/nbitregister.vhd|
 Z72 !s107 C:/Users/arnav/Desktop/CEG-3155-LAB-2/nbitregister.vhd|
 R11
@@ -400,7 +400,7 @@ L4
 V;<S>;RJo><mAiIl8bh1BH1
 R7
 31
-Z76 !s108 1729287652.290000
+Z76 !s108 1729289842.132000
 Z77 !s90 -reportprogress|300|-93|-work|work|-O0|C:/Users/arnav/Desktop/CEG-3155-LAB-2/nBitShiftRegister.vhd|
 Z78 !s107 C:/Users/arnav/Desktop/CEG-3155-LAB-2/nBitShiftRegister.vhd|
 R11
@@ -437,7 +437,7 @@ V4;>2a4D8>JDfE8eVL3Z8m0
 R7
 31
 !i10b 1
-Z82 !s108 1729287652.364000
+Z82 !s108 1729289842.210000
 Z83 !s90 -reportprogress|300|-93|-work|work|-O0|C:/Users/arnav/Desktop/CEG-3155-LAB-2/oneBitAdderSubtractor.vhd|
 Z84 !s107 C:/Users/arnav/Desktop/CEG-3155-LAB-2/oneBitAdderSubtractor.vhd|
 R11

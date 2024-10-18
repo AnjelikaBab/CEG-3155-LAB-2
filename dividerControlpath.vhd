@@ -53,7 +53,7 @@ BEGIN
     state_in(6) <= state_out(5) AND rgtz;
     state_in(7) <= state_out(5) AND (NOT rgtz);
     state_in(8) <= state_out(6) OR state_out(7);
-    state_in(9) <= state_out(8) AND (NOT incEq5) AND sgn;
+    state_in(9) <= state_out(8) AND incEq5 AND sgn;
 
     control_path_reset <= NOT reset;
 
