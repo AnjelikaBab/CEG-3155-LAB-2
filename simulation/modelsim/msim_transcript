@@ -1,0 +1,985 @@
+# Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# ERROR: No extended dataflow license exists
+# do CEG-3155-LAB-2_run_msim_rtl_vhdl.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vcom -93 -work work {C:/Users/arnav/Desktop/CEG-3155-LAB-2/dividerDatapath.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity dividerDatapath
+# -- Compiling architecture structural of dividerDatapath
+# vcom -93 -work work {C:/Users/arnav/Desktop/CEG-3155-LAB-2/nBitIncrementer.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nBitIncrementer
+# -- Compiling architecture rtl of nBitIncrementer
+# vcom -93 -work work {C:/Users/arnav/Desktop/CEG-3155-LAB-2/nBitShiftRegister.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nBitShiftRegister
+# -- Compiling architecture rtl of nBitShiftRegister
+# vcom -93 -work work {C:/Users/arnav/Desktop/CEG-3155-LAB-2/nbitmux41.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nbitmux41
+# -- Compiling architecture structural of nbitmux41
+# vcom -93 -work work {C:/Users/arnav/Desktop/CEG-3155-LAB-2/nbitmux21.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nbitmux21
+# -- Compiling architecture structural of nbitmux21
+# vcom -93 -work work {C:/Users/arnav/Desktop/CEG-3155-LAB-2/mux41.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux41
+# -- Compiling architecture structural of mux41
+# vcom -93 -work work {C:/Users/arnav/Desktop/CEG-3155-LAB-2/mux21.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux21
+# -- Compiling architecture structural of mux21
+# vcom -93 -work work {C:/Users/arnav/Desktop/CEG-3155-LAB-2/nbitregister.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nBitRegister
+# -- Compiling architecture rtl of nBitRegister
+# vcom -93 -work work {C:/Users/arnav/Desktop/CEG-3155-LAB-2/oneBitAdderSubtractor.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity oneBitAdderSubtractor
+# -- Compiling architecture rtl of oneBitAdderSubtractor
+# vcom -93 -work work {C:/Users/arnav/Desktop/CEG-3155-LAB-2/enardFF_2.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity enARdFF_2
+# -- Compiling architecture rtl of enARdFF_2
+# vcom -93 -work work {C:/Users/arnav/Desktop/CEG-3155-LAB-2/nBitAdderSubtractor.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nBitAdderSubtractor
+# -- Compiling architecture rtl of nBitAdderSubtractor
+# vcom -93 -work work {C:/Users/arnav/Desktop/CEG-3155-LAB-2/dividerControlpath.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity dividerControlpath
+# -- Compiling architecture rtl of dividerControlpath
+# vcom -93 -work work {C:/Users/arnav/Desktop/CEG-3155-LAB-2/dividerTopLevel.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity dividerTopLevel
+# -- Compiling architecture rtl of dividerTopLevel
+# 
+vsim work.dividercontrolpath
+# vsim work.dividercontrolpath 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.dividercontrolpath(rtl)
+# Loading work.enardff_2(rtl)
+add wave -position insertpoint  \
+sim:/dividercontrolpath/A_msb \
+sim:/dividercontrolpath/B_msb \
+sim:/dividercontrolpath/clk \
+sim:/dividercontrolpath/incEq5 \
+sim:/dividercontrolpath/reset \
+sim:/dividercontrolpath/rgtz \
+sim:/dividercontrolpath/sgn \
+sim:/dividercontrolpath/addSel0 \
+sim:/dividercontrolpath/addSel1 \
+sim:/dividercontrolpath/greset \
+sim:/dividercontrolpath/inc \
+sim:/dividercontrolpath/ldDiv \
+sim:/dividercontrolpath/ldQuot \
+sim:/dividercontrolpath/ldRem \
+sim:/dividercontrolpath/ldSign \
+sim:/dividercontrolpath/quotSerialIn \
+sim:/dividercontrolpath/selA \
+sim:/dividercontrolpath/selBComp \
+sim:/dividercontrolpath/selZ \
+sim:/dividercontrolpath/shiftDiv \
+sim:/dividercontrolpath/shiftQuot \
+sim:/dividercontrolpath/sub
+# Can't move the Now cursor.
+force -freeze sim:/dividercontrolpath/A_msb 0 0
+force -freeze sim:/dividercontrolpath/B_msb 0 0
+force -freeze sim:/dividercontrolpath/incEq5 0 0
+force -freeze sim:/dividercontrolpath/reset 1 0
+force -freeze sim:/dividercontrolpath/rgtz 0 0
+force -freeze sim:/dividercontrolpath/sgn 0 0
+run
+run
+run
+force -freeze sim:/dividercontrolpath/clk 1 0, 0 {50 ps} -r 100
+run
+force -freeze sim:/dividercontrolpath/reset 0 0
+force -freeze sim:/dividercontrolpath/A_msb 1 0
+run
+force -freeze sim:/dividercontrolpath/A_msb 0 0
+force -freeze sim:/dividercontrolpath/B_msb 1 0
+run
+run
+run
+add wave -position insertpoint  \
+sim:/dividercontrolpath/state_in \
+sim:/dividercontrolpath/state_out
+run
+run
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/dividerControlpath.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity dividerControlpath
+# -- Compiling architecture rtl of dividerControlpath
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/dividerDatapath.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity dividerDatapath
+# -- Compiling architecture structural of dividerDatapath
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/dividerTopLevel.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity dividerTopLevel
+# -- Compiling architecture rtl of dividerTopLevel
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/enardFF_2.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity enARdFF_2
+# -- Compiling architecture rtl of enARdFF_2
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/mux21.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux21
+# -- Compiling architecture structural of mux21
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/mux41.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux41
+# -- Compiling architecture structural of mux41
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/nBitAdderSubtractor.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nBitAdderSubtractor
+# -- Compiling architecture rtl of nBitAdderSubtractor
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/nBitIncrementer.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nBitIncrementer
+# -- Compiling architecture rtl of nBitIncrementer
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/nbitmux21.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nbitmux21
+# -- Compiling architecture structural of nbitmux21
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/nbitmux41.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nbitmux41
+# -- Compiling architecture structural of nbitmux41
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/nbitregister.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nBitRegister
+# -- Compiling architecture rtl of nBitRegister
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/nBitShiftRegister.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nBitShiftRegister
+# -- Compiling architecture rtl of nBitShiftRegister
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/oneBitAdderSubtractor.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity oneBitAdderSubtractor
+# -- Compiling architecture rtl of oneBitAdderSubtractor
+restart -f
+# Loading work.dividercontrolpath(rtl)
+# Loading work.enardff_2(rtl)
+force -freeze sim:/dividercontrolpath/A_msb {0} 0
+# ** Error: (vsim-4026) Value "0" does not represent a literal of the enumeration type.
+# ** Error: (vsim-4011) Invalid force value: {0} 0.
+# 
+force -freeze sim:/dividercontrolpath/B_msb 0 0
+force -freeze sim:/dividercontrolpath/incEq5 0 0
+force -freeze sim:/dividercontrolpath/reset 0 0
+force -freeze sim:/dividercontrolpath/rgtz 0 0
+force -freeze sim:/dividercontrolpath/sgn 0 0
+force -freeze sim:/dividercontrolpath/A_msb 0 0
+force -freeze sim:/dividercontrolpath/clk 1 0, 0 {50 ps} -r 100
+force -freeze sim:/dividercontrolpath/reset 1 0
+run
+run
+run
+force -freeze sim:/dividercontrolpath/reset 0 0
+force -freeze sim:/dividercontrolpath/A_msb 1 0
+run
+force -freeze sim:/dividercontrolpath/A_msb 0 0
+force -freeze sim:/dividercontrolpath/B_msb 1 0
+run
+force -freeze sim:/dividercontrolpath/B_msb 1 0
+force -freeze sim:/dividercontrolpath/A_msb 1 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/dividercontrolpath/incEq5 1 0
+run
+run
+run
+run
+run
+run
+vsim work.dividertoplevel
+# vsim work.dividertoplevel 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.dividertoplevel(rtl)
+# Loading work.dividercontrolpath(rtl)
+# Loading work.enardff_2(rtl)
+# Loading work.dividerdatapath(structural)
+# Loading work.nbitmux21(structural)
+# Loading work.mux21(structural)
+# Loading work.nbitregister(rtl)
+# Loading work.nbitshiftregister(rtl)
+# Loading work.mux41(structural)
+# Loading work.nbitmux41(structural)
+# Loading work.nbitaddersubtractor(rtl)
+# Loading work.onebitaddersubtractor(rtl)
+# Loading work.nbitincrementer(rtl)
+# WARNING: No extended dataflow license exists
+add wave -position insertpoint  \
+sim:/dividertoplevel/INA \
+sim:/dividertoplevel/INB \
+sim:/dividertoplevel/clk \
+sim:/dividertoplevel/reset \
+sim:/dividertoplevel/overflow \
+sim:/dividertoplevel/quotient \
+sim:/dividertoplevel/remainder \
+sim:/dividertoplevel/zero \
+sim:/dividertoplevel/int_A_msb \
+sim:/dividertoplevel/int_B_msb \
+sim:/dividertoplevel/int_addSel0 \
+sim:/dividertoplevel/int_addSel1 \
+sim:/dividertoplevel/int_greset \
+sim:/dividertoplevel/int_inc \
+sim:/dividertoplevel/int_incEq5 \
+sim:/dividertoplevel/int_ldDiv \
+sim:/dividertoplevel/int_ldQuot \
+sim:/dividertoplevel/int_ldRem \
+sim:/dividertoplevel/int_ldSign \
+sim:/dividertoplevel/int_quotSerialIn \
+sim:/dividertoplevel/int_rgtz \
+sim:/dividertoplevel/int_selA \
+sim:/dividertoplevel/int_selBComp \
+sim:/dividertoplevel/int_selZ \
+sim:/dividertoplevel/int_sgn \
+sim:/dividertoplevel/int_shiftDiv \
+sim:/dividertoplevel/int_shiftQuot \
+sim:/dividertoplevel/int_sub
+force -freeze sim:/dividertoplevel/reset 1 0
+force -freeze sim:/dividertoplevel/INA 0100 0
+force -freeze sim:/dividertoplevel/INB 0010 0
+force -freeze sim:/dividertoplevel/clk 1 0, 0 {50 ps} -r 100
+force -freeze sim:/dividertoplevel/reset 1 0
+run
+run
+force -freeze sim:/dividertoplevel/reset 0 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+restart -f
+force -freeze sim:/dividertoplevel/INA {0100} 0
+# Value length (5) does not equal array index length (4).
+# 
+# ** Error: (vsim-4011) Invalid force value: {0100} 0.
+# 
+force -freeze sim:/dividertoplevel/INB {0010} 0
+# Value length (5) does not equal array index length (4).
+# 
+# ** Error: (vsim-4011) Invalid force value: {0010} 0.
+# 
+force -freeze sim:/dividertoplevel/reset 1 0
+force -freeze sim:/dividertoplevel/INA {0100} 0
+# Value length (5) does not equal array index length (4).
+# 
+# ** Error: (vsim-4011) Invalid force value: {0100} 0.
+# 
+force -freeze sim:/dividertoplevel/INA 0100 0
+force -freeze sim:/dividertoplevel/INB 0010 0
+force -freeze sim:/dividertoplevel/clk 1 0, 0 {50 ps} -r 100
+run
+run
+force -freeze sim:/dividertoplevel/reset 0 0
+run
+run
+run
+run
+run
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/dividerControlpath.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity dividerControlpath
+# -- Compiling architecture rtl of dividerControlpath
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/dividerDatapath.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity dividerDatapath
+# -- Compiling architecture structural of dividerDatapath
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/dividerTopLevel.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity dividerTopLevel
+# -- Compiling architecture rtl of dividerTopLevel
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/enardFF_2.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity enARdFF_2
+# -- Compiling architecture rtl of enARdFF_2
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/mux21.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux21
+# -- Compiling architecture structural of mux21
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/mux41.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux41
+# -- Compiling architecture structural of mux41
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/nBitAdderSubtractor.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nBitAdderSubtractor
+# -- Compiling architecture rtl of nBitAdderSubtractor
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/nBitIncrementer.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nBitIncrementer
+# -- Compiling architecture rtl of nBitIncrementer
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/nbitmux21.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nbitmux21
+# -- Compiling architecture structural of nbitmux21
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/nbitmux41.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nbitmux41
+# -- Compiling architecture structural of nbitmux41
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/nbitregister.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nBitRegister
+# -- Compiling architecture rtl of nBitRegister
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/nBitShiftRegister.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nBitShiftRegister
+# -- Compiling architecture rtl of nBitShiftRegister
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/oneBitAdderSubtractor.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity oneBitAdderSubtractor
+# -- Compiling architecture rtl of oneBitAdderSubtractor
+restart -f
+# Loading work.dividertoplevel(rtl)
+# Loading work.dividercontrolpath(rtl)
+# Loading work.enardff_2(rtl)
+# Loading work.dividerdatapath(structural)
+# Loading work.nbitmux21(structural)
+# Loading work.mux21(structural)
+# Loading work.nbitregister(rtl)
+# Loading work.nbitshiftregister(rtl)
+# Loading work.mux41(structural)
+# Loading work.nbitmux41(structural)
+# Loading work.nbitaddersubtractor(rtl)
+# Loading work.onebitaddersubtractor(rtl)
+# Loading work.nbitincrementer(rtl)
+force -freeze sim:/dividertoplevel/INA 0100 0
+force -freeze sim:/dividertoplevel/INB 0010 0
+force -freeze sim:/dividertoplevel/reset 1 0
+force -freeze sim:/dividertoplevel/clk 1 0, 0 {50 ps} -r 100
+run
+run
+force -freeze sim:/dividertoplevel/reset 0 {}
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/dividerControlpath.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity dividerControlpath
+# -- Compiling architecture rtl of dividerControlpath
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/dividerDatapath.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity dividerDatapath
+# -- Compiling architecture structural of dividerDatapath
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/dividerTopLevel.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity dividerTopLevel
+# -- Compiling architecture rtl of dividerTopLevel
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/enardFF_2.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity enARdFF_2
+# -- Compiling architecture rtl of enARdFF_2
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/mux21.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux21
+# -- Compiling architecture structural of mux21
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/mux41.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux41
+# -- Compiling architecture structural of mux41
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/nBitAdderSubtractor.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nBitAdderSubtractor
+# -- Compiling architecture rtl of nBitAdderSubtractor
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/nBitIncrementer.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nBitIncrementer
+# -- Compiling architecture rtl of nBitIncrementer
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/nbitmux21.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nbitmux21
+# -- Compiling architecture structural of nbitmux21
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/nbitmux41.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nbitmux41
+# -- Compiling architecture structural of nbitmux41
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/nbitregister.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nBitRegister
+# -- Compiling architecture rtl of nBitRegister
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/nBitShiftRegister.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nBitShiftRegister
+# -- Compiling architecture rtl of nBitShiftRegister
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/oneBitAdderSubtractor.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity oneBitAdderSubtractor
+# -- Compiling architecture rtl of oneBitAdderSubtractor
+restart -f
+# Loading work.dividertoplevel(rtl)
+# Loading work.dividercontrolpath(rtl)
+# Loading work.enardff_2(rtl)
+# Loading work.dividerdatapath(structural)
+# Loading work.nbitmux21(structural)
+# Loading work.mux21(structural)
+# Loading work.nbitregister(rtl)
+# Loading work.nbitshiftregister(rtl)
+# Loading work.mux41(structural)
+# Loading work.nbitmux41(structural)
+# Loading work.nbitaddersubtractor(rtl)
+# Loading work.onebitaddersubtractor(rtl)
+# Loading work.nbitincrementer(rtl)
+force -freeze sim:/dividertoplevel/INA 0100 0
+force -freeze sim:/dividertoplevel/INB 0010 0
+force -freeze sim:/dividertoplevel/reset 1 0
+force -freeze sim:/dividertoplevel/clk 1 0, 0 {50 ps} -r 100
+run
+run
+force -freeze sim:/dividertoplevel/reset 0 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/dividerControlpath.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity dividerControlpath
+# -- Compiling architecture rtl of dividerControlpath
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/dividerDatapath.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity dividerDatapath
+# -- Compiling architecture structural of dividerDatapath
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/dividerTopLevel.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity dividerTopLevel
+# -- Compiling architecture rtl of dividerTopLevel
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/enardFF_2.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity enARdFF_2
+# -- Compiling architecture rtl of enARdFF_2
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/mux21.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux21
+# -- Compiling architecture structural of mux21
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/mux41.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux41
+# -- Compiling architecture structural of mux41
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/nBitAdderSubtractor.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nBitAdderSubtractor
+# -- Compiling architecture rtl of nBitAdderSubtractor
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/nBitIncrementer.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nBitIncrementer
+# -- Compiling architecture rtl of nBitIncrementer
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/nbitmux21.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nbitmux21
+# -- Compiling architecture structural of nbitmux21
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/nbitmux41.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nbitmux41
+# -- Compiling architecture structural of nbitmux41
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/nbitregister.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nBitRegister
+# -- Compiling architecture rtl of nBitRegister
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/nBitShiftRegister.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nBitShiftRegister
+# -- Compiling architecture rtl of nBitShiftRegister
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/oneBitAdderSubtractor.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity oneBitAdderSubtractor
+# -- Compiling architecture rtl of oneBitAdderSubtractor
+restart -f
+# Loading work.dividertoplevel(rtl)
+# Loading work.dividercontrolpath(rtl)
+# Loading work.enardff_2(rtl)
+# Loading work.dividerdatapath(structural)
+# Loading work.nbitmux21(structural)
+# Loading work.mux21(structural)
+# Loading work.nbitregister(rtl)
+# Loading work.nbitshiftregister(rtl)
+# Loading work.mux41(structural)
+# Loading work.nbitmux41(structural)
+# Loading work.nbitaddersubtractor(rtl)
+# Loading work.onebitaddersubtractor(rtl)
+# Loading work.nbitincrementer(rtl)
+force -freeze sim:/dividertoplevel/INA 0100 0
+force -freeze sim:/dividertoplevel/INB 0010 0
+force -freeze sim:/dividertoplevel/reset 1 0
+run
+run
+run
+force -freeze sim:/dividertoplevel/clk 1 0, 0 {50 ps} -r 100
+run
+run
+force -freeze sim:/dividertoplevel/clk 1 0, 0 {50 ps} -r 100
+force -freeze sim:/dividertoplevel/reset 0 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/dividertoplevel/reset 1 0
+run
+run
+run
+force -freeze sim:/dividertoplevel/INA 1100 0
+force -freeze sim:/dividertoplevel/INB 1110 0
+run
+force -freeze sim:/dividertoplevel/reset 0 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/dividertoplevel/reset 1 0
+run
+run
+force -freeze sim:/dividertoplevel/reset 0 0
+run
+run
+run
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/dividerControlpath.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity dividerControlpath
+# -- Compiling architecture rtl of dividerControlpath
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/dividerDatapath.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity dividerDatapath
+# -- Compiling architecture structural of dividerDatapath
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/dividerTopLevel.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity dividerTopLevel
+# -- Compiling architecture rtl of dividerTopLevel
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/enardFF_2.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity enARdFF_2
+# -- Compiling architecture rtl of enARdFF_2
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/mux21.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux21
+# -- Compiling architecture structural of mux21
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/mux41.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux41
+# -- Compiling architecture structural of mux41
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/nBitAdderSubtractor.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nBitAdderSubtractor
+# -- Compiling architecture rtl of nBitAdderSubtractor
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/nBitIncrementer.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nBitIncrementer
+# -- Compiling architecture rtl of nBitIncrementer
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/nbitmux21.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nbitmux21
+# -- Compiling architecture structural of nbitmux21
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/nbitmux41.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nbitmux41
+# -- Compiling architecture structural of nbitmux41
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/nbitregister.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nBitRegister
+# -- Compiling architecture rtl of nBitRegister
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/nBitShiftRegister.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nBitShiftRegister
+# -- Compiling architecture rtl of nBitShiftRegister
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/oneBitAdderSubtractor.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity oneBitAdderSubtractor
+# -- Compiling architecture rtl of oneBitAdderSubtractor
+restart -f
+# Loading work.dividertoplevel(rtl)
+# Loading work.dividercontrolpath(rtl)
+# Loading work.enardff_2(rtl)
+# Loading work.dividerdatapath(structural)
+# Loading work.nbitmux21(structural)
+# Loading work.mux21(structural)
+# Loading work.nbitregister(rtl)
+# Loading work.nbitshiftregister(rtl)
+# Loading work.mux41(structural)
+# Loading work.nbitmux41(structural)
+# Loading work.nbitaddersubtractor(rtl)
+# Loading work.onebitaddersubtractor(rtl)
+# Loading work.nbitincrementer(rtl)
+force -freeze sim:/dividertoplevel/INA 1100 0
+force -freeze sim:/dividertoplevel/INB 1110 0
+force -freeze sim:/dividertoplevel/clk 1 0, 0 {50 ps} -r 100
+force -freeze sim:/dividertoplevel/reset 1 0
+run
+run
+force -freeze sim:/dividertoplevel/reset 0 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run

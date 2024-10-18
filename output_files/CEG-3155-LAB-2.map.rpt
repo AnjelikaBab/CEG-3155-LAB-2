@@ -1,0 +1,1037 @@
+Analysis & Synthesis report for CEG-3155-LAB-2
+Fri Oct 18 16:58:15 2024
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: dividerDatapath:dataPath|nbitmux21:remainder_mux
+ 13. Parameter Settings for User Entity Instance: dividerDatapath:dataPath|nBitRegister:remainder_reg
+ 14. Parameter Settings for User Entity Instance: dividerDatapath:dataPath|nbitmux21:divisor_mux
+ 15. Parameter Settings for User Entity Instance: dividerDatapath:dataPath|nBitShiftRegister:divisor_reg
+ 16. Parameter Settings for User Entity Instance: dividerDatapath:dataPath|nbitmux21:inputA_mux
+ 17. Parameter Settings for User Entity Instance: dividerDatapath:dataPath|nbitmux41:inputB_mux
+ 18. Parameter Settings for User Entity Instance: dividerDatapath:dataPath|nBitAdderSubtractor:adder
+ 19. Parameter Settings for User Entity Instance: dividerDatapath:dataPath|nBitShiftRegister:quotient_reg
+ 20. Parameter Settings for User Entity Instance: dividerDatapath:dataPath|nBitIncrementer:incrementer
+ 21. Parameter Settings for User Entity Instance: dividerDatapath:dataPath|nBitIncrementer:incrementer|nBitAdderSubtractor:adder
+ 22. Parameter Settings for User Entity Instance: dividerDatapath:dataPath|nBitIncrementer:incrementer|nBitRegister:reg
+ 23. Port Connectivity Checks: "dividerDatapath:dataPath|enARdFF_2:sign_reg"
+ 24. Port Connectivity Checks: "dividerDatapath:dataPath|nBitIncrementer:incrementer|nBitRegister:reg|enARdFF_2:\reg_n_bits:2:b"
+ 25. Port Connectivity Checks: "dividerDatapath:dataPath|nBitIncrementer:incrementer|nBitRegister:reg|enARdFF_2:\reg_n_bits:1:b"
+ 26. Port Connectivity Checks: "dividerDatapath:dataPath|nBitIncrementer:incrementer|nBitRegister:reg|enARdFF_2:\reg_n_bits:0:b"
+ 27. Port Connectivity Checks: "dividerDatapath:dataPath|nBitIncrementer:incrementer|nBitAdderSubtractor:adder"
+ 28. Port Connectivity Checks: "dividerDatapath:dataPath|nBitShiftRegister:quotient_reg"
+ 29. Port Connectivity Checks: "dividerDatapath:dataPath|nbitmux41:inputB_mux"
+ 30. Port Connectivity Checks: "dividerDatapath:dataPath|nbitmux21:inputA_mux"
+ 31. Port Connectivity Checks: "dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|mux41:\muxloop:6:mux_n"
+ 32. Port Connectivity Checks: "dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|mux41:\muxloop:5:mux_n"
+ 33. Port Connectivity Checks: "dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|mux41:\muxloop:4:mux_n"
+ 34. Port Connectivity Checks: "dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|mux41:\muxloop:3:mux_n"
+ 35. Port Connectivity Checks: "dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|mux41:\muxloop:2:mux_n"
+ 36. Port Connectivity Checks: "dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|mux41:\muxloop:1:mux_n"
+ 37. Port Connectivity Checks: "dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|mux41:mux_msb"
+ 38. Port Connectivity Checks: "dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|mux41:mux_0"
+ 39. Port Connectivity Checks: "dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|enARdFF_2:\regloop:7:bit_n"
+ 40. Port Connectivity Checks: "dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|enARdFF_2:\regloop:6:bit_n"
+ 41. Port Connectivity Checks: "dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|enARdFF_2:\regloop:5:bit_n"
+ 42. Port Connectivity Checks: "dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|enARdFF_2:\regloop:4:bit_n"
+ 43. Port Connectivity Checks: "dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|enARdFF_2:\regloop:3:bit_n"
+ 44. Port Connectivity Checks: "dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|enARdFF_2:\regloop:2:bit_n"
+ 45. Port Connectivity Checks: "dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|enARdFF_2:\regloop:1:bit_n"
+ 46. Port Connectivity Checks: "dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|enARdFF_2:\regloop:0:bit_n"
+ 47. Port Connectivity Checks: "dividerDatapath:dataPath|nBitShiftRegister:divisor_reg"
+ 48. Port Connectivity Checks: "dividerDatapath:dataPath|nbitmux21:divisor_mux"
+ 49. Port Connectivity Checks: "dividerDatapath:dataPath|nBitRegister:remainder_reg|enARdFF_2:\reg_n_bits:7:b"
+ 50. Port Connectivity Checks: "dividerDatapath:dataPath|nBitRegister:remainder_reg|enARdFF_2:\reg_n_bits:6:b"
+ 51. Port Connectivity Checks: "dividerDatapath:dataPath|nBitRegister:remainder_reg|enARdFF_2:\reg_n_bits:5:b"
+ 52. Port Connectivity Checks: "dividerDatapath:dataPath|nBitRegister:remainder_reg|enARdFF_2:\reg_n_bits:4:b"
+ 53. Port Connectivity Checks: "dividerDatapath:dataPath|nBitRegister:remainder_reg|enARdFF_2:\reg_n_bits:3:b"
+ 54. Port Connectivity Checks: "dividerDatapath:dataPath|nBitRegister:remainder_reg|enARdFF_2:\reg_n_bits:2:b"
+ 55. Port Connectivity Checks: "dividerDatapath:dataPath|nBitRegister:remainder_reg|enARdFF_2:\reg_n_bits:1:b"
+ 56. Port Connectivity Checks: "dividerDatapath:dataPath|nBitRegister:remainder_reg|enARdFF_2:\reg_n_bits:0:b"
+ 57. Port Connectivity Checks: "dividerDatapath:dataPath|nbitmux21:remainder_mux"
+ 58. Port Connectivity Checks: "dividerControlpath:controlPath|enARdFF_2:\stateRegloop:9:state_n"
+ 59. Port Connectivity Checks: "dividerControlpath:controlPath|enARdFF_2:\stateRegloop:8:state_n"
+ 60. Port Connectivity Checks: "dividerControlpath:controlPath|enARdFF_2:\stateRegloop:7:state_n"
+ 61. Port Connectivity Checks: "dividerControlpath:controlPath|enARdFF_2:\stateRegloop:6:state_n"
+ 62. Port Connectivity Checks: "dividerControlpath:controlPath|enARdFF_2:\stateRegloop:5:state_n"
+ 63. Port Connectivity Checks: "dividerControlpath:controlPath|enARdFF_2:\stateRegloop:4:state_n"
+ 64. Port Connectivity Checks: "dividerControlpath:controlPath|enARdFF_2:\stateRegloop:3:state_n"
+ 65. Port Connectivity Checks: "dividerControlpath:controlPath|enARdFF_2:\stateRegloop:2:state_n"
+ 66. Port Connectivity Checks: "dividerControlpath:controlPath|enARdFF_2:\stateRegloop:1:state_n"
+ 67. Port Connectivity Checks: "dividerControlpath:controlPath|enARdFF_2:stateReg0"
+ 68. Elapsed Time Per Partition
+ 69. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Fri Oct 18 16:58:15 2024           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; CEG-3155-LAB-2                                  ;
+; Top-level Entity Name              ; dividerTopLevel                                 ;
+; Family                             ; Cyclone IV E                                    ;
+; Total logic elements               ; 7                                               ;
+;     Total combinational functions  ; 4                                               ;
+;     Dedicated logic registers      ; 7                                               ;
+; Total registers                    ; 7                                               ;
+; Total pins                         ; 28                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                                      ; dividerTopLevel    ; CEG-3155-LAB-2     ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 16     ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                           ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                    ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
+; dividerDatapath.vhd              ; yes             ; User VHDL File  ; C:/Users/arnav/Desktop/CEG-3155-LAB-2/dividerDatapath.vhd       ;         ;
+; nBitIncrementer.vhd              ; yes             ; User VHDL File  ; C:/Users/arnav/Desktop/CEG-3155-LAB-2/nBitIncrementer.vhd       ;         ;
+; nBitShiftRegister.vhd            ; yes             ; User VHDL File  ; C:/Users/arnav/Desktop/CEG-3155-LAB-2/nBitShiftRegister.vhd     ;         ;
+; nbitmux41.vhd                    ; yes             ; User VHDL File  ; C:/Users/arnav/Desktop/CEG-3155-LAB-2/nbitmux41.vhd             ;         ;
+; nbitmux21.vhd                    ; yes             ; User VHDL File  ; C:/Users/arnav/Desktop/CEG-3155-LAB-2/nbitmux21.vhd             ;         ;
+; mux41.vhd                        ; yes             ; User VHDL File  ; C:/Users/arnav/Desktop/CEG-3155-LAB-2/mux41.vhd                 ;         ;
+; mux21.vhd                        ; yes             ; User VHDL File  ; C:/Users/arnav/Desktop/CEG-3155-LAB-2/mux21.vhd                 ;         ;
+; nbitregister.vhd                 ; yes             ; User VHDL File  ; C:/Users/arnav/Desktop/CEG-3155-LAB-2/nbitregister.vhd          ;         ;
+; oneBitAdderSubtractor.vhd        ; yes             ; User VHDL File  ; C:/Users/arnav/Desktop/CEG-3155-LAB-2/oneBitAdderSubtractor.vhd ;         ;
+; enardFF_2.vhd                    ; yes             ; User VHDL File  ; C:/Users/arnav/Desktop/CEG-3155-LAB-2/enardFF_2.vhd             ;         ;
+; nBitAdderSubtractor.vhd          ; yes             ; User VHDL File  ; C:/Users/arnav/Desktop/CEG-3155-LAB-2/nBitAdderSubtractor.vhd   ;         ;
+; dividerControlpath.vhd           ; yes             ; User VHDL File  ; C:/Users/arnav/Desktop/CEG-3155-LAB-2/dividerControlpath.vhd    ;         ;
+; dividerTopLevel.vhd              ; yes             ; User VHDL File  ; C:/Users/arnav/Desktop/CEG-3155-LAB-2/dividerTopLevel.vhd       ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 7         ;
+;                                             ;           ;
+; Total combinational functions               ; 4         ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 2         ;
+;     -- 3 input functions                    ; 1         ;
+;     -- <=2 input functions                  ; 1         ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 4         ;
+;     -- arithmetic mode                      ; 0         ;
+;                                             ;           ;
+; Total registers                             ; 7         ;
+;     -- Dedicated logic registers            ; 7         ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 28        ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 7         ;
+; Total fan-out                               ; 62        ;
+; Average fan-out                             ; 0.93      ;
++---------------------------------------------+-----------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                     ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                              ; Library Name ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------+--------------+
+; |dividerTopLevel                          ; 4 (0)             ; 7 (0)        ; 0           ; 0            ; 0       ; 0         ; 28   ; 0            ; |dividerTopLevel                                                                                                 ; work         ;
+;    |dividerControlpath:controlPath|       ; 1 (1)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dividerTopLevel|dividerControlpath:controlPath                                                                  ; work         ;
+;       |enARdFF_2:\stateRegloop:5:state_n| ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dividerTopLevel|dividerControlpath:controlPath|enARdFF_2:\stateRegloop:5:state_n                                ; work         ;
+;       |enARdFF_2:\stateRegloop:7:state_n| ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dividerTopLevel|dividerControlpath:controlPath|enARdFF_2:\stateRegloop:7:state_n                                ; work         ;
+;       |enARdFF_2:\stateRegloop:8:state_n| ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dividerTopLevel|dividerControlpath:controlPath|enARdFF_2:\stateRegloop:8:state_n                                ; work         ;
+;       |enARdFF_2:stateReg0|               ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dividerTopLevel|dividerControlpath:controlPath|enARdFF_2:stateReg0                                              ; work         ;
+;    |dividerDatapath:dataPath|             ; 3 (0)             ; 3 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dividerTopLevel|dividerDatapath:dataPath                                                                        ; work         ;
+;       |nBitIncrementer:incrementer|       ; 3 (0)             ; 3 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dividerTopLevel|dividerDatapath:dataPath|nBitIncrementer:incrementer                                            ; work         ;
+;          |nBitRegister:reg|               ; 3 (0)             ; 3 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dividerTopLevel|dividerDatapath:dataPath|nBitIncrementer:incrementer|nBitRegister:reg                           ; work         ;
+;             |enARdFF_2:\reg_n_bits:0:b|   ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dividerTopLevel|dividerDatapath:dataPath|nBitIncrementer:incrementer|nBitRegister:reg|enARdFF_2:\reg_n_bits:0:b ; work         ;
+;             |enARdFF_2:\reg_n_bits:1:b|   ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dividerTopLevel|dividerDatapath:dataPath|nBitIncrementer:incrementer|nBitRegister:reg|enARdFF_2:\reg_n_bits:1:b ; work         ;
+;             |enARdFF_2:\reg_n_bits:2:b|   ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |dividerTopLevel|dividerDatapath:dataPath|nBitIncrementer:incrementer|nBitRegister:reg|enARdFF_2:\reg_n_bits:2:b ; work         ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                     ;
++------------------------------------------------------------------------------------------+---------------------------------------------+
+; Register name                                                                            ; Reason for Removal                          ;
++------------------------------------------------------------------------------------------+---------------------------------------------+
+; dividerDatapath:dataPath|enARdFF_2:sign_reg|int_q                                        ; Stuck at GND due to stuck port clock_enable ;
+; dividerControlpath:controlPath|enARdFF_2:\stateRegloop:9:state_n|int_q                   ; Stuck at GND due to stuck port data_in      ;
+; dividerControlpath:controlPath|enARdFF_2:\stateRegloop:1:state_n|int_q                   ; Stuck at GND due to stuck port data_in      ;
+; dividerControlpath:controlPath|enARdFF_2:\stateRegloop:2:state_n|int_q                   ; Stuck at GND due to stuck port data_in      ;
+; dividerControlpath:controlPath|enARdFF_2:\stateRegloop:3:state_n|int_q                   ; Stuck at GND due to stuck port data_in      ;
+; dividerControlpath:controlPath|enARdFF_2:\stateRegloop:4:state_n|int_q                   ; Stuck at GND due to stuck port data_in      ;
+; dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|enARdFF_2:\regloop:7:bit_n|int_q  ; Stuck at GND due to stuck port data_in      ;
+; dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|enARdFF_2:\regloop:6:bit_n|int_q  ; Stuck at GND due to stuck port data_in      ;
+; dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|enARdFF_2:\regloop:5:bit_n|int_q  ; Stuck at GND due to stuck port data_in      ;
+; dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|enARdFF_2:\regloop:4:bit_n|int_q  ; Stuck at GND due to stuck port data_in      ;
+; dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|enARdFF_2:\regloop:3:bit_n|int_q  ; Stuck at GND due to stuck port data_in      ;
+; dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|enARdFF_2:\regloop:2:bit_n|int_q  ; Stuck at GND due to stuck port data_in      ;
+; dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|enARdFF_2:\regloop:1:bit_n|int_q  ; Stuck at GND due to stuck port data_in      ;
+; dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|enARdFF_2:\regloop:0:bit_n|int_q  ; Stuck at GND due to stuck port data_in      ;
+; dividerDatapath:dataPath|nBitRegister:remainder_reg|enARdFF_2:\reg_n_bits:0:b|int_q      ; Stuck at GND due to stuck port data_in      ;
+; dividerDatapath:dataPath|nBitRegister:remainder_reg|enARdFF_2:\reg_n_bits:1:b|int_q      ; Stuck at GND due to stuck port data_in      ;
+; dividerDatapath:dataPath|nBitRegister:remainder_reg|enARdFF_2:\reg_n_bits:7:b|int_q      ; Stuck at GND due to stuck port data_in      ;
+; dividerDatapath:dataPath|nBitRegister:remainder_reg|enARdFF_2:\reg_n_bits:6:b|int_q      ; Stuck at GND due to stuck port data_in      ;
+; dividerDatapath:dataPath|nBitRegister:remainder_reg|enARdFF_2:\reg_n_bits:5:b|int_q      ; Stuck at GND due to stuck port data_in      ;
+; dividerDatapath:dataPath|nBitRegister:remainder_reg|enARdFF_2:\reg_n_bits:4:b|int_q      ; Stuck at GND due to stuck port data_in      ;
+; dividerDatapath:dataPath|nBitRegister:remainder_reg|enARdFF_2:\reg_n_bits:3:b|int_q      ; Stuck at GND due to stuck port data_in      ;
+; dividerDatapath:dataPath|nBitRegister:remainder_reg|enARdFF_2:\reg_n_bits:2:b|int_q      ; Stuck at GND due to stuck port data_in      ;
+; dividerControlpath:controlPath|enARdFF_2:\stateRegloop:6:state_n|int_q                   ; Stuck at GND due to stuck port data_in      ;
+; dividerDatapath:dataPath|nBitShiftRegister:quotient_reg|enARdFF_2:\regloop:0:bit_n|int_q ; Stuck at GND due to stuck port data_in      ;
+; dividerDatapath:dataPath|nBitShiftRegister:quotient_reg|enARdFF_2:\regloop:1:bit_n|int_q ; Stuck at GND due to stuck port data_in      ;
+; dividerDatapath:dataPath|nBitShiftRegister:quotient_reg|enARdFF_2:\regloop:2:bit_n|int_q ; Stuck at GND due to stuck port data_in      ;
+; dividerDatapath:dataPath|nBitShiftRegister:quotient_reg|enARdFF_2:\regloop:3:bit_n|int_q ; Stuck at GND due to stuck port data_in      ;
+; dividerDatapath:dataPath|nBitShiftRegister:quotient_reg|enARdFF_2:\regloop:4:bit_n|int_q ; Stuck at GND due to stuck port data_in      ;
+; dividerDatapath:dataPath|nBitShiftRegister:quotient_reg|enARdFF_2:\regloop:5:bit_n|int_q ; Stuck at GND due to stuck port data_in      ;
+; dividerDatapath:dataPath|nBitShiftRegister:quotient_reg|enARdFF_2:\regloop:6:bit_n|int_q ; Stuck at GND due to stuck port data_in      ;
+; dividerDatapath:dataPath|nBitShiftRegister:quotient_reg|enARdFF_2:\regloop:7:bit_n|int_q ; Stuck at GND due to stuck port data_in      ;
+; Total Number of Removed Registers = 31                                                   ;                                             ;
++------------------------------------------------------------------------------------------+---------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                                                         ;
++------------------------------------------------------------------------+--------------------------------+-------------------------------------------------------------------------------------------+
+; Register name                                                          ; Reason for Removal             ; Registers Removed due to This Register                                                    ;
++------------------------------------------------------------------------+--------------------------------+-------------------------------------------------------------------------------------------+
+; dividerControlpath:controlPath|enARdFF_2:\stateRegloop:1:state_n|int_q ; Stuck at GND                   ; dividerControlpath:controlPath|enARdFF_2:\stateRegloop:3:state_n|int_q,                   ;
+;                                                                        ; due to stuck port data_in      ; dividerControlpath:controlPath|enARdFF_2:\stateRegloop:4:state_n|int_q,                   ;
+;                                                                        ;                                ; dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|enARdFF_2:\regloop:7:bit_n|int_q,  ;
+;                                                                        ;                                ; dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|enARdFF_2:\regloop:6:bit_n|int_q,  ;
+;                                                                        ;                                ; dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|enARdFF_2:\regloop:5:bit_n|int_q,  ;
+;                                                                        ;                                ; dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|enARdFF_2:\regloop:4:bit_n|int_q,  ;
+;                                                                        ;                                ; dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|enARdFF_2:\regloop:3:bit_n|int_q,  ;
+;                                                                        ;                                ; dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|enARdFF_2:\regloop:2:bit_n|int_q,  ;
+;                                                                        ;                                ; dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|enARdFF_2:\regloop:1:bit_n|int_q,  ;
+;                                                                        ;                                ; dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|enARdFF_2:\regloop:0:bit_n|int_q,  ;
+;                                                                        ;                                ; dividerDatapath:dataPath|nBitRegister:remainder_reg|enARdFF_2:\reg_n_bits:1:b|int_q,      ;
+;                                                                        ;                                ; dividerDatapath:dataPath|nBitRegister:remainder_reg|enARdFF_2:\reg_n_bits:7:b|int_q,      ;
+;                                                                        ;                                ; dividerDatapath:dataPath|nBitRegister:remainder_reg|enARdFF_2:\reg_n_bits:5:b|int_q,      ;
+;                                                                        ;                                ; dividerDatapath:dataPath|nBitRegister:remainder_reg|enARdFF_2:\reg_n_bits:3:b|int_q,      ;
+;                                                                        ;                                ; dividerControlpath:controlPath|enARdFF_2:\stateRegloop:6:state_n|int_q,                   ;
+;                                                                        ;                                ; dividerDatapath:dataPath|nBitShiftRegister:quotient_reg|enARdFF_2:\regloop:1:bit_n|int_q, ;
+;                                                                        ;                                ; dividerDatapath:dataPath|nBitShiftRegister:quotient_reg|enARdFF_2:\regloop:3:bit_n|int_q, ;
+;                                                                        ;                                ; dividerDatapath:dataPath|nBitShiftRegister:quotient_reg|enARdFF_2:\regloop:5:bit_n|int_q, ;
+;                                                                        ;                                ; dividerDatapath:dataPath|nBitShiftRegister:quotient_reg|enARdFF_2:\regloop:7:bit_n|int_q  ;
+; dividerDatapath:dataPath|enARdFF_2:sign_reg|int_q                      ; Stuck at GND                   ; dividerControlpath:controlPath|enARdFF_2:\stateRegloop:9:state_n|int_q,                   ;
+;                                                                        ; due to stuck port clock_enable ; dividerDatapath:dataPath|nBitRegister:remainder_reg|enARdFF_2:\reg_n_bits:0:b|int_q,      ;
+;                                                                        ;                                ; dividerDatapath:dataPath|nBitRegister:remainder_reg|enARdFF_2:\reg_n_bits:6:b|int_q,      ;
+;                                                                        ;                                ; dividerDatapath:dataPath|nBitRegister:remainder_reg|enARdFF_2:\reg_n_bits:4:b|int_q,      ;
+;                                                                        ;                                ; dividerDatapath:dataPath|nBitRegister:remainder_reg|enARdFF_2:\reg_n_bits:2:b|int_q,      ;
+;                                                                        ;                                ; dividerDatapath:dataPath|nBitShiftRegister:quotient_reg|enARdFF_2:\regloop:0:bit_n|int_q, ;
+;                                                                        ;                                ; dividerDatapath:dataPath|nBitShiftRegister:quotient_reg|enARdFF_2:\regloop:2:bit_n|int_q, ;
+;                                                                        ;                                ; dividerDatapath:dataPath|nBitShiftRegister:quotient_reg|enARdFF_2:\regloop:4:bit_n|int_q, ;
+;                                                                        ;                                ; dividerDatapath:dataPath|nBitShiftRegister:quotient_reg|enARdFF_2:\regloop:6:bit_n|int_q  ;
++------------------------------------------------------------------------+--------------------------------+-------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 7     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 6     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------+
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|enARdFF_2:\regloop:6:bit_n|int_q ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |dividerTopLevel|dividerDatapath:dataPath|nbitmux41:inputB_mux|mux41:\muxloop:7:mux_n|mux21:muxfinal|y   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: dividerDatapath:dataPath|nbitmux21:remainder_mux ;
++----------------+-------+----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                 ;
++----------------+-------+----------------------------------------------------------------------+
+; n              ; 8     ; Signed Integer                                                       ;
++----------------+-------+----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: dividerDatapath:dataPath|nBitRegister:remainder_reg ;
++----------------+-------+-------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                    ;
++----------------+-------+-------------------------------------------------------------------------+
+; n              ; 8     ; Signed Integer                                                          ;
++----------------+-------+-------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: dividerDatapath:dataPath|nbitmux21:divisor_mux ;
++----------------+-------+--------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                               ;
++----------------+-------+--------------------------------------------------------------------+
+; n              ; 8     ; Signed Integer                                                     ;
++----------------+-------+--------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: dividerDatapath:dataPath|nBitShiftRegister:divisor_reg ;
++----------------+-------+----------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                       ;
++----------------+-------+----------------------------------------------------------------------------+
+; n              ; 8     ; Signed Integer                                                             ;
++----------------+-------+----------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: dividerDatapath:dataPath|nbitmux21:inputA_mux ;
++----------------+-------+-------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                              ;
++----------------+-------+-------------------------------------------------------------------+
+; n              ; 8     ; Signed Integer                                                    ;
++----------------+-------+-------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: dividerDatapath:dataPath|nbitmux41:inputB_mux ;
++----------------+-------+-------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                              ;
++----------------+-------+-------------------------------------------------------------------+
+; n              ; 8     ; Signed Integer                                                    ;
++----------------+-------+-------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: dividerDatapath:dataPath|nBitAdderSubtractor:adder ;
++----------------+-------+------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                   ;
++----------------+-------+------------------------------------------------------------------------+
+; n              ; 8     ; Signed Integer                                                         ;
++----------------+-------+------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: dividerDatapath:dataPath|nBitShiftRegister:quotient_reg ;
++----------------+-------+-----------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                        ;
++----------------+-------+-----------------------------------------------------------------------------+
+; n              ; 8     ; Signed Integer                                                              ;
++----------------+-------+-----------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: dividerDatapath:dataPath|nBitIncrementer:incrementer ;
++----------------+-------+--------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                     ;
++----------------+-------+--------------------------------------------------------------------------+
+; n              ; 3     ; Signed Integer                                                           ;
++----------------+-------+--------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: dividerDatapath:dataPath|nBitIncrementer:incrementer|nBitAdderSubtractor:adder ;
++----------------+-------+----------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                               ;
++----------------+-------+----------------------------------------------------------------------------------------------------+
+; n              ; 3     ; Signed Integer                                                                                     ;
++----------------+-------+----------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: dividerDatapath:dataPath|nBitIncrementer:incrementer|nBitRegister:reg ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                      ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+; n              ; 3     ; Signed Integer                                                                            ;
++----------------+-------+-------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dividerDatapath:dataPath|enARdFF_2:sign_reg"                                          ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dividerDatapath:dataPath|nBitIncrementer:incrementer|nBitRegister:reg|enARdFF_2:\reg_n_bits:2:b" ;
++--------+--------+----------+------------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                        ;
++--------+--------+----------+------------------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.            ;
++--------+--------+----------+------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dividerDatapath:dataPath|nBitIncrementer:incrementer|nBitRegister:reg|enARdFF_2:\reg_n_bits:1:b" ;
++--------+--------+----------+------------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                        ;
++--------+--------+----------+------------------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.            ;
++--------+--------+----------+------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dividerDatapath:dataPath|nBitIncrementer:incrementer|nBitRegister:reg|enARdFF_2:\reg_n_bits:0:b" ;
++--------+--------+----------+------------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                        ;
++--------+--------+----------+------------------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.            ;
++--------+--------+----------+------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dividerDatapath:dataPath|nBitIncrementer:incrementer|nBitAdderSubtractor:adder"              ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port          ; Type   ; Severity ; Details                                                                             ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+; i_bi[2..1]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; i_bi[0]       ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; operationflag ; Input  ; Info     ; Stuck at GND                                                                        ;
+; o_carryout    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dividerDatapath:dataPath|nBitShiftRegister:quotient_reg" ;
++---------------+-------+----------+--------------------------------------------------+
+; Port          ; Type  ; Severity ; Details                                          ;
++---------------+-------+----------+--------------------------------------------------+
+; i_shift_right ; Input ; Info     ; Stuck at GND                                     ;
++---------------+-------+----------+--------------------------------------------------+
+
+
++---------------------------------------------------------------------------+
+; Port Connectivity Checks: "dividerDatapath:dataPath|nbitmux41:inputB_mux" ;
++----------+-------+----------+---------------------------------------------+
+; Port     ; Type  ; Severity ; Details                                     ;
++----------+-------+----------+---------------------------------------------+
+; x2[3..0] ; Input ; Info     ; Stuck at GND                                ;
+; x3[7..4] ; Input ; Info     ; Stuck at GND                                ;
++----------+-------+----------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------+
+; Port Connectivity Checks: "dividerDatapath:dataPath|nbitmux21:inputA_mux" ;
++------+-------+----------+-------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                         ;
++------+-------+----------+-------------------------------------------------+
+; x1   ; Input ; Info     ; Stuck at GND                                    ;
++------+-------+----------+-------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|mux41:\muxloop:6:mux_n" ;
++------+-------+----------+---------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                         ;
++------+-------+----------+---------------------------------------------------------------------------------+
+; x3   ; Input ; Info     ; Stuck at GND                                                                    ;
++------+-------+----------+---------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|mux41:\muxloop:5:mux_n" ;
++------+-------+----------+---------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                         ;
++------+-------+----------+---------------------------------------------------------------------------------+
+; x3   ; Input ; Info     ; Stuck at GND                                                                    ;
++------+-------+----------+---------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|mux41:\muxloop:4:mux_n" ;
++------+-------+----------+---------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                         ;
++------+-------+----------+---------------------------------------------------------------------------------+
+; x3   ; Input ; Info     ; Stuck at GND                                                                    ;
++------+-------+----------+---------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|mux41:\muxloop:3:mux_n" ;
++------+-------+----------+---------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                         ;
++------+-------+----------+---------------------------------------------------------------------------------+
+; x3   ; Input ; Info     ; Stuck at GND                                                                    ;
++------+-------+----------+---------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|mux41:\muxloop:2:mux_n" ;
++------+-------+----------+---------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                         ;
++------+-------+----------+---------------------------------------------------------------------------------+
+; x3   ; Input ; Info     ; Stuck at GND                                                                    ;
++------+-------+----------+---------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|mux41:\muxloop:1:mux_n" ;
++------+-------+----------+---------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                         ;
++------+-------+----------+---------------------------------------------------------------------------------+
+; x3   ; Input ; Info     ; Stuck at GND                                                                    ;
++------+-------+----------+---------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|mux41:mux_msb" ;
++------+-------+----------+------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                ;
++------+-------+----------+------------------------------------------------------------------------+
+; x3   ; Input ; Info     ; Stuck at GND                                                           ;
++------+-------+----------+------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|mux41:mux_0" ;
++------+-------+----------+----------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                              ;
++------+-------+----------+----------------------------------------------------------------------+
+; x3   ; Input ; Info     ; Stuck at GND                                                         ;
++------+-------+----------+----------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|enARdFF_2:\regloop:7:bit_n"    ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|enARdFF_2:\regloop:6:bit_n"    ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|enARdFF_2:\regloop:5:bit_n"    ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|enARdFF_2:\regloop:4:bit_n"    ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|enARdFF_2:\regloop:3:bit_n"    ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|enARdFF_2:\regloop:2:bit_n"    ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|enARdFF_2:\regloop:1:bit_n"    ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|enARdFF_2:\regloop:0:bit_n"    ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dividerDatapath:dataPath|nBitShiftRegister:divisor_reg" ;
++--------------+-------+----------+--------------------------------------------------+
+; Port         ; Type  ; Severity ; Details                                          ;
++--------------+-------+----------+--------------------------------------------------+
+; i_shift_left ; Input ; Info     ; Stuck at GND                                     ;
+; serial_in    ; Input ; Info     ; Stuck at GND                                     ;
++--------------+-------+----------+--------------------------------------------------+
+
+
++----------------------------------------------------------------------------+
+; Port Connectivity Checks: "dividerDatapath:dataPath|nbitmux21:divisor_mux" ;
++----------+-------+----------+----------------------------------------------+
+; Port     ; Type  ; Severity ; Details                                      ;
++----------+-------+----------+----------------------------------------------+
+; x0[3..0] ; Input ; Info     ; Stuck at GND                                 ;
++----------+-------+----------+----------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dividerDatapath:dataPath|nBitRegister:remainder_reg|enARdFF_2:\reg_n_bits:7:b"        ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dividerDatapath:dataPath|nBitRegister:remainder_reg|enARdFF_2:\reg_n_bits:6:b"        ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dividerDatapath:dataPath|nBitRegister:remainder_reg|enARdFF_2:\reg_n_bits:5:b"        ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dividerDatapath:dataPath|nBitRegister:remainder_reg|enARdFF_2:\reg_n_bits:4:b"        ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dividerDatapath:dataPath|nBitRegister:remainder_reg|enARdFF_2:\reg_n_bits:3:b"        ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dividerDatapath:dataPath|nBitRegister:remainder_reg|enARdFF_2:\reg_n_bits:2:b"        ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dividerDatapath:dataPath|nBitRegister:remainder_reg|enARdFF_2:\reg_n_bits:1:b"        ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dividerDatapath:dataPath|nBitRegister:remainder_reg|enARdFF_2:\reg_n_bits:0:b"        ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dividerDatapath:dataPath|nbitmux21:remainder_mux" ;
++----------+-------+----------+------------------------------------------------+
+; Port     ; Type  ; Severity ; Details                                        ;
++----------+-------+----------+------------------------------------------------+
+; x1[7..4] ; Input ; Info     ; Stuck at GND                                   ;
++----------+-------+----------+------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dividerControlpath:controlPath|enARdFF_2:\stateRegloop:9:state_n"                       ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; i_enable ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; o_qbar   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dividerControlpath:controlPath|enARdFF_2:\stateRegloop:8:state_n"                       ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; i_enable ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; o_qbar   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dividerControlpath:controlPath|enARdFF_2:\stateRegloop:7:state_n"                       ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; i_enable ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; o_qbar   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dividerControlpath:controlPath|enARdFF_2:\stateRegloop:6:state_n"                       ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; i_enable ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; o_qbar   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dividerControlpath:controlPath|enARdFF_2:\stateRegloop:5:state_n"                       ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; i_enable ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; o_qbar   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dividerControlpath:controlPath|enARdFF_2:\stateRegloop:4:state_n"                       ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; i_enable ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; o_qbar   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dividerControlpath:controlPath|enARdFF_2:\stateRegloop:3:state_n"                       ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; i_enable ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; o_qbar   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dividerControlpath:controlPath|enARdFF_2:\stateRegloop:2:state_n"                       ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; i_enable ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; o_qbar   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dividerControlpath:controlPath|enARdFF_2:\stateRegloop:1:state_n"                       ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; i_enable ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; o_qbar   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dividerControlpath:controlPath|enARdFF_2:stateReg0"                                       ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; i_resetbar ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; i_enable   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; o_qbar     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Fri Oct 18 16:58:12 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CEG-3155-LAB-2 -c CEG-3155-LAB-2
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file dividerdatapath.vhd
+    Info (12022): Found design unit 1: dividerDatapath-structural
+    Info (12023): Found entity 1: dividerDatapath
+Info (12021): Found 2 design units, including 1 entities, in source file nbitincrementer.vhd
+    Info (12022): Found design unit 1: nBitIncrementer-rtl
+    Info (12023): Found entity 1: nBitIncrementer
+Info (12021): Found 2 design units, including 1 entities, in source file nbitshiftregister.vhd
+    Info (12022): Found design unit 1: nBitShiftRegister-rtl
+    Info (12023): Found entity 1: nBitShiftRegister
+Info (12021): Found 2 design units, including 1 entities, in source file nbitmux41.vhd
+    Info (12022): Found design unit 1: nbitmux41-structural
+    Info (12023): Found entity 1: nbitmux41
+Info (12021): Found 2 design units, including 1 entities, in source file nbitmux21.vhd
+    Info (12022): Found design unit 1: nbitmux21-structural
+    Info (12023): Found entity 1: nbitmux21
+Warning (12090): Entity "mux41" obtained from "mux41.vhd" instead of from Quartus II megafunction library
+Info (12021): Found 2 design units, including 1 entities, in source file mux41.vhd
+    Info (12022): Found design unit 1: mux41-structural
+    Info (12023): Found entity 1: mux41
+Info (12021): Found 2 design units, including 1 entities, in source file mux21.vhd
+    Info (12022): Found design unit 1: mux21-structural
+    Info (12023): Found entity 1: mux21
+Info (12021): Found 2 design units, including 1 entities, in source file nbitregister.vhd
+    Info (12022): Found design unit 1: nBitRegister-rtl
+    Info (12023): Found entity 1: nBitRegister
+Info (12021): Found 2 design units, including 1 entities, in source file onebitaddersubtractor.vhd
+    Info (12022): Found design unit 1: oneBitAdderSubtractor-rtl
+    Info (12023): Found entity 1: oneBitAdderSubtractor
+Info (12021): Found 2 design units, including 1 entities, in source file enardff_2.vhd
+    Info (12022): Found design unit 1: enARdFF_2-rtl
+    Info (12023): Found entity 1: enARdFF_2
+Info (12021): Found 2 design units, including 1 entities, in source file nbitaddersubtractor.vhd
+    Info (12022): Found design unit 1: nBitAdderSubtractor-rtl
+    Info (12023): Found entity 1: nBitAdderSubtractor
+Info (12021): Found 2 design units, including 1 entities, in source file dividercontrolpath.vhd
+    Info (12022): Found design unit 1: dividerControlpath-rtl
+    Info (12023): Found entity 1: dividerControlpath
+Info (12021): Found 2 design units, including 1 entities, in source file dividertoplevel.vhd
+    Info (12022): Found design unit 1: dividerTopLevel-rtl
+    Info (12023): Found entity 1: dividerTopLevel
+Info (12127): Elaborating entity "dividerTopLevel" for the top level hierarchy
+Info (12128): Elaborating entity "dividerControlpath" for hierarchy "dividerControlpath:controlPath"
+Info (12128): Elaborating entity "enARdFF_2" for hierarchy "dividerControlpath:controlPath|enARdFF_2:stateReg0"
+Info (12128): Elaborating entity "dividerDatapath" for hierarchy "dividerDatapath:dataPath"
+Info (12128): Elaborating entity "nbitmux21" for hierarchy "dividerDatapath:dataPath|nbitmux21:remainder_mux"
+Info (12128): Elaborating entity "mux21" for hierarchy "dividerDatapath:dataPath|nbitmux21:remainder_mux|mux21:\muxloop:0:mux_n"
+Info (12128): Elaborating entity "nBitRegister" for hierarchy "dividerDatapath:dataPath|nBitRegister:remainder_reg"
+Warning (10036): Verilog HDL or VHDL warning at nbitregister.vhd(14): object "int_notValue" assigned a value but never read
+Info (12128): Elaborating entity "nBitShiftRegister" for hierarchy "dividerDatapath:dataPath|nBitShiftRegister:divisor_reg"
+Info (12128): Elaborating entity "mux41" for hierarchy "dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|mux41:mux_0"
+Info (12128): Elaborating entity "nbitmux41" for hierarchy "dividerDatapath:dataPath|nbitmux41:inputB_mux"
+Info (12128): Elaborating entity "nBitAdderSubtractor" for hierarchy "dividerDatapath:dataPath|nBitAdderSubtractor:adder"
+Info (12128): Elaborating entity "oneBitAdderSubtractor" for hierarchy "dividerDatapath:dataPath|nBitAdderSubtractor:adder|oneBitAdderSubtractor:add_0"
+Info (12128): Elaborating entity "nBitIncrementer" for hierarchy "dividerDatapath:dataPath|nBitIncrementer:incrementer"
+Info (12128): Elaborating entity "nBitAdderSubtractor" for hierarchy "dividerDatapath:dataPath|nBitIncrementer:incrementer|nBitAdderSubtractor:adder"
+Info (12128): Elaborating entity "nBitRegister" for hierarchy "dividerDatapath:dataPath|nBitIncrementer:incrementer|nBitRegister:reg"
+Warning (10036): Verilog HDL or VHDL warning at nbitregister.vhd(14): object "int_notValue" assigned a value but never read
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "zero" is stuck at VCC
+    Warning (13410): Pin "quotient[0]" is stuck at GND
+    Warning (13410): Pin "quotient[1]" is stuck at GND
+    Warning (13410): Pin "quotient[2]" is stuck at GND
+    Warning (13410): Pin "quotient[3]" is stuck at GND
+    Warning (13410): Pin "quotient[4]" is stuck at GND
+    Warning (13410): Pin "quotient[5]" is stuck at GND
+    Warning (13410): Pin "quotient[6]" is stuck at GND
+    Warning (13410): Pin "quotient[7]" is stuck at GND
+    Warning (13410): Pin "remainder[0]" is stuck at GND
+    Warning (13410): Pin "remainder[1]" is stuck at GND
+    Warning (13410): Pin "remainder[2]" is stuck at GND
+    Warning (13410): Pin "remainder[3]" is stuck at GND
+    Warning (13410): Pin "remainder[4]" is stuck at GND
+    Warning (13410): Pin "remainder[5]" is stuck at GND
+    Warning (13410): Pin "remainder[6]" is stuck at GND
+    Warning (13410): Pin "remainder[7]" is stuck at GND
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 8 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "INB[3]"
+    Warning (15610): No output dependent on input pin "INB[2]"
+    Warning (15610): No output dependent on input pin "INB[1]"
+    Warning (15610): No output dependent on input pin "INB[0]"
+    Warning (15610): No output dependent on input pin "INA[3]"
+    Warning (15610): No output dependent on input pin "INA[2]"
+    Warning (15610): No output dependent on input pin "INA[0]"
+    Warning (15610): No output dependent on input pin "INA[1]"
+Info (21057): Implemented 35 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 10 input pins
+    Info (21059): Implemented 18 output pins
+    Info (21061): Implemented 7 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 31 warnings
+    Info: Peak virtual memory: 4640 megabytes
+    Info: Processing ended: Fri Oct 18 16:58:15 2024
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:01
+
+
