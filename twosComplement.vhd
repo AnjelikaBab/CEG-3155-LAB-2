@@ -26,7 +26,7 @@ ARCHITECTURE func OF complement2s IS
 BEGIN
 
 
-    not_din <= NOT(din);
+    not_din <= not din;
 
  
     adder: nBitAdderSubtractor

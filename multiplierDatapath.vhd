@@ -7,7 +7,6 @@ ENTITY multiplierDatapath IS
         selA, selB, selOperand, p_neg, loadA, loadB, loadP, ldSign, shiftLA, shiftRB: IN STD_LOGIC; -- Load and shift control signals
         INA, INB: IN STD_LOGIC_VECTOR(3 downto 0);
         product: OUT STD_LOGIC_VECTOR(7 downto 0);
-        eightbit_INA, eightbit_INB: OUT STD_LOGIC_VECTOR(7 downto 0);  -- Changed to OUT since it's used in COMPONENTS
         A_msb, B_msb, B_lsb, sgn, beq0: OUT STD_LOGIC; -- Status signals
         zero, overflow: OUT STD_LOGIC  -- Status signals for errors
     );
@@ -16,18 +15,11 @@ END multiplierDatapath;
 ARCHITECTURE structural OF multiplierDatapath IS
     SIGNAL two_comp_A, two_comp_B, two_comp_P: STD_LOGIC_VECTOR(7 downto 0);
     SIGNAL A_mux_out, B_mux_out, P_mux_out, adder_mux_out: STD_LOGIC_VECTOR(7 downto 0);
+    SIGNAL eightbit_INA, eightbit_INB: STD_LOGIC_VECTOR(7 downto 0); 
     SIGNAL left_shift_A, right_shift_B, int_addr_out, reg_P_output: STD_LOGIC_VECTOR(7 downto 0);
     SIGNAL not_greset, int_sign_in: STD_LOGIC;
 
     CONSTANT regWidth: INTEGER := 8;
-
-BEGIN 
-    -- Signal assignment for sign extension
-    eightbit_INA <= (INA(3) & INA(3) & INA(3) & INA(3) & INA);
-    eightbit_INB <= (INB(3) & INB(3) & INB(3) & INB(3) & INB);
-
-    -- Inversion of greset for internal use
-    not_greset <= NOT greset; 
 
 
     COMPONENT complement2s
@@ -97,6 +89,13 @@ BEGIN
         );
     END COMPONENT;
 
+BEGIN 
+
+    -- Signal assignment for sign extension
+    eightbit_INA <= INA(3) & INA(3) & INA(3) & INA(3) & INA;
+    eightbit_INB <= INB(3) & INB(3) & INB(3) & INB(3) & INB;
+
+
     -- Signal assignments for two's complement
     two_comp_A_inst: complement2s
         PORT MAP (
@@ -165,7 +164,7 @@ BEGIN
             i_load => loadP, 
             i_clock => clk, 
             i_Value => P_mux_out, 
-            o_Value => product
+            o_Value => reg_P_output
         );
 
     -- Prepare adder input correctly
@@ -200,5 +199,10 @@ BEGIN
             o_q => sgn, 
             o_qBar => OPEN
         );
+
+            -- Output Drivers
+    product <= reg_P_output;
+
+    not_greset <= not greset;
 
 END structural;
