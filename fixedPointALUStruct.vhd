@@ -2,7 +2,7 @@ LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 USE ieee.numeric_std.ALL;
 
-ENTITY ALU_Top_Level IS
+ENTITY fixedPointALUStruct IS
     PORT(
         GClock          : IN  STD_LOGIC;                    
         GReset          : IN  STD_LOGIC;                      
@@ -15,9 +15,9 @@ ENTITY ALU_Top_Level IS
         OverflowOut     : OUT STD_LOGIC                       
     );
 
-END ALU_Top_Level;
+END fixedPointALUStruct;
 
-ARCHITECTURE Structural OF ALU_Top_Level IS
+ARCHITECTURE Structural OF fixedPointALUStruct IS
     SIGNAL sum_result      : STD_LOGIC_VECTOR(3 downto 0);
     SIGNAL carry_out       : STD_LOGIC;
     SIGNAL mult_result     : STD_LOGIC_VECTOR(7 downto 0);

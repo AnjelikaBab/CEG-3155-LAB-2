@@ -116,7 +116,7 @@ BEGIN
                 CarryOut <= '0';                 
             WHEN "11" =>                     -- Divide
                 selected_result <= quot_result(3 downto 0) & remainder_result(3 downto 0); 
-                CarryOut <= '0';                 -
+                CarryOut <= '0';                 
             WHEN OTHERS =>
                 selected_result <= (others => '0');  
                 CarryOut <= '0';                    

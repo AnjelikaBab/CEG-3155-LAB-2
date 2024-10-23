@@ -34,7 +34,7 @@ END dec_7seg;
 ARCHITECTURE rtl OF dec_7seg IS
 	SIGNAL int_segment_data : STD_LOGIC_VECTOR(6 DOWNTO 0);
 BEGIN
-	PROCESS  (Hex_digit)
+	PROCESS  (i_hexDigit)
 	BEGIN
 		CASE i_hexDigit IS
 		        WHEN "0000" =>

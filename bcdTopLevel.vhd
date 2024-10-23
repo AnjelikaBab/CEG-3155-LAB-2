@@ -21,7 +21,7 @@ ARCHITECTURE Structural OF bcdtoplevel IS
     SIGNAL ZeroOut        : STD_LOGIC;
     SIGNAL OverflowOut     : STD_LOGIC;
 
-    COMPONENT ALU_Top_Level
+    COMPONENT fixedPointALUStruct
         PORT(
             GClock          : IN  STD_LOGIC;                    
             GReset          : IN  STD_LOGIC;                      
@@ -45,7 +45,7 @@ ARCHITECTURE Structural OF bcdtoplevel IS
 
 BEGIN
 
-    ALU_Inst: ALU_Top_Level
+    ALU_Inst: fixedPointALUStruct
         PORT MAP (
             GClock          => GClock,
             GReset          => GReset,
