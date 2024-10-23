@@ -28,10 +28,14 @@ ARCHITECTURE Structural OF ALU_Top_Level IS
     SIGNAL overflow_mult       : STD_LOGIC;
     SIGNAL overflow_div        : STD_LOGIC;
     SIGNAL selected_result : STD_LOGIC_VECTOR(7 downto 0); 
-    
-BEGIN
 
-        COMPONENT nBitAdderSubtractor
+    SIGNAL mux_x0 : STD_LOGIC_VECTOR(7 downto 0);
+    SIGNAL mux_x1 : STD_LOGIC_VECTOR(7 downto 0);
+    SIGNAL mux_x2 : STD_LOGIC_VECTOR(7 downto 0);
+    SIGNAL mux_x3 : STD_LOGIC_VECTOR(7 downto 0);
+    
+
+    COMPONENT nBitAdderSubtractor
         GENERIC (n: INTEGER := 8);
         PORT(
             i_Ai, i_Bi: IN  STD_LOGIC_VECTOR(n-1 downto 0);
@@ -75,14 +79,15 @@ BEGIN
     END COMPONENT;
 
     COMPONENT nBitMux41
-        GENERIC (n: INTEGER := 8);  -- 4-bit inputs and outputs
+        GENERIC (n: INTEGER := 8); 
         PORT ( s0, s1: IN STD_LOGIC;
             x0, x1, x2, x3: IN STD_LOGIC_VECTOR(n-1 downto 0);
             y: OUT STD_LOGIC_VECTOR(n-1 downto 0));
     END COMPONENT;
 
+BEGIN
 
-    -- Instantiate the adder/subtractor
+
     adder_subtractor_inst: nBitAdderSubtractor
      GENERIC MAP (n => 8)
         PORT MAP (
@@ -93,7 +98,7 @@ BEGIN
             o_Sum           => sum_result
         );
 
-    -- Instantiate the multiplier
+
     multiplier_inst: multiplierTopLevel
         PORT MAP (
             clk             => GClock,
@@ -105,7 +110,7 @@ BEGIN
             product         => mult_result
         );
 
-    -- Instantiate the divider
+
     divider_inst: dividerTopLevel
         PORT MAP (
             clk             => GClock,
@@ -118,16 +123,21 @@ BEGIN
             overflow        => overflow_div           
         );
 
+        mux_x0 <= "0000" & sum_result;  
+        mux_x1 <= "0000" & sum_result;  
+        mux_x2 <= mult_result;
+        mux_x3 <= quot_result(3 downto 0) & remainder_result(3 downto 0);
+
 
     mux_inst: nBitMux41
         GENERIC MAP (n => 8)
         PORT MAP (
             s0 => OperationSelect(0),
             s1 => OperationSelect(1),
-            x0 => "0000" & sum_result,   -- 4-bit sum with leading zeros
-            x1 => "0000" & sum_result,   
-            x2 => mult_result,           -
-            x3 => quot_result(3 downto 0) & remainder_result(3 downto 0), 
+            x0 => mux_x0,
+            x1 => mux_x1,
+            x2 => mux_x2,           
+            x3 => mux_x3, 
             y  => selected_result        
         );
 

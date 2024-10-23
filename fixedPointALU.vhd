@@ -107,17 +107,16 @@ BEGIN
 
         CASE OperationSelect IS
             WHEN "00" =>                     -- Add
-                selected_result <= "0000" & sum_result;  -- Concatenate 4-bit sum with leading zeros
+                selected_result <= "0000" & sum_result; 
                 CarryOut <= carry_out;       
             WHEN "01" =>                     -- Subtract
-                selected_result <= "0000" & sum_result; -- Concatenate 4-bit difference with leading zeros
-                CarryOut <= carry_out;       
+                selected_result <= "0000" & sum_result; 
             WHEN "10" =>                     -- Multiply
-                selected_result <= mult_result;  -- 8-bit product
+                selected_result <= mult_result;  
                 CarryOut <= '0';                 
             WHEN "11" =>                     -- Divide
-                selected_result <= quot_result(3 downto 0) & remainder_result(3 downto 0);  -- Concatenate least 4 bits
-                CarryOut <= '0';                 -- No carry out for division
+                selected_result <= quot_result(3 downto 0) & remainder_result(3 downto 0); 
+                CarryOut <= '0';                 -
             WHEN OTHERS =>
                 selected_result <= (others => '0');  
                 CarryOut <= '0';                    
