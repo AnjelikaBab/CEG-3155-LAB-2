@@ -2,64 +2,64 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : -3.768
-TNS   : -53.432
+Type  : Slow 1200mV 85C Model Setup 'GClock'
+Slack : -4.775
+TNS   : -160.081
 
-Type  : Slow 1200mV 85C Model Hold 'clk'
+Type  : Slow 1200mV 85C Model Hold 'GClock'
 Slack : 0.402
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Recovery 'clk'
-Slack : -0.824
-TNS   : -16.110
+Type  : Slow 1200mV 85C Model Recovery 'GClock'
+Slack : -1.180
+TNS   : -41.591
 
-Type  : Slow 1200mV 85C Model Removal 'clk'
-Slack : 1.024
+Type  : Slow 1200mV 85C Model Removal 'GClock'
+Slack : 1.025
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'GClock'
 Slack : -3.000
-TNS   : -46.690
+TNS   : -87.810
 
-Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : -3.292
-TNS   : -45.774
+Type  : Slow 1200mV 0C Model Setup 'GClock'
+Slack : -4.267
+TNS   : -140.698
 
-Type  : Slow 1200mV 0C Model Hold 'clk'
+Type  : Slow 1200mV 0C Model Hold 'GClock'
 Slack : 0.353
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Recovery 'clk'
-Slack : -0.645
-TNS   : -12.129
+Type  : Slow 1200mV 0C Model Recovery 'GClock'
+Slack : -0.985
+TNS   : -32.385
 
-Type  : Slow 1200mV 0C Model Removal 'clk'
-Slack : 0.926
+Type  : Slow 1200mV 0C Model Removal 'GClock'
+Slack : 0.927
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'GClock'
 Slack : -3.000
-TNS   : -46.690
+TNS   : -87.810
 
-Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : -1.335
-TNS   : -11.015
+Type  : Fast 1200mV 0C Model Setup 'GClock'
+Slack : -1.784
+TNS   : -46.507
 
-Type  : Fast 1200mV 0C Model Hold 'clk'
+Type  : Fast 1200mV 0C Model Hold 'GClock'
 Slack : 0.181
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Recovery 'clk'
-Slack : 0.081
-TNS   : 0.000
+Type  : Fast 1200mV 0C Model Recovery 'GClock'
+Slack : -0.116
+TNS   : -0.900
 
-Type  : Fast 1200mV 0C Model Removal 'clk'
+Type  : Fast 1200mV 0C Model Removal 'GClock'
 Slack : 0.500
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'GClock'
 Slack : -3.000
-TNS   : -39.052
+TNS   : -73.203
 
 ------------------------------------------------------------

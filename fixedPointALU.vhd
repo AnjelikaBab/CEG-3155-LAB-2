@@ -22,6 +22,8 @@ ARCHITECTURE Structural OF ALU_Top_Level IS
     SIGNAL mult_result         : STD_LOGIC_VECTOR(7 downto 0);
     SIGNAL quot_result          : STD_LOGIC_VECTOR(7 downto 0);
     SIGNAL remainder_result      : STD_LOGIC_VECTOR(7 downto 0);
+    SIGNAL int_operandA        : STD_LOGIC_VECTOR(7 downto 0);
+    SIGNAL int_operandB        : STD_LOGIC_VECTOR(7 downto 0);
     SIGNAL zero_mult           : STD_LOGIC;
     SIGNAL zero_div            : STD_LOGIC;
     SIGNAL overflow_mult       : STD_LOGIC;
@@ -68,8 +70,8 @@ BEGIN
     -- Instantiate the nBitAdderSubtractor
     adder_subtractor_inst: nBitAdderSubtractor
         PORT MAP (
-            i_Ai            => OperandA,
-            i_Bi            => OperandB,
+            i_Ai            => int_operandA,
+            i_Bi            => int_operandB,
             operationFlag   => OperationSelect(0), -- 0 for addition, 1 for subtraction
             o_CarryOut      => carry_out,
             o_Sum           => sum_result
@@ -80,8 +82,8 @@ BEGIN
         PORT MAP (
             clk             => GClock,
             reset           => GReset,
-            INA             => OperandA,
-            INB             => OperandB,
+            INA             => int_operandA,
+            INB             => int_operandB,
             zero            => zero_mult,
             overflow        => overflow_mult,
             product         => mult_result
@@ -92,8 +94,8 @@ BEGIN
         PORT MAP (
             clk             => GClock,
             reset           => GReset,
-            INA             => OperandA,
-            INB             => OperandB,
+            INA             => int_operandA,
+            INB             => int_operandB,
             quotient        => quot_result,
             remainder       => remainder_result,
             zero            => zero_div,

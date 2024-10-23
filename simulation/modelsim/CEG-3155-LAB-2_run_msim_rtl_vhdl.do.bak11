@@ -5,6 +5,11 @@ if {[file exists rtl_work]} {
 vlib rtl_work
 vmap work rtl_work
 
+vcom -93 -work work {C:/Users/arnav/Desktop/CEG-3155-LAB-2/fixedPointALUStruct.vhd}
+vcom -93 -work work {C:/Users/arnav/Desktop/CEG-3155-LAB-2/twosComplement.vhd}
+vcom -93 -work work {C:/Users/arnav/Desktop/CEG-3155-LAB-2/multiplierTopLevel.vhd}
+vcom -93 -work work {C:/Users/arnav/Desktop/CEG-3155-LAB-2/multiplierDatapath.vhd}
+vcom -93 -work work {C:/Users/arnav/Desktop/CEG-3155-LAB-2/multiplierControlpath.vhd}
 vcom -93 -work work {C:/Users/arnav/Desktop/CEG-3155-LAB-2/dividerDatapath.vhd}
 vcom -93 -work work {C:/Users/arnav/Desktop/CEG-3155-LAB-2/nBitIncrementer.vhd}
 vcom -93 -work work {C:/Users/arnav/Desktop/CEG-3155-LAB-2/nBitShiftRegister.vhd}

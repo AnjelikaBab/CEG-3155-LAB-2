@@ -29,6 +29,10 @@ ARCHITECTURE Structural OF fixedPointALUStruct IS
     SIGNAL overflow_div        : STD_LOGIC;
     SIGNAL selected_result : STD_LOGIC_VECTOR(7 downto 0); 
 
+    SIGNAL eight_bit_operandA : STD_LOGIC_VECTOR(7 downto 0);
+    SIGNAL eight_bit_operandB : STD_LOGIC_VECTOR(7 downto 0);
+    SIGNAL eight_bit_sum_result : STD_LOGIC_VECTOR(7 downto 0);
+
     SIGNAL mux_x0 : STD_LOGIC_VECTOR(7 downto 0);
     SIGNAL mux_x1 : STD_LOGIC_VECTOR(7 downto 0);
     SIGNAL mux_x2 : STD_LOGIC_VECTOR(7 downto 0);
@@ -91,11 +95,11 @@ BEGIN
     adder_subtractor_inst: nBitAdderSubtractor
      GENERIC MAP (n => 8)
         PORT MAP (
-            i_Ai            => OperandA,
-            i_Bi            => OperandB,
+            i_Ai            => eight_bit_operandA,
+            i_Bi            => eight_bit_operandB,
             operationFlag   => OperationSelect(0), -- 0 for addition, 1 for subtraction
             o_CarryOut      => carry_out,
-            o_Sum           => sum_result
+            o_Sum           => eight_bit_sum_result
         );
 
 
@@ -123,8 +127,8 @@ BEGIN
             overflow        => overflow_div           
         );
 
-        mux_x0 <= "0000" & sum_result;  
-        mux_x1 <= "0000" & sum_result;  
+        mux_x0 <= eight_bit_sum_result;  -- addition
+        mux_x1 <= eight_bit_sum_result;  -- subtraction
         mux_x2 <= mult_result;
         mux_x3 <= quot_result(3 downto 0) & remainder_result(3 downto 0);
 
@@ -147,6 +151,8 @@ BEGIN
     ZeroOut <= NOT (selected_result(7) OR selected_result(6) OR selected_result(5) OR selected_result(4) OR 
                     selected_result(3) OR selected_result(2) OR selected_result(1) OR selected_result(0));
     OverflowOut <= overflow_mult WHEN OperationSelect = "10" ELSE overflow_div WHEN OperationSelect = "11" ELSE '0';
-               
-
-END Structural;
+    
+    eight_bit_operandA <= "0000" & operandA;
+    eight_bit_operandB <= "0000" & operandB;
+	 
+end Structural;
