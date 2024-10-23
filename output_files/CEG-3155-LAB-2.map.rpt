@@ -1,5 +1,5 @@
 Analysis & Synthesis report for CEG-3155-LAB-2
-Sat Oct 19 19:44:04 2024
+Tue Oct 22 20:33:05 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -10,7 +10,64 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Parameter Settings for User Entity Instance: multiplierDatapath:dataPath|complement2s:two_comp_A_inst|nBitAdderSubtractor:adder
+ 11. Parameter Settings for User Entity Instance: multiplierDatapath:dataPath|complement2s:two_comp_B_inst|nBitAdderSubtractor:adder
+ 12. Parameter Settings for User Entity Instance: multiplierDatapath:dataPath|complement2s:two_comp_P_inst|nBitAdderSubtractor:adder
+ 13. Parameter Settings for User Entity Instance: multiplierDatapath:dataPath|nbitmux21:mux_A
+ 14. Parameter Settings for User Entity Instance: multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift
+ 15. Parameter Settings for User Entity Instance: multiplierDatapath:dataPath|nbitmux21:mux_B
+ 16. Parameter Settings for User Entity Instance: multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift
+ 17. Parameter Settings for User Entity Instance: multiplierDatapath:dataPath|nbitmux21:mux_P
+ 18. Parameter Settings for User Entity Instance: multiplierDatapath:dataPath|nBitRegister:reg_P
+ 19. Parameter Settings for User Entity Instance: multiplierDatapath:dataPath|nbitmux21:mux_adder
+ 20. Parameter Settings for User Entity Instance: multiplierDatapath:dataPath|nBitAdderSubtractor:adder
+ 21. Port Connectivity Checks: "multiplierDatapath:dataPath|enARdFF_2:sign_reg"
+ 22. Port Connectivity Checks: "multiplierDatapath:dataPath|nBitAdderSubtractor:adder"
+ 23. Port Connectivity Checks: "multiplierDatapath:dataPath|nbitmux21:mux_adder"
+ 24. Port Connectivity Checks: "multiplierDatapath:dataPath|nBitRegister:reg_P|enARdFF_2:\reg_n_bits:7:b"
+ 25. Port Connectivity Checks: "multiplierDatapath:dataPath|nBitRegister:reg_P|enARdFF_2:\reg_n_bits:6:b"
+ 26. Port Connectivity Checks: "multiplierDatapath:dataPath|nBitRegister:reg_P|enARdFF_2:\reg_n_bits:5:b"
+ 27. Port Connectivity Checks: "multiplierDatapath:dataPath|nBitRegister:reg_P|enARdFF_2:\reg_n_bits:4:b"
+ 28. Port Connectivity Checks: "multiplierDatapath:dataPath|nBitRegister:reg_P|enARdFF_2:\reg_n_bits:3:b"
+ 29. Port Connectivity Checks: "multiplierDatapath:dataPath|nBitRegister:reg_P|enARdFF_2:\reg_n_bits:2:b"
+ 30. Port Connectivity Checks: "multiplierDatapath:dataPath|nBitRegister:reg_P|enARdFF_2:\reg_n_bits:1:b"
+ 31. Port Connectivity Checks: "multiplierDatapath:dataPath|nBitRegister:reg_P|enARdFF_2:\reg_n_bits:0:b"
+ 32. Port Connectivity Checks: "multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift"
+ 33. Port Connectivity Checks: "multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|mux41:\muxloop:6:mux_n"
+ 34. Port Connectivity Checks: "multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|mux41:\muxloop:5:mux_n"
+ 35. Port Connectivity Checks: "multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|mux41:\muxloop:4:mux_n"
+ 36. Port Connectivity Checks: "multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|mux41:\muxloop:3:mux_n"
+ 37. Port Connectivity Checks: "multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|mux41:\muxloop:2:mux_n"
+ 38. Port Connectivity Checks: "multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|mux41:\muxloop:1:mux_n"
+ 39. Port Connectivity Checks: "multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|mux41:mux_msb"
+ 40. Port Connectivity Checks: "multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|mux41:mux_0"
+ 41. Port Connectivity Checks: "multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|enARdFF_2:\regloop:7:bit_n"
+ 42. Port Connectivity Checks: "multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|enARdFF_2:\regloop:6:bit_n"
+ 43. Port Connectivity Checks: "multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|enARdFF_2:\regloop:5:bit_n"
+ 44. Port Connectivity Checks: "multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|enARdFF_2:\regloop:4:bit_n"
+ 45. Port Connectivity Checks: "multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|enARdFF_2:\regloop:3:bit_n"
+ 46. Port Connectivity Checks: "multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|enARdFF_2:\regloop:2:bit_n"
+ 47. Port Connectivity Checks: "multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|enARdFF_2:\regloop:1:bit_n"
+ 48. Port Connectivity Checks: "multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|enARdFF_2:\regloop:0:bit_n"
+ 49. Port Connectivity Checks: "multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift"
+ 50. Port Connectivity Checks: "multiplierDatapath:dataPath|complement2s:two_comp_A_inst|nBitAdderSubtractor:adder"
+ 51. Port Connectivity Checks: "multiplierControlpath:controlPath|enARdFF_2:\stateRegloop:9:state_n"
+ 52. Port Connectivity Checks: "multiplierControlpath:controlPath|enARdFF_2:\stateRegloop:8:state_n"
+ 53. Port Connectivity Checks: "multiplierControlpath:controlPath|enARdFF_2:\stateRegloop:7:state_n"
+ 54. Port Connectivity Checks: "multiplierControlpath:controlPath|enARdFF_2:\stateRegloop:6:state_n"
+ 55. Port Connectivity Checks: "multiplierControlpath:controlPath|enARdFF_2:\stateRegloop:5:state_n"
+ 56. Port Connectivity Checks: "multiplierControlpath:controlPath|enARdFF_2:\stateRegloop:4:state_n"
+ 57. Port Connectivity Checks: "multiplierControlpath:controlPath|enARdFF_2:\stateRegloop:3:state_n"
+ 58. Port Connectivity Checks: "multiplierControlpath:controlPath|enARdFF_2:\stateRegloop:2:state_n"
+ 59. Port Connectivity Checks: "multiplierControlpath:controlPath|enARdFF_2:\stateRegloop:1:state_n"
+ 60. Port Connectivity Checks: "multiplierControlpath:controlPath|enARdFF_2:stateReg0"
+ 61. Elapsed Time Per Partition
+ 62. Analysis & Synthesis Messages
 
 
 
@@ -36,20 +93,20 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Sat Oct 19 19:44:03 2024               ;
+; Analysis & Synthesis Status        ; Successful - Tue Oct 22 20:33:05 2024           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; CEG-3155-LAB-2                                  ;
-; Top-level Entity Name              ; dividerTopLevel                                 ;
+; Top-level Entity Name              ; multiplierTopLevel                              ;
 ; Family                             ; Cyclone IV E                                    ;
-; Total logic elements               ; N/A until Partition Merge                       ;
-;     Total combinational functions  ; N/A until Partition Merge                       ;
-;     Dedicated logic registers      ; N/A until Partition Merge                       ;
-; Total registers                    ; N/A until Partition Merge                       ;
-; Total pins                         ; N/A until Partition Merge                       ;
-; Total virtual pins                 ; N/A until Partition Merge                       ;
-; Total memory bits                  ; N/A until Partition Merge                       ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                       ;
-; Total PLLs                         ; N/A until Partition Merge                       ;
+; Total logic elements               ; 80                                              ;
+;     Total combinational functions  ; 78                                              ;
+;     Dedicated logic registers      ; 34                                              ;
+; Total registers                    ; 34                                              ;
+; Total pins                         ; 20                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
 +------------------------------------+-------------------------------------------------+
 
 
@@ -59,7 +116,7 @@ applicable agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                     ; EP4CE115F29C7      ;                    ;
-; Top-level entity name                                                      ; dividerTopLevel    ; CEG-3155-LAB-2     ;
+; Top-level entity name                                                      ; multiplierTopLevel ; CEG-3155-LAB-2     ;
 ; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
@@ -146,9 +203,680 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 ; Processors                 ; Number ;
 +----------------------------+--------+
-; Number detected on machine ; 20     ;
+; Number detected on machine ; 16     ;
 ; Maximum allowed            ; 1      ;
 +----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                           ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                    ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
+; twosComplement.vhd               ; yes             ; User VHDL File  ; C:/Users/arnav/Desktop/CEG-3155-LAB-2/twosComplement.vhd        ;         ;
+; multiplierTopLevel.vhd           ; yes             ; User VHDL File  ; C:/Users/arnav/Desktop/CEG-3155-LAB-2/multiplierTopLevel.vhd    ;         ;
+; multiplierDatapath.vhd           ; yes             ; User VHDL File  ; C:/Users/arnav/Desktop/CEG-3155-LAB-2/multiplierDatapath.vhd    ;         ;
+; multiplierControlpath.vhd        ; yes             ; User VHDL File  ; C:/Users/arnav/Desktop/CEG-3155-LAB-2/multiplierControlpath.vhd ;         ;
+; nBitShiftRegister.vhd            ; yes             ; User VHDL File  ; C:/Users/arnav/Desktop/CEG-3155-LAB-2/nBitShiftRegister.vhd     ;         ;
+; nbitmux21.vhd                    ; yes             ; User VHDL File  ; C:/Users/arnav/Desktop/CEG-3155-LAB-2/nbitmux21.vhd             ;         ;
+; mux41.vhd                        ; yes             ; User VHDL File  ; C:/Users/arnav/Desktop/CEG-3155-LAB-2/mux41.vhd                 ;         ;
+; mux21.vhd                        ; yes             ; User VHDL File  ; C:/Users/arnav/Desktop/CEG-3155-LAB-2/mux21.vhd                 ;         ;
+; nbitregister.vhd                 ; yes             ; User VHDL File  ; C:/Users/arnav/Desktop/CEG-3155-LAB-2/nbitregister.vhd          ;         ;
+; oneBitAdderSubtractor.vhd        ; yes             ; User VHDL File  ; C:/Users/arnav/Desktop/CEG-3155-LAB-2/oneBitAdderSubtractor.vhd ;         ;
+; enardFF_2.vhd                    ; yes             ; User VHDL File  ; C:/Users/arnav/Desktop/CEG-3155-LAB-2/enardFF_2.vhd             ;         ;
+; nBitAdderSubtractor.vhd          ; yes             ; User VHDL File  ; C:/Users/arnav/Desktop/CEG-3155-LAB-2/nBitAdderSubtractor.vhd   ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 80        ;
+;                                             ;           ;
+; Total combinational functions               ; 78        ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 36        ;
+;     -- 3 input functions                    ; 28        ;
+;     -- <=2 input functions                  ; 14        ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 78        ;
+;     -- arithmetic mode                      ; 0         ;
+;                                             ;           ;
+; Total registers                             ; 34        ;
+;     -- Dedicated logic registers            ; 34        ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 20        ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 34        ;
+; Total fan-out                               ; 437       ;
+; Average fan-out                             ; 2.88      ;
++---------------------------------------------+-----------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                               ;
++-------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                            ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                            ; Library Name ;
++-------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |multiplierTopLevel                                   ; 78 (0)            ; 34 (0)       ; 0           ; 0            ; 0       ; 0         ; 20   ; 0            ; |multiplierTopLevel                                                                                                                            ; work         ;
+;    |multiplierControlpath:controlPath|                ; 10 (10)           ; 9 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierControlpath:controlPath                                                                                          ; work         ;
+;       |enARdFF_2:\stateRegloop:1:state_n|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierControlpath:controlPath|enARdFF_2:\stateRegloop:1:state_n                                                        ; work         ;
+;       |enARdFF_2:\stateRegloop:2:state_n|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierControlpath:controlPath|enARdFF_2:\stateRegloop:2:state_n                                                        ; work         ;
+;       |enARdFF_2:\stateRegloop:3:state_n|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierControlpath:controlPath|enARdFF_2:\stateRegloop:3:state_n                                                        ; work         ;
+;       |enARdFF_2:\stateRegloop:4:state_n|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierControlpath:controlPath|enARdFF_2:\stateRegloop:4:state_n                                                        ; work         ;
+;       |enARdFF_2:\stateRegloop:5:state_n|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierControlpath:controlPath|enARdFF_2:\stateRegloop:5:state_n                                                        ; work         ;
+;       |enARdFF_2:\stateRegloop:6:state_n|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierControlpath:controlPath|enARdFF_2:\stateRegloop:6:state_n                                                        ; work         ;
+;       |enARdFF_2:\stateRegloop:7:state_n|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierControlpath:controlPath|enARdFF_2:\stateRegloop:7:state_n                                                        ; work         ;
+;       |enARdFF_2:\stateRegloop:8:state_n|             ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierControlpath:controlPath|enARdFF_2:\stateRegloop:8:state_n                                                        ; work         ;
+;       |enARdFF_2:stateReg0|                           ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierControlpath:controlPath|enARdFF_2:stateReg0                                                                      ; work         ;
+;    |multiplierDatapath:dataPath|                      ; 68 (9)            ; 25 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath                                                                                                ; work         ;
+;       |complement2s:two_comp_A_inst|                  ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|complement2s:two_comp_A_inst                                                                   ; work         ;
+;          |nBitAdderSubtractor:adder|                  ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|complement2s:two_comp_A_inst|nBitAdderSubtractor:adder                                         ; work         ;
+;             |oneBitAdderSubtractor:\loop_add:1:addrn| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|complement2s:two_comp_A_inst|nBitAdderSubtractor:adder|oneBitAdderSubtractor:\loop_add:1:addrn ; work         ;
+;             |oneBitAdderSubtractor:\loop_add:2:addrn| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|complement2s:two_comp_A_inst|nBitAdderSubtractor:adder|oneBitAdderSubtractor:\loop_add:2:addrn ; work         ;
+;             |oneBitAdderSubtractor:\loop_add:3:addrn| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|complement2s:two_comp_A_inst|nBitAdderSubtractor:adder|oneBitAdderSubtractor:\loop_add:3:addrn ; work         ;
+;             |oneBitAdderSubtractor:\loop_add:4:addrn| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|complement2s:two_comp_A_inst|nBitAdderSubtractor:adder|oneBitAdderSubtractor:\loop_add:4:addrn ; work         ;
+;       |complement2s:two_comp_B_inst|                  ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|complement2s:two_comp_B_inst                                                                   ; work         ;
+;          |nBitAdderSubtractor:adder|                  ; 4 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|complement2s:two_comp_B_inst|nBitAdderSubtractor:adder                                         ; work         ;
+;             |oneBitAdderSubtractor:\loop_add:1:addrn| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|complement2s:two_comp_B_inst|nBitAdderSubtractor:adder|oneBitAdderSubtractor:\loop_add:1:addrn ; work         ;
+;             |oneBitAdderSubtractor:\loop_add:2:addrn| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|complement2s:two_comp_B_inst|nBitAdderSubtractor:adder|oneBitAdderSubtractor:\loop_add:2:addrn ; work         ;
+;             |oneBitAdderSubtractor:\loop_add:3:addrn| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|complement2s:two_comp_B_inst|nBitAdderSubtractor:adder|oneBitAdderSubtractor:\loop_add:3:addrn ; work         ;
+;             |oneBitAdderSubtractor:\loop_add:4:addrn| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|complement2s:two_comp_B_inst|nBitAdderSubtractor:adder|oneBitAdderSubtractor:\loop_add:4:addrn ; work         ;
+;       |complement2s:two_comp_P_inst|                  ; 3 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|complement2s:two_comp_P_inst                                                                   ; work         ;
+;          |nBitAdderSubtractor:adder|                  ; 3 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|complement2s:two_comp_P_inst|nBitAdderSubtractor:adder                                         ; work         ;
+;             |oneBitAdderSubtractor:\loop_add:1:addrn| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|complement2s:two_comp_P_inst|nBitAdderSubtractor:adder|oneBitAdderSubtractor:\loop_add:1:addrn ; work         ;
+;             |oneBitAdderSubtractor:\loop_add:3:addrn| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|complement2s:two_comp_P_inst|nBitAdderSubtractor:adder|oneBitAdderSubtractor:\loop_add:3:addrn ; work         ;
+;             |oneBitAdderSubtractor:\loop_add:6:addrn| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|complement2s:two_comp_P_inst|nBitAdderSubtractor:adder|oneBitAdderSubtractor:\loop_add:6:addrn ; work         ;
+;       |enARdFF_2:sign_reg|                            ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|enARdFF_2:sign_reg                                                                             ; work         ;
+;       |nBitAdderSubtractor:adder|                     ; 15 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nBitAdderSubtractor:adder                                                                      ; work         ;
+;          |oneBitAdderSubtractor:\loop_add:1:addrn|    ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nBitAdderSubtractor:adder|oneBitAdderSubtractor:\loop_add:1:addrn                              ; work         ;
+;          |oneBitAdderSubtractor:\loop_add:2:addrn|    ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nBitAdderSubtractor:adder|oneBitAdderSubtractor:\loop_add:2:addrn                              ; work         ;
+;          |oneBitAdderSubtractor:\loop_add:3:addrn|    ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nBitAdderSubtractor:adder|oneBitAdderSubtractor:\loop_add:3:addrn                              ; work         ;
+;          |oneBitAdderSubtractor:\loop_add:4:addrn|    ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nBitAdderSubtractor:adder|oneBitAdderSubtractor:\loop_add:4:addrn                              ; work         ;
+;          |oneBitAdderSubtractor:\loop_add:5:addrn|    ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nBitAdderSubtractor:adder|oneBitAdderSubtractor:\loop_add:5:addrn                              ; work         ;
+;          |oneBitAdderSubtractor:\loop_add:6:addrn|    ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nBitAdderSubtractor:adder|oneBitAdderSubtractor:\loop_add:6:addrn                              ; work         ;
+;          |oneBitAdderSubtractor:\loop_add:7:addrn|    ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nBitAdderSubtractor:adder|oneBitAdderSubtractor:\loop_add:7:addrn                              ; work         ;
+;          |oneBitAdderSubtractor:add_0|                ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nBitAdderSubtractor:adder|oneBitAdderSubtractor:add_0                                          ; work         ;
+;       |nBitRegister:reg_P|                            ; 0 (0)             ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nBitRegister:reg_P                                                                             ; work         ;
+;          |enARdFF_2:\reg_n_bits:0:b|                  ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nBitRegister:reg_P|enARdFF_2:\reg_n_bits:0:b                                                   ; work         ;
+;          |enARdFF_2:\reg_n_bits:1:b|                  ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nBitRegister:reg_P|enARdFF_2:\reg_n_bits:1:b                                                   ; work         ;
+;          |enARdFF_2:\reg_n_bits:2:b|                  ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nBitRegister:reg_P|enARdFF_2:\reg_n_bits:2:b                                                   ; work         ;
+;          |enARdFF_2:\reg_n_bits:3:b|                  ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nBitRegister:reg_P|enARdFF_2:\reg_n_bits:3:b                                                   ; work         ;
+;          |enARdFF_2:\reg_n_bits:4:b|                  ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nBitRegister:reg_P|enARdFF_2:\reg_n_bits:4:b                                                   ; work         ;
+;          |enARdFF_2:\reg_n_bits:5:b|                  ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nBitRegister:reg_P|enARdFF_2:\reg_n_bits:5:b                                                   ; work         ;
+;          |enARdFF_2:\reg_n_bits:6:b|                  ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nBitRegister:reg_P|enARdFF_2:\reg_n_bits:6:b                                                   ; work         ;
+;          |enARdFF_2:\reg_n_bits:7:b|                  ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nBitRegister:reg_P|enARdFF_2:\reg_n_bits:7:b                                                   ; work         ;
+;       |nBitShiftRegister:reg_A_left_shift|            ; 12 (1)            ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift                                                             ; work         ;
+;          |enARdFF_2:\regloop:0:bit_n|                 ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|enARdFF_2:\regloop:0:bit_n                                  ; work         ;
+;          |enARdFF_2:\regloop:1:bit_n|                 ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|enARdFF_2:\regloop:1:bit_n                                  ; work         ;
+;          |enARdFF_2:\regloop:2:bit_n|                 ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|enARdFF_2:\regloop:2:bit_n                                  ; work         ;
+;          |enARdFF_2:\regloop:3:bit_n|                 ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|enARdFF_2:\regloop:3:bit_n                                  ; work         ;
+;          |enARdFF_2:\regloop:4:bit_n|                 ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|enARdFF_2:\regloop:4:bit_n                                  ; work         ;
+;          |enARdFF_2:\regloop:5:bit_n|                 ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|enARdFF_2:\regloop:5:bit_n                                  ; work         ;
+;          |enARdFF_2:\regloop:6:bit_n|                 ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|enARdFF_2:\regloop:6:bit_n                                  ; work         ;
+;          |enARdFF_2:\regloop:7:bit_n|                 ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|enARdFF_2:\regloop:7:bit_n                                  ; work         ;
+;          |mux41:\muxloop:5:mux_n|                     ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|mux41:\muxloop:5:mux_n                                      ; work         ;
+;             |mux21:mux1|                              ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|mux41:\muxloop:5:mux_n|mux21:mux1                           ; work         ;
+;          |mux41:\muxloop:6:mux_n|                     ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|mux41:\muxloop:6:mux_n                                      ; work         ;
+;             |mux21:mux1|                              ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|mux41:\muxloop:6:mux_n|mux21:mux1                           ; work         ;
+;          |mux41:mux_0|                                ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|mux41:mux_0                                                 ; work         ;
+;             |mux21:mux1|                              ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|mux41:mux_0|mux21:mux1                                      ; work         ;
+;          |mux41:mux_msb|                              ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|mux41:mux_msb                                               ; work         ;
+;             |mux21:mux1|                              ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|mux41:mux_msb|mux21:mux1                                    ; work         ;
+;       |nBitShiftRegister:reg_B_right_shift|           ; 11 (1)            ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift                                                            ; work         ;
+;          |enARdFF_2:\regloop:0:bit_n|                 ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift|enARdFF_2:\regloop:0:bit_n                                 ; work         ;
+;          |enARdFF_2:\regloop:1:bit_n|                 ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift|enARdFF_2:\regloop:1:bit_n                                 ; work         ;
+;          |enARdFF_2:\regloop:2:bit_n|                 ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift|enARdFF_2:\regloop:2:bit_n                                 ; work         ;
+;          |enARdFF_2:\regloop:3:bit_n|                 ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift|enARdFF_2:\regloop:3:bit_n                                 ; work         ;
+;          |enARdFF_2:\regloop:4:bit_n|                 ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift|enARdFF_2:\regloop:4:bit_n                                 ; work         ;
+;          |enARdFF_2:\regloop:5:bit_n|                 ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift|enARdFF_2:\regloop:5:bit_n                                 ; work         ;
+;          |enARdFF_2:\regloop:6:bit_n|                 ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift|enARdFF_2:\regloop:6:bit_n                                 ; work         ;
+;          |enARdFF_2:\regloop:7:bit_n|                 ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift|enARdFF_2:\regloop:7:bit_n                                 ; work         ;
+;          |mux41:\muxloop:5:mux_n|                     ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift|mux41:\muxloop:5:mux_n                                     ; work         ;
+;             |mux21:muxfinal|                          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift|mux41:\muxloop:5:mux_n|mux21:muxfinal                      ; work         ;
+;          |mux41:mux_0|                                ; 1 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift|mux41:mux_0                                                ; work         ;
+;             |mux21:muxfinal|                          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift|mux41:mux_0|mux21:muxfinal                                 ; work         ;
+;          |mux41:mux_msb|                              ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift|mux41:mux_msb                                              ; work         ;
+;             |mux21:muxfinal|                          ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift|mux41:mux_msb|mux21:muxfinal                               ; work         ;
+;       |nbitmux21:mux_P|                               ; 8 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nbitmux21:mux_P                                                                                ; work         ;
+;          |mux21:\muxloop:1:mux_n|                     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nbitmux21:mux_P|mux21:\muxloop:1:mux_n                                                         ; work         ;
+;          |mux21:\muxloop:2:mux_n|                     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nbitmux21:mux_P|mux21:\muxloop:2:mux_n                                                         ; work         ;
+;          |mux21:\muxloop:3:mux_n|                     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nbitmux21:mux_P|mux21:\muxloop:3:mux_n                                                         ; work         ;
+;          |mux21:\muxloop:4:mux_n|                     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nbitmux21:mux_P|mux21:\muxloop:4:mux_n                                                         ; work         ;
+;          |mux21:\muxloop:5:mux_n|                     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nbitmux21:mux_P|mux21:\muxloop:5:mux_n                                                         ; work         ;
+;          |mux21:\muxloop:6:mux_n|                     ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nbitmux21:mux_P|mux21:\muxloop:6:mux_n                                                         ; work         ;
+;          |mux21:\muxloop:7:mux_n|                     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nbitmux21:mux_P|mux21:\muxloop:7:mux_n                                                         ; work         ;
+;       |nbitmux21:mux_adder|                           ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nbitmux21:mux_adder                                                                            ; work         ;
+;          |mux21:\muxloop:0:mux_n|                     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nbitmux21:mux_adder|mux21:\muxloop:0:mux_n                                                     ; work         ;
+;          |mux21:\muxloop:1:mux_n|                     ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |multiplierTopLevel|multiplierDatapath:dataPath|nbitmux21:mux_adder|mux21:\muxloop:1:mux_n                                                     ; work         ;
++-------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 34    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 13    ;
+; Number of registers using Asynchronous Clear ; 32    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 25    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------------+
+; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|enARdFF_2:\regloop:1:bit_n|int_q  ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift|enARdFF_2:\regloop:1:bit_n|int_q ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: multiplierDatapath:dataPath|complement2s:two_comp_A_inst|nBitAdderSubtractor:adder ;
++----------------+-------+--------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                   ;
++----------------+-------+--------------------------------------------------------------------------------------------------------+
+; n              ; 8     ; Signed Integer                                                                                         ;
++----------------+-------+--------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: multiplierDatapath:dataPath|complement2s:two_comp_B_inst|nBitAdderSubtractor:adder ;
++----------------+-------+--------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                   ;
++----------------+-------+--------------------------------------------------------------------------------------------------------+
+; n              ; 8     ; Signed Integer                                                                                         ;
++----------------+-------+--------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: multiplierDatapath:dataPath|complement2s:two_comp_P_inst|nBitAdderSubtractor:adder ;
++----------------+-------+--------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                   ;
++----------------+-------+--------------------------------------------------------------------------------------------------------+
+; n              ; 8     ; Signed Integer                                                                                         ;
++----------------+-------+--------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: multiplierDatapath:dataPath|nbitmux21:mux_A ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; n              ; 8     ; Signed Integer                                                  ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift ;
++----------------+-------+------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                               ;
++----------------+-------+------------------------------------------------------------------------------------+
+; n              ; 8     ; Signed Integer                                                                     ;
++----------------+-------+------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: multiplierDatapath:dataPath|nbitmux21:mux_B ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; n              ; 8     ; Signed Integer                                                  ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift ;
++----------------+-------+-------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                ;
++----------------+-------+-------------------------------------------------------------------------------------+
+; n              ; 8     ; Signed Integer                                                                      ;
++----------------+-------+-------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: multiplierDatapath:dataPath|nbitmux21:mux_P ;
++----------------+-------+-----------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                            ;
++----------------+-------+-----------------------------------------------------------------+
+; n              ; 8     ; Signed Integer                                                  ;
++----------------+-------+-----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: multiplierDatapath:dataPath|nBitRegister:reg_P ;
++----------------+-------+--------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                               ;
++----------------+-------+--------------------------------------------------------------------+
+; n              ; 8     ; Signed Integer                                                     ;
++----------------+-------+--------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: multiplierDatapath:dataPath|nbitmux21:mux_adder ;
++----------------+-------+---------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                ;
++----------------+-------+---------------------------------------------------------------------+
+; n              ; 8     ; Signed Integer                                                      ;
++----------------+-------+---------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: multiplierDatapath:dataPath|nBitAdderSubtractor:adder ;
++----------------+-------+---------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                      ;
++----------------+-------+---------------------------------------------------------------------------+
+; n              ; 8     ; Signed Integer                                                            ;
++----------------+-------+---------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplierDatapath:dataPath|enARdFF_2:sign_reg"                                           ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; i_resetbar ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; o_qbar     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplierDatapath:dataPath|nBitAdderSubtractor:adder" ;
++---------------+-------+----------+------------------------------------------------+
+; Port          ; Type  ; Severity ; Details                                        ;
++---------------+-------+----------+------------------------------------------------+
+; operationflag ; Input ; Info     ; Stuck at GND                                   ;
++---------------+-------+----------+------------------------------------------------+
+
+
++-----------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplierDatapath:dataPath|nbitmux21:mux_adder" ;
++------+-------+----------+---------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                           ;
++------+-------+----------+---------------------------------------------------+
+; x0   ; Input ; Info     ; Stuck at GND                                      ;
++------+-------+----------+---------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplierDatapath:dataPath|nBitRegister:reg_P|enARdFF_2:\reg_n_bits:7:b"             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplierDatapath:dataPath|nBitRegister:reg_P|enARdFF_2:\reg_n_bits:6:b"             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplierDatapath:dataPath|nBitRegister:reg_P|enARdFF_2:\reg_n_bits:5:b"             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplierDatapath:dataPath|nBitRegister:reg_P|enARdFF_2:\reg_n_bits:4:b"             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplierDatapath:dataPath|nBitRegister:reg_P|enARdFF_2:\reg_n_bits:3:b"             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplierDatapath:dataPath|nBitRegister:reg_P|enARdFF_2:\reg_n_bits:2:b"             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplierDatapath:dataPath|nBitRegister:reg_P|enARdFF_2:\reg_n_bits:1:b"             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplierDatapath:dataPath|nBitRegister:reg_P|enARdFF_2:\reg_n_bits:0:b"             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift" ;
++--------------+-------+----------+-----------------------------------------------------------+
+; Port         ; Type  ; Severity ; Details                                                   ;
++--------------+-------+----------+-----------------------------------------------------------+
+; i_shift_left ; Input ; Info     ; Stuck at GND                                              ;
+; serial_in    ; Input ; Info     ; Stuck at GND                                              ;
++--------------+-------+----------+-----------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|mux41:\muxloop:6:mux_n" ;
++------+-------+----------+-----------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                 ;
++------+-------+----------+-----------------------------------------------------------------------------------------+
+; x3   ; Input ; Info     ; Stuck at GND                                                                            ;
++------+-------+----------+-----------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|mux41:\muxloop:5:mux_n" ;
++------+-------+----------+-----------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                 ;
++------+-------+----------+-----------------------------------------------------------------------------------------+
+; x3   ; Input ; Info     ; Stuck at GND                                                                            ;
++------+-------+----------+-----------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|mux41:\muxloop:4:mux_n" ;
++------+-------+----------+-----------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                 ;
++------+-------+----------+-----------------------------------------------------------------------------------------+
+; x3   ; Input ; Info     ; Stuck at GND                                                                            ;
++------+-------+----------+-----------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|mux41:\muxloop:3:mux_n" ;
++------+-------+----------+-----------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                 ;
++------+-------+----------+-----------------------------------------------------------------------------------------+
+; x3   ; Input ; Info     ; Stuck at GND                                                                            ;
++------+-------+----------+-----------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|mux41:\muxloop:2:mux_n" ;
++------+-------+----------+-----------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                 ;
++------+-------+----------+-----------------------------------------------------------------------------------------+
+; x3   ; Input ; Info     ; Stuck at GND                                                                            ;
++------+-------+----------+-----------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|mux41:\muxloop:1:mux_n" ;
++------+-------+----------+-----------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                 ;
++------+-------+----------+-----------------------------------------------------------------------------------------+
+; x3   ; Input ; Info     ; Stuck at GND                                                                            ;
++------+-------+----------+-----------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|mux41:mux_msb" ;
++------+-------+----------+--------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                        ;
++------+-------+----------+--------------------------------------------------------------------------------+
+; x3   ; Input ; Info     ; Stuck at GND                                                                   ;
++------+-------+----------+--------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|mux41:mux_0" ;
++------+-------+----------+------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                      ;
++------+-------+----------+------------------------------------------------------------------------------+
+; x3   ; Input ; Info     ; Stuck at GND                                                                 ;
++------+-------+----------+------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|enARdFF_2:\regloop:7:bit_n" ;
++--------+--------+----------+------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                  ;
++--------+--------+----------+------------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.      ;
++--------+--------+----------+------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|enARdFF_2:\regloop:6:bit_n" ;
++--------+--------+----------+------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                  ;
++--------+--------+----------+------------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.      ;
++--------+--------+----------+------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|enARdFF_2:\regloop:5:bit_n" ;
++--------+--------+----------+------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                  ;
++--------+--------+----------+------------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.      ;
++--------+--------+----------+------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|enARdFF_2:\regloop:4:bit_n" ;
++--------+--------+----------+------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                  ;
++--------+--------+----------+------------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.      ;
++--------+--------+----------+------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|enARdFF_2:\regloop:3:bit_n" ;
++--------+--------+----------+------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                  ;
++--------+--------+----------+------------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.      ;
++--------+--------+----------+------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|enARdFF_2:\regloop:2:bit_n" ;
++--------+--------+----------+------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                  ;
++--------+--------+----------+------------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.      ;
++--------+--------+----------+------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|enARdFF_2:\regloop:1:bit_n" ;
++--------+--------+----------+------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                  ;
++--------+--------+----------+------------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.      ;
++--------+--------+----------+------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|enARdFF_2:\regloop:0:bit_n" ;
++--------+--------+----------+------------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                                  ;
++--------+--------+----------+------------------------------------------------------------------------------------------+
+; o_qbar ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.      ;
++--------+--------+----------+------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift" ;
++---------------+-------+----------+---------------------------------------------------------+
+; Port          ; Type  ; Severity ; Details                                                 ;
++---------------+-------+----------+---------------------------------------------------------+
+; i_shift_right ; Input ; Info     ; Stuck at GND                                            ;
+; serial_in     ; Input ; Info     ; Stuck at GND                                            ;
++---------------+-------+----------+---------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplierDatapath:dataPath|complement2s:two_comp_A_inst|nBitAdderSubtractor:adder" ;
++---------------+-------+----------+-----------------------------------------------------------------------------+
+; Port          ; Type  ; Severity ; Details                                                                     ;
++---------------+-------+----------+-----------------------------------------------------------------------------+
+; i_ai[7..1]    ; Input ; Info     ; Stuck at GND                                                                ;
+; i_ai[0]       ; Input ; Info     ; Stuck at VCC                                                                ;
+; operationflag ; Input ; Info     ; Stuck at GND                                                                ;
++---------------+-------+----------+-----------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplierControlpath:controlPath|enARdFF_2:\stateRegloop:9:state_n"                    ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; i_enable ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; o_q      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; o_qbar   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplierControlpath:controlPath|enARdFF_2:\stateRegloop:8:state_n"                    ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; i_enable ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; o_qbar   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplierControlpath:controlPath|enARdFF_2:\stateRegloop:7:state_n"                    ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; i_enable ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; o_qbar   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplierControlpath:controlPath|enARdFF_2:\stateRegloop:6:state_n"                    ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; i_enable ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; o_qbar   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplierControlpath:controlPath|enARdFF_2:\stateRegloop:5:state_n"                    ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; i_enable ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; o_qbar   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplierControlpath:controlPath|enARdFF_2:\stateRegloop:4:state_n"                    ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; i_enable ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; o_qbar   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplierControlpath:controlPath|enARdFF_2:\stateRegloop:3:state_n"                    ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; i_enable ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; o_qbar   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplierControlpath:controlPath|enARdFF_2:\stateRegloop:2:state_n"                    ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; i_enable ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; o_qbar   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplierControlpath:controlPath|enARdFF_2:\stateRegloop:1:state_n"                    ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; i_enable ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; o_qbar   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "multiplierControlpath:controlPath|enARdFF_2:stateReg0"                                    ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; i_resetbar ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; i_enable   ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; o_qbar     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -157,9 +885,24 @@ Parallel compilation was disabled, but you have multiple processors available. E
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sat Oct 19 19:41:13 2024
+    Info: Processing started: Tue Oct 22 20:33:02 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off CEG-3155-LAB-2 -c CEG-3155-LAB-2
 Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 2 design units, including 1 entities, in source file twoscomplement.vhd
+    Info (12022): Found design unit 1: complement2s-func
+    Info (12023): Found entity 1: complement2s
+Info (12021): Found 2 design units, including 1 entities, in source file fixedpointalu.vhd
+    Info (12022): Found design unit 1: ALU_Top_Level-Structural
+    Info (12023): Found entity 1: ALU_Top_Level
+Info (12021): Found 2 design units, including 1 entities, in source file multipliertoplevel.vhd
+    Info (12022): Found design unit 1: multiplierTopLevel-rtl
+    Info (12023): Found entity 1: multiplierTopLevel
+Info (12021): Found 2 design units, including 1 entities, in source file multiplierdatapath.vhd
+    Info (12022): Found design unit 1: multiplierDatapath-structural
+    Info (12023): Found entity 1: multiplierDatapath
+Info (12021): Found 2 design units, including 1 entities, in source file multipliercontrolpath.vhd
+    Info (12022): Found design unit 1: multiplierControlpath-rtl
+    Info (12023): Found entity 1: multiplierControlpath
 Info (12021): Found 2 design units, including 1 entities, in source file dividerdatapath.vhd
     Info (12022): Found design unit 1: dividerDatapath-structural
     Info (12023): Found entity 1: dividerDatapath
@@ -198,13 +941,32 @@ Info (12021): Found 2 design units, including 1 entities, in source file divider
     Info (12022): Found design unit 1: dividerControlpath-rtl
     Info (12023): Found entity 1: dividerControlpath
 Info (12021): Found 2 design units, including 1 entities, in source file dividertoplevel.vhd
-    Info (12022): Found design unit 1: multiplierTopLevel-rtl
-    Info (12023): Found entity 1: multiplierTopLevel
-Error (12007): Top-level design entity "dividerTopLevel" is undefined
-Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 1 error, 2 warnings
-    Error: Peak virtual memory: 4622 megabytes
-    Error: Processing ended: Sat Oct 19 19:44:21 2024
-    Error: Elapsed time: 00:03:08
-    Error: Total CPU time (on all processors): 00:00:03
+    Info (12022): Found design unit 1: dividerTopLevel-rtl
+    Info (12023): Found entity 1: dividerTopLevel
+Info (12127): Elaborating entity "multiplierTopLevel" for the top level hierarchy
+Info (12128): Elaborating entity "multiplierControlpath" for hierarchy "multiplierControlpath:controlPath"
+Info (12128): Elaborating entity "enARdFF_2" for hierarchy "multiplierControlpath:controlPath|enARdFF_2:stateReg0"
+Info (12128): Elaborating entity "multiplierDatapath" for hierarchy "multiplierDatapath:dataPath"
+Info (12128): Elaborating entity "complement2s" for hierarchy "multiplierDatapath:dataPath|complement2s:two_comp_A_inst"
+Info (12128): Elaborating entity "nBitAdderSubtractor" for hierarchy "multiplierDatapath:dataPath|complement2s:two_comp_A_inst|nBitAdderSubtractor:adder"
+Info (12128): Elaborating entity "oneBitAdderSubtractor" for hierarchy "multiplierDatapath:dataPath|complement2s:two_comp_A_inst|nBitAdderSubtractor:adder|oneBitAdderSubtractor:add_0"
+Info (12128): Elaborating entity "nbitmux21" for hierarchy "multiplierDatapath:dataPath|nbitmux21:mux_A"
+Info (12128): Elaborating entity "mux21" for hierarchy "multiplierDatapath:dataPath|nbitmux21:mux_A|mux21:\muxloop:0:mux_n"
+Info (12128): Elaborating entity "nBitShiftRegister" for hierarchy "multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift"
+Info (12128): Elaborating entity "mux41" for hierarchy "multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|mux41:mux_0"
+Info (12128): Elaborating entity "nBitRegister" for hierarchy "multiplierDatapath:dataPath|nBitRegister:reg_P"
+Warning (10036): Verilog HDL or VHDL warning at nbitregister.vhd(14): object "int_notValue" assigned a value but never read
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 100 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 10 input pins
+    Info (21059): Implemented 10 output pins
+    Info (21061): Implemented 80 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 4631 megabytes
+    Info: Processing ended: Tue Oct 22 20:33:05 2024
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
 
 

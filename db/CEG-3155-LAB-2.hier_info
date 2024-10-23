@@ -1,36 +1,28 @@
-|dividerTopLevel
-clk => dividerControlpath:controlPath.clk
-clk => dividerDatapath:dataPath.clk
-reset => dividerControlpath:controlPath.reset
-INA[0] => dividerDatapath:dataPath.INA[0]
-INA[1] => dividerDatapath:dataPath.INA[1]
-INA[2] => dividerDatapath:dataPath.INA[2]
-INA[3] => dividerDatapath:dataPath.INA[3]
-INB[0] => dividerDatapath:dataPath.INB[0]
-INB[1] => dividerDatapath:dataPath.INB[1]
-INB[2] => dividerDatapath:dataPath.INB[2]
-INB[3] => dividerDatapath:dataPath.INB[3]
-zero <= dividerDatapath:dataPath.zero
-overflow <= dividerDatapath:dataPath.overflow
-quotient[0] <= dividerDatapath:dataPath.quotient[0]
-quotient[1] <= dividerDatapath:dataPath.quotient[1]
-quotient[2] <= dividerDatapath:dataPath.quotient[2]
-quotient[3] <= dividerDatapath:dataPath.quotient[3]
-quotient[4] <= dividerDatapath:dataPath.quotient[4]
-quotient[5] <= dividerDatapath:dataPath.quotient[5]
-quotient[6] <= dividerDatapath:dataPath.quotient[6]
-quotient[7] <= dividerDatapath:dataPath.quotient[7]
-remainder[0] <= dividerDatapath:dataPath.remainder[0]
-remainder[1] <= dividerDatapath:dataPath.remainder[1]
-remainder[2] <= dividerDatapath:dataPath.remainder[2]
-remainder[3] <= dividerDatapath:dataPath.remainder[3]
-remainder[4] <= dividerDatapath:dataPath.remainder[4]
-remainder[5] <= dividerDatapath:dataPath.remainder[5]
-remainder[6] <= dividerDatapath:dataPath.remainder[6]
-remainder[7] <= dividerDatapath:dataPath.remainder[7]
+|multiplierTopLevel
+clk => multiplierControlpath:controlPath.clk
+clk => multiplierDatapath:dataPath.clk
+reset => multiplierControlpath:controlPath.reset
+INA[0] => multiplierDatapath:dataPath.INA[0]
+INA[1] => multiplierDatapath:dataPath.INA[1]
+INA[2] => multiplierDatapath:dataPath.INA[2]
+INA[3] => multiplierDatapath:dataPath.INA[3]
+INB[0] => multiplierDatapath:dataPath.INB[0]
+INB[1] => multiplierDatapath:dataPath.INB[1]
+INB[2] => multiplierDatapath:dataPath.INB[2]
+INB[3] => multiplierDatapath:dataPath.INB[3]
+zero <= multiplierDatapath:dataPath.zero
+overflow <= multiplierDatapath:dataPath.overflow
+product[0] <= multiplierDatapath:dataPath.product[0]
+product[1] <= multiplierDatapath:dataPath.product[1]
+product[2] <= multiplierDatapath:dataPath.product[2]
+product[3] <= multiplierDatapath:dataPath.product[3]
+product[4] <= multiplierDatapath:dataPath.product[4]
+product[5] <= multiplierDatapath:dataPath.product[5]
+product[6] <= multiplierDatapath:dataPath.product[6]
+product[7] <= multiplierDatapath:dataPath.product[7]
 
 
-|dividerTopLevel|dividerControlpath:controlPath
+|multiplierTopLevel|multiplierControlpath:controlPath
 clk => enardff_2:stateReg0.i_clock
 clk => enardff_2:stateRegloop:1:state_n.i_clock
 clk => enardff_2:stateRegloop:2:state_n.i_clock
@@ -51,33 +43,34 @@ reset => enardff_2:stateRegloop:6:state_n.i_resetBar
 reset => enardff_2:stateRegloop:7:state_n.i_resetBar
 reset => enardff_2:stateRegloop:8:state_n.i_resetBar
 reset => enardff_2:stateRegloop:9:state_n.i_resetBar
+selA <= enardff_2:stateRegloop:1:state_n.o_q
+selB <= enardff_2:stateRegloop:3:state_n.o_q
+selOperand <= enardff_2:stateRegloop:7:state_n.o_q
+p_neg <= enardff_2:stateRegloop:8:state_n.o_q
+loadA <= loadA.DB_MAX_OUTPUT_PORT_TYPE
+loadB <= loadB.DB_MAX_OUTPUT_PORT_TYPE
+loadP <= loadP.DB_MAX_OUTPUT_PORT_TYPE
+ldSign <= enardff_2:stateReg0.o_q
+shiftLA <= enardff_2:stateRegloop:5:state_n.o_q
+shiftRB <= enardff_2:stateRegloop:6:state_n.o_q
 A_msb => state_in[1].IN1
 A_msb => state_in[2].IN1
 B_msb => state_in[3].IN1
 B_msb => state_in[4].IN1
-incEq5 => state_in.IN1
-incEq5 => state_in[5].IN1
-rgtz => state_in[6].IN1
-rgtz => state_in[7].IN1
+B_lsb => state_in.IN1
+B_lsb => state_in.IN0
+B_lsb => state_in.IN1
+B_lsb => state_in.IN0
+beq0 => state_in.IN1
+beq0 => state_in.IN1
+beq0 => state_in.IN1
+beq0 => state_in.IN1
+sgn => state_in[8].IN1
 sgn => state_in[9].IN1
-selA <= enardff_2:stateRegloop:2:state_n.o_q
-selBComp <= enardff_2:stateRegloop:3:state_n.o_q
-ldRem <= ldRem.DB_MAX_OUTPUT_PORT_TYPE
-ldDiv <= ldDiv.DB_MAX_OUTPUT_PORT_TYPE
-ldQuot <= enardff_2:stateRegloop:9:state_n.o_q
-ldSign <= enardff_2:stateReg0.o_q
-shiftQuot <= shiftQuot.DB_MAX_OUTPUT_PORT_TYPE
-shiftDiv <= enardff_2:stateRegloop:8:state_n.o_q
-quotSerialIn <= enardff_2:stateRegloop:6:state_n.o_q
-addSel0 <= addSel0.DB_MAX_OUTPUT_PORT_TYPE
-addSel1 <= addSel1.DB_MAX_OUTPUT_PORT_TYPE
-selZ <= selZ.DB_MAX_OUTPUT_PORT_TYPE
-sub <= sub.DB_MAX_OUTPUT_PORT_TYPE
-inc <= enardff_2:stateRegloop:5:state_n.o_q
 greset <= enardff_2:stateReg0.o_q
 
 
-|dividerTopLevel|dividerControlpath:controlPath|enARdFF_2:stateReg0
+|multiplierTopLevel|multiplierControlpath:controlPath|enARdFF_2:stateReg0
 i_resetBar => int_q.ACLR
 i_d => int_q.DATAIN
 i_enable => int_q.ENA
@@ -86,7 +79,7 @@ o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|dividerTopLevel|dividerControlpath:controlPath|enARdFF_2:\stateRegloop:1:state_n
+|multiplierTopLevel|multiplierControlpath:controlPath|enARdFF_2:\stateRegloop:1:state_n
 i_resetBar => int_q.ACLR
 i_d => int_q.DATAIN
 i_enable => int_q.ENA
@@ -95,7 +88,7 @@ o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|dividerTopLevel|dividerControlpath:controlPath|enARdFF_2:\stateRegloop:2:state_n
+|multiplierTopLevel|multiplierControlpath:controlPath|enARdFF_2:\stateRegloop:2:state_n
 i_resetBar => int_q.ACLR
 i_d => int_q.DATAIN
 i_enable => int_q.ENA
@@ -104,7 +97,7 @@ o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|dividerTopLevel|dividerControlpath:controlPath|enARdFF_2:\stateRegloop:3:state_n
+|multiplierTopLevel|multiplierControlpath:controlPath|enARdFF_2:\stateRegloop:3:state_n
 i_resetBar => int_q.ACLR
 i_d => int_q.DATAIN
 i_enable => int_q.ENA
@@ -113,7 +106,7 @@ o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|dividerTopLevel|dividerControlpath:controlPath|enARdFF_2:\stateRegloop:4:state_n
+|multiplierTopLevel|multiplierControlpath:controlPath|enARdFF_2:\stateRegloop:4:state_n
 i_resetBar => int_q.ACLR
 i_d => int_q.DATAIN
 i_enable => int_q.ENA
@@ -122,7 +115,7 @@ o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|dividerTopLevel|dividerControlpath:controlPath|enARdFF_2:\stateRegloop:5:state_n
+|multiplierTopLevel|multiplierControlpath:controlPath|enARdFF_2:\stateRegloop:5:state_n
 i_resetBar => int_q.ACLR
 i_d => int_q.DATAIN
 i_enable => int_q.ENA
@@ -131,7 +124,7 @@ o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|dividerTopLevel|dividerControlpath:controlPath|enARdFF_2:\stateRegloop:6:state_n
+|multiplierTopLevel|multiplierControlpath:controlPath|enARdFF_2:\stateRegloop:6:state_n
 i_resetBar => int_q.ACLR
 i_d => int_q.DATAIN
 i_enable => int_q.ENA
@@ -140,7 +133,7 @@ o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|dividerTopLevel|dividerControlpath:controlPath|enARdFF_2:\stateRegloop:7:state_n
+|multiplierTopLevel|multiplierControlpath:controlPath|enARdFF_2:\stateRegloop:7:state_n
 i_resetBar => int_q.ACLR
 i_d => int_q.DATAIN
 i_enable => int_q.ENA
@@ -149,7 +142,7 @@ o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|dividerTopLevel|dividerControlpath:controlPath|enARdFF_2:\stateRegloop:8:state_n
+|multiplierTopLevel|multiplierControlpath:controlPath|enARdFF_2:\stateRegloop:8:state_n
 i_resetBar => int_q.ACLR
 i_d => int_q.DATAIN
 i_enable => int_q.ENA
@@ -158,7 +151,7 @@ o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|dividerTopLevel|dividerControlpath:controlPath|enARdFF_2:\stateRegloop:9:state_n
+|multiplierTopLevel|multiplierControlpath:controlPath|enARdFF_2:\stateRegloop:9:state_n
 i_resetBar => int_q.ACLR
 i_d => int_q.DATAIN
 i_enable => int_q.ENA
@@ -167,84 +160,514 @@ o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|dividerTopLevel|dividerDatapath:dataPath
-clk => nBitRegister:remainder_reg.i_clock
-clk => nBitShiftRegister:divisor_reg.i_clock
-clk => nBitShiftRegister:quotient_reg.i_clock
-clk => nBitIncrementer:incrementer.clk
+|multiplierTopLevel|multiplierDatapath:dataPath
+clk => nBitShiftRegister:reg_A_left_shift.i_clock
+clk => nBitShiftRegister:reg_B_right_shift.i_clock
+clk => nBitRegister:reg_P.i_clock
 clk => enardFF_2:sign_reg.i_clock
-greset => nBitIncrementer:incrementer.reset
-greset => nBitRegister:remainder_reg.i_resetBar
-greset => nBitShiftRegister:divisor_reg.i_resetBar
-greset => nBitShiftRegister:quotient_reg.i_resetBar
-selA => nBitMux21:remainder_mux.s
-selBComp => nBitMux21:divisor_mux.s
-ldRem => nBitRegister:remainder_reg.i_load
-ldDiv => nBitShiftRegister:divisor_reg.i_load
-ldQuot => nBitShiftRegister:quotient_reg.i_load
+greset => nBitShiftRegister:reg_A_left_shift.i_resetBar
+greset => nBitShiftRegister:reg_B_right_shift.i_resetBar
+greset => nBitRegister:reg_P.i_resetBar
+selA => nBitMux21:mux_A.s
+selB => nBitMux21:mux_B.s
+selOperand => nBitMux21:mux_adder.s
+p_neg => nBitMux21:mux_P.s
+loadA => nBitShiftRegister:reg_A_left_shift.i_load
+loadB => nBitShiftRegister:reg_B_right_shift.i_load
+loadP => nBitRegister:reg_P.i_load
 ldSign => enardFF_2:sign_reg.i_enable
-shiftQuot => nBitShiftRegister:quotient_reg.i_shift_left
-shiftDiv => nBitShiftRegister:divisor_reg.i_shift_right
-quotSerialIn => nBitShiftRegister:quotient_reg.serial_in
-addSel0 => nBitMux41:inputB_mux.s0
-addSel1 => nBitMux41:inputB_mux.s1
-selZ => nBitMux21:inputA_mux.s
-sub => nBitAdderSubtractor:adder.operationFlag
-inc => nBitIncrementer:incrementer.increment
-INA[0] => nBitMux21:remainder_mux.x1[0]
-INA[0] => nBitMux41:inputB_mux.x3[0]
-INA[1] => nBitMux21:remainder_mux.x1[1]
-INA[1] => nBitMux41:inputB_mux.x3[1]
-INA[2] => nBitMux21:remainder_mux.x1[2]
-INA[2] => nBitMux41:inputB_mux.x3[2]
+shiftLA => nBitShiftRegister:reg_A_left_shift.i_shift_left
+shiftRB => nBitShiftRegister:reg_B_right_shift.i_shift_right
+INA[0] => complement2s:two_comp_A_inst.din[0]
+INA[0] => nBitMux21:mux_A.x0[0]
+INA[1] => complement2s:two_comp_A_inst.din[1]
+INA[1] => nBitMux21:mux_A.x0[1]
+INA[2] => complement2s:two_comp_A_inst.din[2]
+INA[2] => nBitMux21:mux_A.x0[2]
 INA[3] => int_sign_in.IN0
-INA[3] => nBitMux21:remainder_mux.x1[7]
-INA[3] => nBitMux21:remainder_mux.x1[6]
-INA[3] => nBitMux21:remainder_mux.x1[5]
-INA[3] => nBitMux21:remainder_mux.x1[4]
-INA[3] => nBitMux21:remainder_mux.x1[3]
-INA[3] => nBitMux41:inputB_mux.x3[7]
-INA[3] => nBitMux41:inputB_mux.x3[6]
-INA[3] => nBitMux41:inputB_mux.x3[5]
-INA[3] => nBitMux41:inputB_mux.x3[4]
-INA[3] => nBitMux41:inputB_mux.x3[3]
+INA[3] => complement2s:two_comp_A_inst.din[7]
+INA[3] => complement2s:two_comp_A_inst.din[6]
+INA[3] => complement2s:two_comp_A_inst.din[5]
+INA[3] => complement2s:two_comp_A_inst.din[4]
+INA[3] => complement2s:two_comp_A_inst.din[3]
+INA[3] => nBitMux21:mux_A.x0[7]
+INA[3] => nBitMux21:mux_A.x0[6]
+INA[3] => nBitMux21:mux_A.x0[5]
+INA[3] => nBitMux21:mux_A.x0[4]
+INA[3] => nBitMux21:mux_A.x0[3]
 INA[3] => A_msb.DATAIN
-INB[0] => nBitMux21:divisor_mux.x0[4]
-INB[0] => nBitMux41:inputB_mux.x2[4]
-INB[1] => nBitMux21:divisor_mux.x0[5]
-INB[1] => nBitMux41:inputB_mux.x2[5]
-INB[2] => nBitMux21:divisor_mux.x0[6]
-INB[2] => nBitMux41:inputB_mux.x2[6]
-INB[3] => nBitMux21:divisor_mux.x0[7]
+INB[0] => complement2s:two_comp_B_inst.din[0]
+INB[0] => nBitMux21:mux_B.x0[0]
+INB[0] => B_lsb.DATAIN
+INB[1] => complement2s:two_comp_B_inst.din[1]
+INB[1] => nBitMux21:mux_B.x0[1]
+INB[2] => complement2s:two_comp_B_inst.din[2]
+INB[2] => nBitMux21:mux_B.x0[2]
 INB[3] => int_sign_in.IN1
-INB[3] => nBitMux41:inputB_mux.x2[7]
+INB[3] => complement2s:two_comp_B_inst.din[7]
+INB[3] => complement2s:two_comp_B_inst.din[6]
+INB[3] => complement2s:two_comp_B_inst.din[5]
+INB[3] => complement2s:two_comp_B_inst.din[4]
+INB[3] => complement2s:two_comp_B_inst.din[3]
+INB[3] => nBitMux21:mux_B.x0[7]
+INB[3] => nBitMux21:mux_B.x0[6]
+INB[3] => nBitMux21:mux_B.x0[5]
+INB[3] => nBitMux21:mux_B.x0[4]
+INB[3] => nBitMux21:mux_B.x0[3]
 INB[3] => B_msb.DATAIN
+product[0] <= nBitRegister:reg_P.o_Value[0]
+product[1] <= nBitRegister:reg_P.o_Value[1]
+product[2] <= nBitRegister:reg_P.o_Value[2]
+product[3] <= nBitRegister:reg_P.o_Value[3]
+product[4] <= nBitRegister:reg_P.o_Value[4]
+product[5] <= nBitRegister:reg_P.o_Value[5]
+product[6] <= nBitRegister:reg_P.o_Value[6]
+product[7] <= nBitRegister:reg_P.o_Value[7]
 A_msb <= INA[3].DB_MAX_OUTPUT_PORT_TYPE
 B_msb <= INB[3].DB_MAX_OUTPUT_PORT_TYPE
-incEq5 <= incEq5.DB_MAX_OUTPUT_PORT_TYPE
-rgtz <= nBitAdderSubtractor:adder.o_Sum[7]
+B_lsb <= INB[0].DB_MAX_OUTPUT_PORT_TYPE
 sgn <= enardFF_2:sign_reg.o_q
+beq0 <= beq0.DB_MAX_OUTPUT_PORT_TYPE
 zero <= zero.DB_MAX_OUTPUT_PORT_TYPE
+overflow <= overflow.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|complement2s:two_comp_A_inst
+din[0] => nBitAdderSubtractor:adder.i_Bi[0]
+din[1] => nBitAdderSubtractor:adder.i_Bi[1]
+din[2] => nBitAdderSubtractor:adder.i_Bi[2]
+din[3] => nBitAdderSubtractor:adder.i_Bi[3]
+din[4] => nBitAdderSubtractor:adder.i_Bi[4]
+din[5] => nBitAdderSubtractor:adder.i_Bi[5]
+din[6] => nBitAdderSubtractor:adder.i_Bi[6]
+din[7] => nBitAdderSubtractor:adder.i_Bi[7]
 overflow <= nBitAdderSubtractor:adder.o_CarryOut
-quotient[0] <= nBitShiftRegister:quotient_reg.o_Value[0]
-quotient[1] <= nBitShiftRegister:quotient_reg.o_Value[1]
-quotient[2] <= nBitShiftRegister:quotient_reg.o_Value[2]
-quotient[3] <= nBitShiftRegister:quotient_reg.o_Value[3]
-quotient[4] <= nBitShiftRegister:quotient_reg.o_Value[4]
-quotient[5] <= nBitShiftRegister:quotient_reg.o_Value[5]
-quotient[6] <= nBitShiftRegister:quotient_reg.o_Value[6]
-quotient[7] <= nBitShiftRegister:quotient_reg.o_Value[7]
-remainder[0] <= nBitRegister:remainder_reg.o_Value[0]
-remainder[1] <= nBitRegister:remainder_reg.o_Value[1]
-remainder[2] <= nBitRegister:remainder_reg.o_Value[2]
-remainder[3] <= nBitRegister:remainder_reg.o_Value[3]
-remainder[4] <= nBitRegister:remainder_reg.o_Value[4]
-remainder[5] <= nBitRegister:remainder_reg.o_Value[5]
-remainder[6] <= nBitRegister:remainder_reg.o_Value[6]
-remainder[7] <= nBitRegister:remainder_reg.o_Value[7]
+dout[0] <= nBitAdderSubtractor:adder.o_Sum[0]
+dout[1] <= nBitAdderSubtractor:adder.o_Sum[1]
+dout[2] <= nBitAdderSubtractor:adder.o_Sum[2]
+dout[3] <= nBitAdderSubtractor:adder.o_Sum[3]
+dout[4] <= nBitAdderSubtractor:adder.o_Sum[4]
+dout[5] <= nBitAdderSubtractor:adder.o_Sum[5]
+dout[6] <= nBitAdderSubtractor:adder.o_Sum[6]
+dout[7] <= nBitAdderSubtractor:adder.o_Sum[7]
 
 
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux21:remainder_mux
+|multiplierTopLevel|multiplierDatapath:dataPath|complement2s:two_comp_A_inst|nBitAdderSubtractor:adder
+i_Ai[0] => oneBitAdderSubtractor:add_0.i_Ai
+i_Ai[1] => oneBitAdderSubtractor:loop_add:1:addrn.i_Ai
+i_Ai[2] => oneBitAdderSubtractor:loop_add:2:addrn.i_Ai
+i_Ai[3] => oneBitAdderSubtractor:loop_add:3:addrn.i_Ai
+i_Ai[4] => oneBitAdderSubtractor:loop_add:4:addrn.i_Ai
+i_Ai[5] => oneBitAdderSubtractor:loop_add:5:addrn.i_Ai
+i_Ai[6] => oneBitAdderSubtractor:loop_add:6:addrn.i_Ai
+i_Ai[7] => oneBitAdderSubtractor:loop_add:7:addrn.i_Ai
+i_Bi[0] => oneBitAdderSubtractor:add_0.i_Bi
+i_Bi[1] => oneBitAdderSubtractor:loop_add:1:addrn.i_Bi
+i_Bi[2] => oneBitAdderSubtractor:loop_add:2:addrn.i_Bi
+i_Bi[3] => oneBitAdderSubtractor:loop_add:3:addrn.i_Bi
+i_Bi[4] => oneBitAdderSubtractor:loop_add:4:addrn.i_Bi
+i_Bi[5] => oneBitAdderSubtractor:loop_add:5:addrn.i_Bi
+i_Bi[6] => oneBitAdderSubtractor:loop_add:6:addrn.i_Bi
+i_Bi[7] => oneBitAdderSubtractor:loop_add:7:addrn.i_Bi
+operationFlag => oneBitAdderSubtractor:add_0.i_CarryIn
+operationFlag => oneBitAdderSubtractor:add_0.operationFlag
+operationFlag => oneBitAdderSubtractor:loop_add:1:addrn.operationFlag
+operationFlag => oneBitAdderSubtractor:loop_add:2:addrn.operationFlag
+operationFlag => oneBitAdderSubtractor:loop_add:3:addrn.operationFlag
+operationFlag => oneBitAdderSubtractor:loop_add:4:addrn.operationFlag
+operationFlag => oneBitAdderSubtractor:loop_add:5:addrn.operationFlag
+operationFlag => oneBitAdderSubtractor:loop_add:6:addrn.operationFlag
+operationFlag => oneBitAdderSubtractor:loop_add:7:addrn.operationFlag
+o_CarryOut <= oneBitAdderSubtractor:loop_add:7:addrn.o_CarryOut
+o_Sum[0] <= oneBitAdderSubtractor:add_0.o_Sum
+o_Sum[1] <= oneBitAdderSubtractor:loop_add:1:addrn.o_Sum
+o_Sum[2] <= oneBitAdderSubtractor:loop_add:2:addrn.o_Sum
+o_Sum[3] <= oneBitAdderSubtractor:loop_add:3:addrn.o_Sum
+o_Sum[4] <= oneBitAdderSubtractor:loop_add:4:addrn.o_Sum
+o_Sum[5] <= oneBitAdderSubtractor:loop_add:5:addrn.o_Sum
+o_Sum[6] <= oneBitAdderSubtractor:loop_add:6:addrn.o_Sum
+o_Sum[7] <= oneBitAdderSubtractor:loop_add:7:addrn.o_Sum
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|complement2s:two_comp_A_inst|nBitAdderSubtractor:adder|oneBitAdderSubtractor:add_0
+i_CarryIn => carryFromBoth.IN0
+i_CarryIn => carryFromAi.IN0
+operationFlag => xor_Bi.IN0
+i_Ai => carryFromBoth.IN1
+i_Ai => carryFromAi.IN1
+i_Bi => xor_Bi.IN1
+o_Sum <= o_Sum.DB_MAX_OUTPUT_PORT_TYPE
+o_CarryOut <= o_CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|complement2s:two_comp_A_inst|nBitAdderSubtractor:adder|oneBitAdderSubtractor:\loop_add:1:addrn
+i_CarryIn => carryFromBoth.IN0
+i_CarryIn => carryFromAi.IN0
+operationFlag => xor_Bi.IN0
+i_Ai => carryFromBoth.IN1
+i_Ai => carryFromAi.IN1
+i_Bi => xor_Bi.IN1
+o_Sum <= o_Sum.DB_MAX_OUTPUT_PORT_TYPE
+o_CarryOut <= o_CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|complement2s:two_comp_A_inst|nBitAdderSubtractor:adder|oneBitAdderSubtractor:\loop_add:2:addrn
+i_CarryIn => carryFromBoth.IN0
+i_CarryIn => carryFromAi.IN0
+operationFlag => xor_Bi.IN0
+i_Ai => carryFromBoth.IN1
+i_Ai => carryFromAi.IN1
+i_Bi => xor_Bi.IN1
+o_Sum <= o_Sum.DB_MAX_OUTPUT_PORT_TYPE
+o_CarryOut <= o_CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|complement2s:two_comp_A_inst|nBitAdderSubtractor:adder|oneBitAdderSubtractor:\loop_add:3:addrn
+i_CarryIn => carryFromBoth.IN0
+i_CarryIn => carryFromAi.IN0
+operationFlag => xor_Bi.IN0
+i_Ai => carryFromBoth.IN1
+i_Ai => carryFromAi.IN1
+i_Bi => xor_Bi.IN1
+o_Sum <= o_Sum.DB_MAX_OUTPUT_PORT_TYPE
+o_CarryOut <= o_CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|complement2s:two_comp_A_inst|nBitAdderSubtractor:adder|oneBitAdderSubtractor:\loop_add:4:addrn
+i_CarryIn => carryFromBoth.IN0
+i_CarryIn => carryFromAi.IN0
+operationFlag => xor_Bi.IN0
+i_Ai => carryFromBoth.IN1
+i_Ai => carryFromAi.IN1
+i_Bi => xor_Bi.IN1
+o_Sum <= o_Sum.DB_MAX_OUTPUT_PORT_TYPE
+o_CarryOut <= o_CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|complement2s:two_comp_A_inst|nBitAdderSubtractor:adder|oneBitAdderSubtractor:\loop_add:5:addrn
+i_CarryIn => carryFromBoth.IN0
+i_CarryIn => carryFromAi.IN0
+operationFlag => xor_Bi.IN0
+i_Ai => carryFromBoth.IN1
+i_Ai => carryFromAi.IN1
+i_Bi => xor_Bi.IN1
+o_Sum <= o_Sum.DB_MAX_OUTPUT_PORT_TYPE
+o_CarryOut <= o_CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|complement2s:two_comp_A_inst|nBitAdderSubtractor:adder|oneBitAdderSubtractor:\loop_add:6:addrn
+i_CarryIn => carryFromBoth.IN0
+i_CarryIn => carryFromAi.IN0
+operationFlag => xor_Bi.IN0
+i_Ai => carryFromBoth.IN1
+i_Ai => carryFromAi.IN1
+i_Bi => xor_Bi.IN1
+o_Sum <= o_Sum.DB_MAX_OUTPUT_PORT_TYPE
+o_CarryOut <= o_CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|complement2s:two_comp_A_inst|nBitAdderSubtractor:adder|oneBitAdderSubtractor:\loop_add:7:addrn
+i_CarryIn => carryFromBoth.IN0
+i_CarryIn => carryFromAi.IN0
+operationFlag => xor_Bi.IN0
+i_Ai => carryFromBoth.IN1
+i_Ai => carryFromAi.IN1
+i_Bi => xor_Bi.IN1
+o_Sum <= o_Sum.DB_MAX_OUTPUT_PORT_TYPE
+o_CarryOut <= o_CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|complement2s:two_comp_B_inst
+din[0] => nBitAdderSubtractor:adder.i_Bi[0]
+din[1] => nBitAdderSubtractor:adder.i_Bi[1]
+din[2] => nBitAdderSubtractor:adder.i_Bi[2]
+din[3] => nBitAdderSubtractor:adder.i_Bi[3]
+din[4] => nBitAdderSubtractor:adder.i_Bi[4]
+din[5] => nBitAdderSubtractor:adder.i_Bi[5]
+din[6] => nBitAdderSubtractor:adder.i_Bi[6]
+din[7] => nBitAdderSubtractor:adder.i_Bi[7]
+overflow <= nBitAdderSubtractor:adder.o_CarryOut
+dout[0] <= nBitAdderSubtractor:adder.o_Sum[0]
+dout[1] <= nBitAdderSubtractor:adder.o_Sum[1]
+dout[2] <= nBitAdderSubtractor:adder.o_Sum[2]
+dout[3] <= nBitAdderSubtractor:adder.o_Sum[3]
+dout[4] <= nBitAdderSubtractor:adder.o_Sum[4]
+dout[5] <= nBitAdderSubtractor:adder.o_Sum[5]
+dout[6] <= nBitAdderSubtractor:adder.o_Sum[6]
+dout[7] <= nBitAdderSubtractor:adder.o_Sum[7]
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|complement2s:two_comp_B_inst|nBitAdderSubtractor:adder
+i_Ai[0] => oneBitAdderSubtractor:add_0.i_Ai
+i_Ai[1] => oneBitAdderSubtractor:loop_add:1:addrn.i_Ai
+i_Ai[2] => oneBitAdderSubtractor:loop_add:2:addrn.i_Ai
+i_Ai[3] => oneBitAdderSubtractor:loop_add:3:addrn.i_Ai
+i_Ai[4] => oneBitAdderSubtractor:loop_add:4:addrn.i_Ai
+i_Ai[5] => oneBitAdderSubtractor:loop_add:5:addrn.i_Ai
+i_Ai[6] => oneBitAdderSubtractor:loop_add:6:addrn.i_Ai
+i_Ai[7] => oneBitAdderSubtractor:loop_add:7:addrn.i_Ai
+i_Bi[0] => oneBitAdderSubtractor:add_0.i_Bi
+i_Bi[1] => oneBitAdderSubtractor:loop_add:1:addrn.i_Bi
+i_Bi[2] => oneBitAdderSubtractor:loop_add:2:addrn.i_Bi
+i_Bi[3] => oneBitAdderSubtractor:loop_add:3:addrn.i_Bi
+i_Bi[4] => oneBitAdderSubtractor:loop_add:4:addrn.i_Bi
+i_Bi[5] => oneBitAdderSubtractor:loop_add:5:addrn.i_Bi
+i_Bi[6] => oneBitAdderSubtractor:loop_add:6:addrn.i_Bi
+i_Bi[7] => oneBitAdderSubtractor:loop_add:7:addrn.i_Bi
+operationFlag => oneBitAdderSubtractor:add_0.i_CarryIn
+operationFlag => oneBitAdderSubtractor:add_0.operationFlag
+operationFlag => oneBitAdderSubtractor:loop_add:1:addrn.operationFlag
+operationFlag => oneBitAdderSubtractor:loop_add:2:addrn.operationFlag
+operationFlag => oneBitAdderSubtractor:loop_add:3:addrn.operationFlag
+operationFlag => oneBitAdderSubtractor:loop_add:4:addrn.operationFlag
+operationFlag => oneBitAdderSubtractor:loop_add:5:addrn.operationFlag
+operationFlag => oneBitAdderSubtractor:loop_add:6:addrn.operationFlag
+operationFlag => oneBitAdderSubtractor:loop_add:7:addrn.operationFlag
+o_CarryOut <= oneBitAdderSubtractor:loop_add:7:addrn.o_CarryOut
+o_Sum[0] <= oneBitAdderSubtractor:add_0.o_Sum
+o_Sum[1] <= oneBitAdderSubtractor:loop_add:1:addrn.o_Sum
+o_Sum[2] <= oneBitAdderSubtractor:loop_add:2:addrn.o_Sum
+o_Sum[3] <= oneBitAdderSubtractor:loop_add:3:addrn.o_Sum
+o_Sum[4] <= oneBitAdderSubtractor:loop_add:4:addrn.o_Sum
+o_Sum[5] <= oneBitAdderSubtractor:loop_add:5:addrn.o_Sum
+o_Sum[6] <= oneBitAdderSubtractor:loop_add:6:addrn.o_Sum
+o_Sum[7] <= oneBitAdderSubtractor:loop_add:7:addrn.o_Sum
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|complement2s:two_comp_B_inst|nBitAdderSubtractor:adder|oneBitAdderSubtractor:add_0
+i_CarryIn => carryFromBoth.IN0
+i_CarryIn => carryFromAi.IN0
+operationFlag => xor_Bi.IN0
+i_Ai => carryFromBoth.IN1
+i_Ai => carryFromAi.IN1
+i_Bi => xor_Bi.IN1
+o_Sum <= o_Sum.DB_MAX_OUTPUT_PORT_TYPE
+o_CarryOut <= o_CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|complement2s:two_comp_B_inst|nBitAdderSubtractor:adder|oneBitAdderSubtractor:\loop_add:1:addrn
+i_CarryIn => carryFromBoth.IN0
+i_CarryIn => carryFromAi.IN0
+operationFlag => xor_Bi.IN0
+i_Ai => carryFromBoth.IN1
+i_Ai => carryFromAi.IN1
+i_Bi => xor_Bi.IN1
+o_Sum <= o_Sum.DB_MAX_OUTPUT_PORT_TYPE
+o_CarryOut <= o_CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|complement2s:two_comp_B_inst|nBitAdderSubtractor:adder|oneBitAdderSubtractor:\loop_add:2:addrn
+i_CarryIn => carryFromBoth.IN0
+i_CarryIn => carryFromAi.IN0
+operationFlag => xor_Bi.IN0
+i_Ai => carryFromBoth.IN1
+i_Ai => carryFromAi.IN1
+i_Bi => xor_Bi.IN1
+o_Sum <= o_Sum.DB_MAX_OUTPUT_PORT_TYPE
+o_CarryOut <= o_CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|complement2s:two_comp_B_inst|nBitAdderSubtractor:adder|oneBitAdderSubtractor:\loop_add:3:addrn
+i_CarryIn => carryFromBoth.IN0
+i_CarryIn => carryFromAi.IN0
+operationFlag => xor_Bi.IN0
+i_Ai => carryFromBoth.IN1
+i_Ai => carryFromAi.IN1
+i_Bi => xor_Bi.IN1
+o_Sum <= o_Sum.DB_MAX_OUTPUT_PORT_TYPE
+o_CarryOut <= o_CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|complement2s:two_comp_B_inst|nBitAdderSubtractor:adder|oneBitAdderSubtractor:\loop_add:4:addrn
+i_CarryIn => carryFromBoth.IN0
+i_CarryIn => carryFromAi.IN0
+operationFlag => xor_Bi.IN0
+i_Ai => carryFromBoth.IN1
+i_Ai => carryFromAi.IN1
+i_Bi => xor_Bi.IN1
+o_Sum <= o_Sum.DB_MAX_OUTPUT_PORT_TYPE
+o_CarryOut <= o_CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|complement2s:two_comp_B_inst|nBitAdderSubtractor:adder|oneBitAdderSubtractor:\loop_add:5:addrn
+i_CarryIn => carryFromBoth.IN0
+i_CarryIn => carryFromAi.IN0
+operationFlag => xor_Bi.IN0
+i_Ai => carryFromBoth.IN1
+i_Ai => carryFromAi.IN1
+i_Bi => xor_Bi.IN1
+o_Sum <= o_Sum.DB_MAX_OUTPUT_PORT_TYPE
+o_CarryOut <= o_CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|complement2s:two_comp_B_inst|nBitAdderSubtractor:adder|oneBitAdderSubtractor:\loop_add:6:addrn
+i_CarryIn => carryFromBoth.IN0
+i_CarryIn => carryFromAi.IN0
+operationFlag => xor_Bi.IN0
+i_Ai => carryFromBoth.IN1
+i_Ai => carryFromAi.IN1
+i_Bi => xor_Bi.IN1
+o_Sum <= o_Sum.DB_MAX_OUTPUT_PORT_TYPE
+o_CarryOut <= o_CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|complement2s:two_comp_B_inst|nBitAdderSubtractor:adder|oneBitAdderSubtractor:\loop_add:7:addrn
+i_CarryIn => carryFromBoth.IN0
+i_CarryIn => carryFromAi.IN0
+operationFlag => xor_Bi.IN0
+i_Ai => carryFromBoth.IN1
+i_Ai => carryFromAi.IN1
+i_Bi => xor_Bi.IN1
+o_Sum <= o_Sum.DB_MAX_OUTPUT_PORT_TYPE
+o_CarryOut <= o_CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|complement2s:two_comp_P_inst
+din[0] => nBitAdderSubtractor:adder.i_Bi[0]
+din[1] => nBitAdderSubtractor:adder.i_Bi[1]
+din[2] => nBitAdderSubtractor:adder.i_Bi[2]
+din[3] => nBitAdderSubtractor:adder.i_Bi[3]
+din[4] => nBitAdderSubtractor:adder.i_Bi[4]
+din[5] => nBitAdderSubtractor:adder.i_Bi[5]
+din[6] => nBitAdderSubtractor:adder.i_Bi[6]
+din[7] => nBitAdderSubtractor:adder.i_Bi[7]
+overflow <= nBitAdderSubtractor:adder.o_CarryOut
+dout[0] <= nBitAdderSubtractor:adder.o_Sum[0]
+dout[1] <= nBitAdderSubtractor:adder.o_Sum[1]
+dout[2] <= nBitAdderSubtractor:adder.o_Sum[2]
+dout[3] <= nBitAdderSubtractor:adder.o_Sum[3]
+dout[4] <= nBitAdderSubtractor:adder.o_Sum[4]
+dout[5] <= nBitAdderSubtractor:adder.o_Sum[5]
+dout[6] <= nBitAdderSubtractor:adder.o_Sum[6]
+dout[7] <= nBitAdderSubtractor:adder.o_Sum[7]
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|complement2s:two_comp_P_inst|nBitAdderSubtractor:adder
+i_Ai[0] => oneBitAdderSubtractor:add_0.i_Ai
+i_Ai[1] => oneBitAdderSubtractor:loop_add:1:addrn.i_Ai
+i_Ai[2] => oneBitAdderSubtractor:loop_add:2:addrn.i_Ai
+i_Ai[3] => oneBitAdderSubtractor:loop_add:3:addrn.i_Ai
+i_Ai[4] => oneBitAdderSubtractor:loop_add:4:addrn.i_Ai
+i_Ai[5] => oneBitAdderSubtractor:loop_add:5:addrn.i_Ai
+i_Ai[6] => oneBitAdderSubtractor:loop_add:6:addrn.i_Ai
+i_Ai[7] => oneBitAdderSubtractor:loop_add:7:addrn.i_Ai
+i_Bi[0] => oneBitAdderSubtractor:add_0.i_Bi
+i_Bi[1] => oneBitAdderSubtractor:loop_add:1:addrn.i_Bi
+i_Bi[2] => oneBitAdderSubtractor:loop_add:2:addrn.i_Bi
+i_Bi[3] => oneBitAdderSubtractor:loop_add:3:addrn.i_Bi
+i_Bi[4] => oneBitAdderSubtractor:loop_add:4:addrn.i_Bi
+i_Bi[5] => oneBitAdderSubtractor:loop_add:5:addrn.i_Bi
+i_Bi[6] => oneBitAdderSubtractor:loop_add:6:addrn.i_Bi
+i_Bi[7] => oneBitAdderSubtractor:loop_add:7:addrn.i_Bi
+operationFlag => oneBitAdderSubtractor:add_0.i_CarryIn
+operationFlag => oneBitAdderSubtractor:add_0.operationFlag
+operationFlag => oneBitAdderSubtractor:loop_add:1:addrn.operationFlag
+operationFlag => oneBitAdderSubtractor:loop_add:2:addrn.operationFlag
+operationFlag => oneBitAdderSubtractor:loop_add:3:addrn.operationFlag
+operationFlag => oneBitAdderSubtractor:loop_add:4:addrn.operationFlag
+operationFlag => oneBitAdderSubtractor:loop_add:5:addrn.operationFlag
+operationFlag => oneBitAdderSubtractor:loop_add:6:addrn.operationFlag
+operationFlag => oneBitAdderSubtractor:loop_add:7:addrn.operationFlag
+o_CarryOut <= oneBitAdderSubtractor:loop_add:7:addrn.o_CarryOut
+o_Sum[0] <= oneBitAdderSubtractor:add_0.o_Sum
+o_Sum[1] <= oneBitAdderSubtractor:loop_add:1:addrn.o_Sum
+o_Sum[2] <= oneBitAdderSubtractor:loop_add:2:addrn.o_Sum
+o_Sum[3] <= oneBitAdderSubtractor:loop_add:3:addrn.o_Sum
+o_Sum[4] <= oneBitAdderSubtractor:loop_add:4:addrn.o_Sum
+o_Sum[5] <= oneBitAdderSubtractor:loop_add:5:addrn.o_Sum
+o_Sum[6] <= oneBitAdderSubtractor:loop_add:6:addrn.o_Sum
+o_Sum[7] <= oneBitAdderSubtractor:loop_add:7:addrn.o_Sum
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|complement2s:two_comp_P_inst|nBitAdderSubtractor:adder|oneBitAdderSubtractor:add_0
+i_CarryIn => carryFromBoth.IN0
+i_CarryIn => carryFromAi.IN0
+operationFlag => xor_Bi.IN0
+i_Ai => carryFromBoth.IN1
+i_Ai => carryFromAi.IN1
+i_Bi => xor_Bi.IN1
+o_Sum <= o_Sum.DB_MAX_OUTPUT_PORT_TYPE
+o_CarryOut <= o_CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|complement2s:two_comp_P_inst|nBitAdderSubtractor:adder|oneBitAdderSubtractor:\loop_add:1:addrn
+i_CarryIn => carryFromBoth.IN0
+i_CarryIn => carryFromAi.IN0
+operationFlag => xor_Bi.IN0
+i_Ai => carryFromBoth.IN1
+i_Ai => carryFromAi.IN1
+i_Bi => xor_Bi.IN1
+o_Sum <= o_Sum.DB_MAX_OUTPUT_PORT_TYPE
+o_CarryOut <= o_CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|complement2s:two_comp_P_inst|nBitAdderSubtractor:adder|oneBitAdderSubtractor:\loop_add:2:addrn
+i_CarryIn => carryFromBoth.IN0
+i_CarryIn => carryFromAi.IN0
+operationFlag => xor_Bi.IN0
+i_Ai => carryFromBoth.IN1
+i_Ai => carryFromAi.IN1
+i_Bi => xor_Bi.IN1
+o_Sum <= o_Sum.DB_MAX_OUTPUT_PORT_TYPE
+o_CarryOut <= o_CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|complement2s:two_comp_P_inst|nBitAdderSubtractor:adder|oneBitAdderSubtractor:\loop_add:3:addrn
+i_CarryIn => carryFromBoth.IN0
+i_CarryIn => carryFromAi.IN0
+operationFlag => xor_Bi.IN0
+i_Ai => carryFromBoth.IN1
+i_Ai => carryFromAi.IN1
+i_Bi => xor_Bi.IN1
+o_Sum <= o_Sum.DB_MAX_OUTPUT_PORT_TYPE
+o_CarryOut <= o_CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|complement2s:two_comp_P_inst|nBitAdderSubtractor:adder|oneBitAdderSubtractor:\loop_add:4:addrn
+i_CarryIn => carryFromBoth.IN0
+i_CarryIn => carryFromAi.IN0
+operationFlag => xor_Bi.IN0
+i_Ai => carryFromBoth.IN1
+i_Ai => carryFromAi.IN1
+i_Bi => xor_Bi.IN1
+o_Sum <= o_Sum.DB_MAX_OUTPUT_PORT_TYPE
+o_CarryOut <= o_CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|complement2s:two_comp_P_inst|nBitAdderSubtractor:adder|oneBitAdderSubtractor:\loop_add:5:addrn
+i_CarryIn => carryFromBoth.IN0
+i_CarryIn => carryFromAi.IN0
+operationFlag => xor_Bi.IN0
+i_Ai => carryFromBoth.IN1
+i_Ai => carryFromAi.IN1
+i_Bi => xor_Bi.IN1
+o_Sum <= o_Sum.DB_MAX_OUTPUT_PORT_TYPE
+o_CarryOut <= o_CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|complement2s:two_comp_P_inst|nBitAdderSubtractor:adder|oneBitAdderSubtractor:\loop_add:6:addrn
+i_CarryIn => carryFromBoth.IN0
+i_CarryIn => carryFromAi.IN0
+operationFlag => xor_Bi.IN0
+i_Ai => carryFromBoth.IN1
+i_Ai => carryFromAi.IN1
+i_Bi => xor_Bi.IN1
+o_Sum <= o_Sum.DB_MAX_OUTPUT_PORT_TYPE
+o_CarryOut <= o_CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|complement2s:two_comp_P_inst|nBitAdderSubtractor:adder|oneBitAdderSubtractor:\loop_add:7:addrn
+i_CarryIn => carryFromBoth.IN0
+i_CarryIn => carryFromAi.IN0
+operationFlag => xor_Bi.IN0
+i_Ai => carryFromBoth.IN1
+i_Ai => carryFromAi.IN1
+i_Bi => xor_Bi.IN1
+o_Sum <= o_Sum.DB_MAX_OUTPUT_PORT_TYPE
+o_CarryOut <= o_CarryOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nbitmux21:mux_A
 s => mux21:muxloop:0:mux_n.s
 s => mux21:muxloop:1:mux_n.s
 s => mux21:muxloop:2:mux_n.s
@@ -279,7 +702,7 @@ y[6] <= mux21:muxloop:6:mux_n.y
 y[7] <= mux21:muxloop:7:mux_n.y
 
 
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux21:remainder_mux|mux21:\muxloop:0:mux_n
+|multiplierTopLevel|multiplierDatapath:dataPath|nbitmux21:mux_A|mux21:\muxloop:0:mux_n
 s => selX1.IN0
 s => selX0.IN0
 x0 => selX0.IN1
@@ -287,7 +710,7 @@ x1 => selX1.IN1
 y <= y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux21:remainder_mux|mux21:\muxloop:1:mux_n
+|multiplierTopLevel|multiplierDatapath:dataPath|nbitmux21:mux_A|mux21:\muxloop:1:mux_n
 s => selX1.IN0
 s => selX0.IN0
 x0 => selX0.IN1
@@ -295,7 +718,7 @@ x1 => selX1.IN1
 y <= y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux21:remainder_mux|mux21:\muxloop:2:mux_n
+|multiplierTopLevel|multiplierDatapath:dataPath|nbitmux21:mux_A|mux21:\muxloop:2:mux_n
 s => selX1.IN0
 s => selX0.IN0
 x0 => selX0.IN1
@@ -303,7 +726,7 @@ x1 => selX1.IN1
 y <= y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux21:remainder_mux|mux21:\muxloop:3:mux_n
+|multiplierTopLevel|multiplierDatapath:dataPath|nbitmux21:mux_A|mux21:\muxloop:3:mux_n
 s => selX1.IN0
 s => selX0.IN0
 x0 => selX0.IN1
@@ -311,7 +734,7 @@ x1 => selX1.IN1
 y <= y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux21:remainder_mux|mux21:\muxloop:4:mux_n
+|multiplierTopLevel|multiplierDatapath:dataPath|nbitmux21:mux_A|mux21:\muxloop:4:mux_n
 s => selX1.IN0
 s => selX0.IN0
 x0 => selX0.IN1
@@ -319,7 +742,7 @@ x1 => selX1.IN1
 y <= y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux21:remainder_mux|mux21:\muxloop:5:mux_n
+|multiplierTopLevel|multiplierDatapath:dataPath|nbitmux21:mux_A|mux21:\muxloop:5:mux_n
 s => selX1.IN0
 s => selX0.IN0
 x0 => selX0.IN1
@@ -327,7 +750,7 @@ x1 => selX1.IN1
 y <= y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux21:remainder_mux|mux21:\muxloop:6:mux_n
+|multiplierTopLevel|multiplierDatapath:dataPath|nbitmux21:mux_A|mux21:\muxloop:6:mux_n
 s => selX1.IN0
 s => selX0.IN0
 x0 => selX0.IN1
@@ -335,7 +758,7 @@ x1 => selX1.IN1
 y <= y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux21:remainder_mux|mux21:\muxloop:7:mux_n
+|multiplierTopLevel|multiplierDatapath:dataPath|nbitmux21:mux_A|mux21:\muxloop:7:mux_n
 s => selX1.IN0
 s => selX0.IN0
 x0 => selX0.IN1
@@ -343,7 +766,1021 @@ x1 => selX1.IN1
 y <= y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|dividerTopLevel|dividerDatapath:dataPath|nBitRegister:remainder_reg
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift
+i_resetBar => enardFF_2:regloop:0:bit_n.i_resetBar
+i_resetBar => enardFF_2:regloop:1:bit_n.i_resetBar
+i_resetBar => enardFF_2:regloop:2:bit_n.i_resetBar
+i_resetBar => enardFF_2:regloop:3:bit_n.i_resetBar
+i_resetBar => enardFF_2:regloop:4:bit_n.i_resetBar
+i_resetBar => enardFF_2:regloop:5:bit_n.i_resetBar
+i_resetBar => enardFF_2:regloop:6:bit_n.i_resetBar
+i_resetBar => enardFF_2:regloop:7:bit_n.i_resetBar
+i_clock => enardFF_2:regloop:0:bit_n.i_clock
+i_clock => enardFF_2:regloop:1:bit_n.i_clock
+i_clock => enardFF_2:regloop:2:bit_n.i_clock
+i_clock => enardFF_2:regloop:3:bit_n.i_clock
+i_clock => enardFF_2:regloop:4:bit_n.i_clock
+i_clock => enardFF_2:regloop:5:bit_n.i_clock
+i_clock => enardFF_2:regloop:6:bit_n.i_clock
+i_clock => enardFF_2:regloop:7:bit_n.i_clock
+i_load => int_enable.IN1
+i_shift_right => int_enable.IN0
+i_shift_right => mux41:mux_0.s1
+i_shift_right => mux41:mux_msb.s1
+i_shift_right => mux41:muxloop:1:mux_n.s1
+i_shift_right => mux41:muxloop:2:mux_n.s1
+i_shift_right => mux41:muxloop:3:mux_n.s1
+i_shift_right => mux41:muxloop:4:mux_n.s1
+i_shift_right => mux41:muxloop:5:mux_n.s1
+i_shift_right => mux41:muxloop:6:mux_n.s1
+i_shift_left => int_enable.IN1
+i_shift_left => mux41:mux_0.s0
+i_shift_left => mux41:mux_msb.s0
+i_shift_left => mux41:muxloop:1:mux_n.s0
+i_shift_left => mux41:muxloop:2:mux_n.s0
+i_shift_left => mux41:muxloop:3:mux_n.s0
+i_shift_left => mux41:muxloop:4:mux_n.s0
+i_shift_left => mux41:muxloop:5:mux_n.s0
+i_shift_left => mux41:muxloop:6:mux_n.s0
+serial_in => mux41:mux_0.x1
+serial_in => mux41:mux_msb.x2
+parallel_in[0] => mux41:mux_0.x0
+parallel_in[1] => mux41:muxloop:1:mux_n.x0
+parallel_in[2] => mux41:muxloop:2:mux_n.x0
+parallel_in[3] => mux41:muxloop:3:mux_n.x0
+parallel_in[4] => mux41:muxloop:4:mux_n.x0
+parallel_in[5] => mux41:muxloop:5:mux_n.x0
+parallel_in[6] => mux41:muxloop:6:mux_n.x0
+parallel_in[7] => mux41:mux_msb.x0
+o_Value[0] <= enardFF_2:regloop:0:bit_n.o_q
+o_Value[1] <= enardFF_2:regloop:1:bit_n.o_q
+o_Value[2] <= enardFF_2:regloop:2:bit_n.o_q
+o_Value[3] <= enardFF_2:regloop:3:bit_n.o_q
+o_Value[4] <= enardFF_2:regloop:4:bit_n.o_q
+o_Value[5] <= enardFF_2:regloop:5:bit_n.o_q
+o_Value[6] <= enardFF_2:regloop:6:bit_n.o_q
+o_Value[7] <= enardFF_2:regloop:7:bit_n.o_q
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|enARdFF_2:\regloop:0:bit_n
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|enARdFF_2:\regloop:1:bit_n
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|enARdFF_2:\regloop:2:bit_n
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|enARdFF_2:\regloop:3:bit_n
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|enARdFF_2:\regloop:4:bit_n
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|enARdFF_2:\regloop:5:bit_n
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|enARdFF_2:\regloop:6:bit_n
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|enARdFF_2:\regloop:7:bit_n
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|mux41:mux_0
+s0 => mux21:mux1.s
+s0 => mux21:mux2.s
+s1 => mux21:muxfinal.s
+x0 => mux21:mux1.x0
+x1 => mux21:mux1.x1
+x2 => mux21:mux2.x0
+x3 => mux21:mux2.x1
+y <= mux21:muxfinal.y
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|mux41:mux_0|mux21:mux1
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|mux41:mux_0|mux21:mux2
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|mux41:mux_0|mux21:muxfinal
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|mux41:mux_msb
+s0 => mux21:mux1.s
+s0 => mux21:mux2.s
+s1 => mux21:muxfinal.s
+x0 => mux21:mux1.x0
+x1 => mux21:mux1.x1
+x2 => mux21:mux2.x0
+x3 => mux21:mux2.x1
+y <= mux21:muxfinal.y
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|mux41:mux_msb|mux21:mux1
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|mux41:mux_msb|mux21:mux2
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|mux41:mux_msb|mux21:muxfinal
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|mux41:\muxloop:1:mux_n
+s0 => mux21:mux1.s
+s0 => mux21:mux2.s
+s1 => mux21:muxfinal.s
+x0 => mux21:mux1.x0
+x1 => mux21:mux1.x1
+x2 => mux21:mux2.x0
+x3 => mux21:mux2.x1
+y <= mux21:muxfinal.y
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|mux41:\muxloop:1:mux_n|mux21:mux1
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|mux41:\muxloop:1:mux_n|mux21:mux2
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|mux41:\muxloop:1:mux_n|mux21:muxfinal
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|mux41:\muxloop:2:mux_n
+s0 => mux21:mux1.s
+s0 => mux21:mux2.s
+s1 => mux21:muxfinal.s
+x0 => mux21:mux1.x0
+x1 => mux21:mux1.x1
+x2 => mux21:mux2.x0
+x3 => mux21:mux2.x1
+y <= mux21:muxfinal.y
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|mux41:\muxloop:2:mux_n|mux21:mux1
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|mux41:\muxloop:2:mux_n|mux21:mux2
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|mux41:\muxloop:2:mux_n|mux21:muxfinal
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|mux41:\muxloop:3:mux_n
+s0 => mux21:mux1.s
+s0 => mux21:mux2.s
+s1 => mux21:muxfinal.s
+x0 => mux21:mux1.x0
+x1 => mux21:mux1.x1
+x2 => mux21:mux2.x0
+x3 => mux21:mux2.x1
+y <= mux21:muxfinal.y
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|mux41:\muxloop:3:mux_n|mux21:mux1
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|mux41:\muxloop:3:mux_n|mux21:mux2
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|mux41:\muxloop:3:mux_n|mux21:muxfinal
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|mux41:\muxloop:4:mux_n
+s0 => mux21:mux1.s
+s0 => mux21:mux2.s
+s1 => mux21:muxfinal.s
+x0 => mux21:mux1.x0
+x1 => mux21:mux1.x1
+x2 => mux21:mux2.x0
+x3 => mux21:mux2.x1
+y <= mux21:muxfinal.y
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|mux41:\muxloop:4:mux_n|mux21:mux1
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|mux41:\muxloop:4:mux_n|mux21:mux2
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|mux41:\muxloop:4:mux_n|mux21:muxfinal
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|mux41:\muxloop:5:mux_n
+s0 => mux21:mux1.s
+s0 => mux21:mux2.s
+s1 => mux21:muxfinal.s
+x0 => mux21:mux1.x0
+x1 => mux21:mux1.x1
+x2 => mux21:mux2.x0
+x3 => mux21:mux2.x1
+y <= mux21:muxfinal.y
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|mux41:\muxloop:5:mux_n|mux21:mux1
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|mux41:\muxloop:5:mux_n|mux21:mux2
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|mux41:\muxloop:5:mux_n|mux21:muxfinal
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|mux41:\muxloop:6:mux_n
+s0 => mux21:mux1.s
+s0 => mux21:mux2.s
+s1 => mux21:muxfinal.s
+x0 => mux21:mux1.x0
+x1 => mux21:mux1.x1
+x2 => mux21:mux2.x0
+x3 => mux21:mux2.x1
+y <= mux21:muxfinal.y
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|mux41:\muxloop:6:mux_n|mux21:mux1
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|mux41:\muxloop:6:mux_n|mux21:mux2
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_A_left_shift|mux41:\muxloop:6:mux_n|mux21:muxfinal
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nbitmux21:mux_B
+s => mux21:muxloop:0:mux_n.s
+s => mux21:muxloop:1:mux_n.s
+s => mux21:muxloop:2:mux_n.s
+s => mux21:muxloop:3:mux_n.s
+s => mux21:muxloop:4:mux_n.s
+s => mux21:muxloop:5:mux_n.s
+s => mux21:muxloop:6:mux_n.s
+s => mux21:muxloop:7:mux_n.s
+x0[0] => mux21:muxloop:0:mux_n.x0
+x0[1] => mux21:muxloop:1:mux_n.x0
+x0[2] => mux21:muxloop:2:mux_n.x0
+x0[3] => mux21:muxloop:3:mux_n.x0
+x0[4] => mux21:muxloop:4:mux_n.x0
+x0[5] => mux21:muxloop:5:mux_n.x0
+x0[6] => mux21:muxloop:6:mux_n.x0
+x0[7] => mux21:muxloop:7:mux_n.x0
+x1[0] => mux21:muxloop:0:mux_n.x1
+x1[1] => mux21:muxloop:1:mux_n.x1
+x1[2] => mux21:muxloop:2:mux_n.x1
+x1[3] => mux21:muxloop:3:mux_n.x1
+x1[4] => mux21:muxloop:4:mux_n.x1
+x1[5] => mux21:muxloop:5:mux_n.x1
+x1[6] => mux21:muxloop:6:mux_n.x1
+x1[7] => mux21:muxloop:7:mux_n.x1
+y[0] <= mux21:muxloop:0:mux_n.y
+y[1] <= mux21:muxloop:1:mux_n.y
+y[2] <= mux21:muxloop:2:mux_n.y
+y[3] <= mux21:muxloop:3:mux_n.y
+y[4] <= mux21:muxloop:4:mux_n.y
+y[5] <= mux21:muxloop:5:mux_n.y
+y[6] <= mux21:muxloop:6:mux_n.y
+y[7] <= mux21:muxloop:7:mux_n.y
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nbitmux21:mux_B|mux21:\muxloop:0:mux_n
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nbitmux21:mux_B|mux21:\muxloop:1:mux_n
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nbitmux21:mux_B|mux21:\muxloop:2:mux_n
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nbitmux21:mux_B|mux21:\muxloop:3:mux_n
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nbitmux21:mux_B|mux21:\muxloop:4:mux_n
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nbitmux21:mux_B|mux21:\muxloop:5:mux_n
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nbitmux21:mux_B|mux21:\muxloop:6:mux_n
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nbitmux21:mux_B|mux21:\muxloop:7:mux_n
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift
+i_resetBar => enardFF_2:regloop:0:bit_n.i_resetBar
+i_resetBar => enardFF_2:regloop:1:bit_n.i_resetBar
+i_resetBar => enardFF_2:regloop:2:bit_n.i_resetBar
+i_resetBar => enardFF_2:regloop:3:bit_n.i_resetBar
+i_resetBar => enardFF_2:regloop:4:bit_n.i_resetBar
+i_resetBar => enardFF_2:regloop:5:bit_n.i_resetBar
+i_resetBar => enardFF_2:regloop:6:bit_n.i_resetBar
+i_resetBar => enardFF_2:regloop:7:bit_n.i_resetBar
+i_clock => enardFF_2:regloop:0:bit_n.i_clock
+i_clock => enardFF_2:regloop:1:bit_n.i_clock
+i_clock => enardFF_2:regloop:2:bit_n.i_clock
+i_clock => enardFF_2:regloop:3:bit_n.i_clock
+i_clock => enardFF_2:regloop:4:bit_n.i_clock
+i_clock => enardFF_2:regloop:5:bit_n.i_clock
+i_clock => enardFF_2:regloop:6:bit_n.i_clock
+i_clock => enardFF_2:regloop:7:bit_n.i_clock
+i_load => int_enable.IN1
+i_shift_right => int_enable.IN0
+i_shift_right => mux41:mux_0.s1
+i_shift_right => mux41:mux_msb.s1
+i_shift_right => mux41:muxloop:1:mux_n.s1
+i_shift_right => mux41:muxloop:2:mux_n.s1
+i_shift_right => mux41:muxloop:3:mux_n.s1
+i_shift_right => mux41:muxloop:4:mux_n.s1
+i_shift_right => mux41:muxloop:5:mux_n.s1
+i_shift_right => mux41:muxloop:6:mux_n.s1
+i_shift_left => int_enable.IN1
+i_shift_left => mux41:mux_0.s0
+i_shift_left => mux41:mux_msb.s0
+i_shift_left => mux41:muxloop:1:mux_n.s0
+i_shift_left => mux41:muxloop:2:mux_n.s0
+i_shift_left => mux41:muxloop:3:mux_n.s0
+i_shift_left => mux41:muxloop:4:mux_n.s0
+i_shift_left => mux41:muxloop:5:mux_n.s0
+i_shift_left => mux41:muxloop:6:mux_n.s0
+serial_in => mux41:mux_0.x1
+serial_in => mux41:mux_msb.x2
+parallel_in[0] => mux41:mux_0.x0
+parallel_in[1] => mux41:muxloop:1:mux_n.x0
+parallel_in[2] => mux41:muxloop:2:mux_n.x0
+parallel_in[3] => mux41:muxloop:3:mux_n.x0
+parallel_in[4] => mux41:muxloop:4:mux_n.x0
+parallel_in[5] => mux41:muxloop:5:mux_n.x0
+parallel_in[6] => mux41:muxloop:6:mux_n.x0
+parallel_in[7] => mux41:mux_msb.x0
+o_Value[0] <= enardFF_2:regloop:0:bit_n.o_q
+o_Value[1] <= enardFF_2:regloop:1:bit_n.o_q
+o_Value[2] <= enardFF_2:regloop:2:bit_n.o_q
+o_Value[3] <= enardFF_2:regloop:3:bit_n.o_q
+o_Value[4] <= enardFF_2:regloop:4:bit_n.o_q
+o_Value[5] <= enardFF_2:regloop:5:bit_n.o_q
+o_Value[6] <= enardFF_2:regloop:6:bit_n.o_q
+o_Value[7] <= enardFF_2:regloop:7:bit_n.o_q
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift|enARdFF_2:\regloop:0:bit_n
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift|enARdFF_2:\regloop:1:bit_n
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift|enARdFF_2:\regloop:2:bit_n
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift|enARdFF_2:\regloop:3:bit_n
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift|enARdFF_2:\regloop:4:bit_n
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift|enARdFF_2:\regloop:5:bit_n
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift|enARdFF_2:\regloop:6:bit_n
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift|enARdFF_2:\regloop:7:bit_n
+i_resetBar => int_q.ACLR
+i_d => int_q.DATAIN
+i_enable => int_q.ENA
+i_clock => int_q.CLK
+o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift|mux41:mux_0
+s0 => mux21:mux1.s
+s0 => mux21:mux2.s
+s1 => mux21:muxfinal.s
+x0 => mux21:mux1.x0
+x1 => mux21:mux1.x1
+x2 => mux21:mux2.x0
+x3 => mux21:mux2.x1
+y <= mux21:muxfinal.y
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift|mux41:mux_0|mux21:mux1
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift|mux41:mux_0|mux21:mux2
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift|mux41:mux_0|mux21:muxfinal
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift|mux41:mux_msb
+s0 => mux21:mux1.s
+s0 => mux21:mux2.s
+s1 => mux21:muxfinal.s
+x0 => mux21:mux1.x0
+x1 => mux21:mux1.x1
+x2 => mux21:mux2.x0
+x3 => mux21:mux2.x1
+y <= mux21:muxfinal.y
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift|mux41:mux_msb|mux21:mux1
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift|mux41:mux_msb|mux21:mux2
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift|mux41:mux_msb|mux21:muxfinal
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift|mux41:\muxloop:1:mux_n
+s0 => mux21:mux1.s
+s0 => mux21:mux2.s
+s1 => mux21:muxfinal.s
+x0 => mux21:mux1.x0
+x1 => mux21:mux1.x1
+x2 => mux21:mux2.x0
+x3 => mux21:mux2.x1
+y <= mux21:muxfinal.y
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift|mux41:\muxloop:1:mux_n|mux21:mux1
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift|mux41:\muxloop:1:mux_n|mux21:mux2
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift|mux41:\muxloop:1:mux_n|mux21:muxfinal
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift|mux41:\muxloop:2:mux_n
+s0 => mux21:mux1.s
+s0 => mux21:mux2.s
+s1 => mux21:muxfinal.s
+x0 => mux21:mux1.x0
+x1 => mux21:mux1.x1
+x2 => mux21:mux2.x0
+x3 => mux21:mux2.x1
+y <= mux21:muxfinal.y
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift|mux41:\muxloop:2:mux_n|mux21:mux1
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift|mux41:\muxloop:2:mux_n|mux21:mux2
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift|mux41:\muxloop:2:mux_n|mux21:muxfinal
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift|mux41:\muxloop:3:mux_n
+s0 => mux21:mux1.s
+s0 => mux21:mux2.s
+s1 => mux21:muxfinal.s
+x0 => mux21:mux1.x0
+x1 => mux21:mux1.x1
+x2 => mux21:mux2.x0
+x3 => mux21:mux2.x1
+y <= mux21:muxfinal.y
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift|mux41:\muxloop:3:mux_n|mux21:mux1
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift|mux41:\muxloop:3:mux_n|mux21:mux2
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift|mux41:\muxloop:3:mux_n|mux21:muxfinal
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift|mux41:\muxloop:4:mux_n
+s0 => mux21:mux1.s
+s0 => mux21:mux2.s
+s1 => mux21:muxfinal.s
+x0 => mux21:mux1.x0
+x1 => mux21:mux1.x1
+x2 => mux21:mux2.x0
+x3 => mux21:mux2.x1
+y <= mux21:muxfinal.y
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift|mux41:\muxloop:4:mux_n|mux21:mux1
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift|mux41:\muxloop:4:mux_n|mux21:mux2
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift|mux41:\muxloop:4:mux_n|mux21:muxfinal
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift|mux41:\muxloop:5:mux_n
+s0 => mux21:mux1.s
+s0 => mux21:mux2.s
+s1 => mux21:muxfinal.s
+x0 => mux21:mux1.x0
+x1 => mux21:mux1.x1
+x2 => mux21:mux2.x0
+x3 => mux21:mux2.x1
+y <= mux21:muxfinal.y
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift|mux41:\muxloop:5:mux_n|mux21:mux1
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift|mux41:\muxloop:5:mux_n|mux21:mux2
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift|mux41:\muxloop:5:mux_n|mux21:muxfinal
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift|mux41:\muxloop:6:mux_n
+s0 => mux21:mux1.s
+s0 => mux21:mux2.s
+s1 => mux21:muxfinal.s
+x0 => mux21:mux1.x0
+x1 => mux21:mux1.x1
+x2 => mux21:mux2.x0
+x3 => mux21:mux2.x1
+y <= mux21:muxfinal.y
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift|mux41:\muxloop:6:mux_n|mux21:mux1
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift|mux41:\muxloop:6:mux_n|mux21:mux2
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitShiftRegister:reg_B_right_shift|mux41:\muxloop:6:mux_n|mux21:muxfinal
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nbitmux21:mux_P
+s => mux21:muxloop:0:mux_n.s
+s => mux21:muxloop:1:mux_n.s
+s => mux21:muxloop:2:mux_n.s
+s => mux21:muxloop:3:mux_n.s
+s => mux21:muxloop:4:mux_n.s
+s => mux21:muxloop:5:mux_n.s
+s => mux21:muxloop:6:mux_n.s
+s => mux21:muxloop:7:mux_n.s
+x0[0] => mux21:muxloop:0:mux_n.x0
+x0[1] => mux21:muxloop:1:mux_n.x0
+x0[2] => mux21:muxloop:2:mux_n.x0
+x0[3] => mux21:muxloop:3:mux_n.x0
+x0[4] => mux21:muxloop:4:mux_n.x0
+x0[5] => mux21:muxloop:5:mux_n.x0
+x0[6] => mux21:muxloop:6:mux_n.x0
+x0[7] => mux21:muxloop:7:mux_n.x0
+x1[0] => mux21:muxloop:0:mux_n.x1
+x1[1] => mux21:muxloop:1:mux_n.x1
+x1[2] => mux21:muxloop:2:mux_n.x1
+x1[3] => mux21:muxloop:3:mux_n.x1
+x1[4] => mux21:muxloop:4:mux_n.x1
+x1[5] => mux21:muxloop:5:mux_n.x1
+x1[6] => mux21:muxloop:6:mux_n.x1
+x1[7] => mux21:muxloop:7:mux_n.x1
+y[0] <= mux21:muxloop:0:mux_n.y
+y[1] <= mux21:muxloop:1:mux_n.y
+y[2] <= mux21:muxloop:2:mux_n.y
+y[3] <= mux21:muxloop:3:mux_n.y
+y[4] <= mux21:muxloop:4:mux_n.y
+y[5] <= mux21:muxloop:5:mux_n.y
+y[6] <= mux21:muxloop:6:mux_n.y
+y[7] <= mux21:muxloop:7:mux_n.y
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nbitmux21:mux_P|mux21:\muxloop:0:mux_n
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nbitmux21:mux_P|mux21:\muxloop:1:mux_n
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nbitmux21:mux_P|mux21:\muxloop:2:mux_n
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nbitmux21:mux_P|mux21:\muxloop:3:mux_n
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nbitmux21:mux_P|mux21:\muxloop:4:mux_n
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nbitmux21:mux_P|mux21:\muxloop:5:mux_n
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nbitmux21:mux_P|mux21:\muxloop:6:mux_n
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nbitmux21:mux_P|mux21:\muxloop:7:mux_n
+s => selX1.IN0
+s => selX0.IN0
+x0 => selX0.IN1
+x1 => selX1.IN1
+y <= y.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitRegister:reg_P
 i_resetBar => enARdFF_2:reg_n_bits:0:b.i_resetBar
 i_resetBar => enARdFF_2:reg_n_bits:1:b.i_resetBar
 i_resetBar => enARdFF_2:reg_n_bits:2:b.i_resetBar
@@ -386,7 +1823,7 @@ o_Value[6] <= enARdFF_2:reg_n_bits:6:b.o_q
 o_Value[7] <= enARdFF_2:reg_n_bits:7:b.o_q
 
 
-|dividerTopLevel|dividerDatapath:dataPath|nBitRegister:remainder_reg|enARdFF_2:\reg_n_bits:0:b
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitRegister:reg_P|enARdFF_2:\reg_n_bits:0:b
 i_resetBar => int_q.ACLR
 i_d => int_q.DATAIN
 i_enable => int_q.ENA
@@ -395,7 +1832,7 @@ o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|dividerTopLevel|dividerDatapath:dataPath|nBitRegister:remainder_reg|enARdFF_2:\reg_n_bits:1:b
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitRegister:reg_P|enARdFF_2:\reg_n_bits:1:b
 i_resetBar => int_q.ACLR
 i_d => int_q.DATAIN
 i_enable => int_q.ENA
@@ -404,7 +1841,7 @@ o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|dividerTopLevel|dividerDatapath:dataPath|nBitRegister:remainder_reg|enARdFF_2:\reg_n_bits:2:b
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitRegister:reg_P|enARdFF_2:\reg_n_bits:2:b
 i_resetBar => int_q.ACLR
 i_d => int_q.DATAIN
 i_enable => int_q.ENA
@@ -413,7 +1850,7 @@ o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|dividerTopLevel|dividerDatapath:dataPath|nBitRegister:remainder_reg|enARdFF_2:\reg_n_bits:3:b
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitRegister:reg_P|enARdFF_2:\reg_n_bits:3:b
 i_resetBar => int_q.ACLR
 i_d => int_q.DATAIN
 i_enable => int_q.ENA
@@ -422,7 +1859,7 @@ o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|dividerTopLevel|dividerDatapath:dataPath|nBitRegister:remainder_reg|enARdFF_2:\reg_n_bits:4:b
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitRegister:reg_P|enARdFF_2:\reg_n_bits:4:b
 i_resetBar => int_q.ACLR
 i_d => int_q.DATAIN
 i_enable => int_q.ENA
@@ -431,7 +1868,7 @@ o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|dividerTopLevel|dividerDatapath:dataPath|nBitRegister:remainder_reg|enARdFF_2:\reg_n_bits:5:b
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitRegister:reg_P|enARdFF_2:\reg_n_bits:5:b
 i_resetBar => int_q.ACLR
 i_d => int_q.DATAIN
 i_enable => int_q.ENA
@@ -440,7 +1877,7 @@ o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|dividerTopLevel|dividerDatapath:dataPath|nBitRegister:remainder_reg|enARdFF_2:\reg_n_bits:6:b
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitRegister:reg_P|enARdFF_2:\reg_n_bits:6:b
 i_resetBar => int_q.ACLR
 i_d => int_q.DATAIN
 i_enable => int_q.ENA
@@ -449,7 +1886,7 @@ o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|dividerTopLevel|dividerDatapath:dataPath|nBitRegister:remainder_reg|enARdFF_2:\reg_n_bits:7:b
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitRegister:reg_P|enARdFF_2:\reg_n_bits:7:b
 i_resetBar => int_q.ACLR
 i_d => int_q.DATAIN
 i_enable => int_q.ENA
@@ -458,7 +1895,7 @@ o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux21:divisor_mux
+|multiplierTopLevel|multiplierDatapath:dataPath|nbitmux21:mux_adder
 s => mux21:muxloop:0:mux_n.s
 s => mux21:muxloop:1:mux_n.s
 s => mux21:muxloop:2:mux_n.s
@@ -493,7 +1930,7 @@ y[6] <= mux21:muxloop:6:mux_n.y
 y[7] <= mux21:muxloop:7:mux_n.y
 
 
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux21:divisor_mux|mux21:\muxloop:0:mux_n
+|multiplierTopLevel|multiplierDatapath:dataPath|nbitmux21:mux_adder|mux21:\muxloop:0:mux_n
 s => selX1.IN0
 s => selX0.IN0
 x0 => selX0.IN1
@@ -501,7 +1938,7 @@ x1 => selX1.IN1
 y <= y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux21:divisor_mux|mux21:\muxloop:1:mux_n
+|multiplierTopLevel|multiplierDatapath:dataPath|nbitmux21:mux_adder|mux21:\muxloop:1:mux_n
 s => selX1.IN0
 s => selX0.IN0
 x0 => selX0.IN1
@@ -509,7 +1946,7 @@ x1 => selX1.IN1
 y <= y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux21:divisor_mux|mux21:\muxloop:2:mux_n
+|multiplierTopLevel|multiplierDatapath:dataPath|nbitmux21:mux_adder|mux21:\muxloop:2:mux_n
 s => selX1.IN0
 s => selX0.IN0
 x0 => selX0.IN1
@@ -517,7 +1954,7 @@ x1 => selX1.IN1
 y <= y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux21:divisor_mux|mux21:\muxloop:3:mux_n
+|multiplierTopLevel|multiplierDatapath:dataPath|nbitmux21:mux_adder|mux21:\muxloop:3:mux_n
 s => selX1.IN0
 s => selX0.IN0
 x0 => selX0.IN1
@@ -525,7 +1962,7 @@ x1 => selX1.IN1
 y <= y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux21:divisor_mux|mux21:\muxloop:4:mux_n
+|multiplierTopLevel|multiplierDatapath:dataPath|nbitmux21:mux_adder|mux21:\muxloop:4:mux_n
 s => selX1.IN0
 s => selX0.IN0
 x0 => selX0.IN1
@@ -533,7 +1970,7 @@ x1 => selX1.IN1
 y <= y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux21:divisor_mux|mux21:\muxloop:5:mux_n
+|multiplierTopLevel|multiplierDatapath:dataPath|nbitmux21:mux_adder|mux21:\muxloop:5:mux_n
 s => selX1.IN0
 s => selX0.IN0
 x0 => selX0.IN1
@@ -541,7 +1978,7 @@ x1 => selX1.IN1
 y <= y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux21:divisor_mux|mux21:\muxloop:6:mux_n
+|multiplierTopLevel|multiplierDatapath:dataPath|nbitmux21:mux_adder|mux21:\muxloop:6:mux_n
 s => selX1.IN0
 s => selX0.IN0
 x0 => selX0.IN1
@@ -549,7 +1986,7 @@ x1 => selX1.IN1
 y <= y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux21:divisor_mux|mux21:\muxloop:7:mux_n
+|multiplierTopLevel|multiplierDatapath:dataPath|nbitmux21:mux_adder|mux21:\muxloop:7:mux_n
 s => selX1.IN0
 s => selX0.IN0
 x0 => selX0.IN1
@@ -557,853 +1994,7 @@ x1 => selX1.IN1
 y <= y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:divisor_reg
-i_resetBar => enardFF_2:regloop:0:bit_n.i_resetBar
-i_resetBar => enardFF_2:regloop:1:bit_n.i_resetBar
-i_resetBar => enardFF_2:regloop:2:bit_n.i_resetBar
-i_resetBar => enardFF_2:regloop:3:bit_n.i_resetBar
-i_resetBar => enardFF_2:regloop:4:bit_n.i_resetBar
-i_resetBar => enardFF_2:regloop:5:bit_n.i_resetBar
-i_resetBar => enardFF_2:regloop:6:bit_n.i_resetBar
-i_resetBar => enardFF_2:regloop:7:bit_n.i_resetBar
-i_clock => enardFF_2:regloop:0:bit_n.i_clock
-i_clock => enardFF_2:regloop:1:bit_n.i_clock
-i_clock => enardFF_2:regloop:2:bit_n.i_clock
-i_clock => enardFF_2:regloop:3:bit_n.i_clock
-i_clock => enardFF_2:regloop:4:bit_n.i_clock
-i_clock => enardFF_2:regloop:5:bit_n.i_clock
-i_clock => enardFF_2:regloop:6:bit_n.i_clock
-i_clock => enardFF_2:regloop:7:bit_n.i_clock
-i_load => int_enable.IN1
-i_shift_right => int_enable.IN0
-i_shift_right => mux41:mux_0.s1
-i_shift_right => mux41:mux_msb.s1
-i_shift_right => mux41:muxloop:1:mux_n.s1
-i_shift_right => mux41:muxloop:2:mux_n.s1
-i_shift_right => mux41:muxloop:3:mux_n.s1
-i_shift_right => mux41:muxloop:4:mux_n.s1
-i_shift_right => mux41:muxloop:5:mux_n.s1
-i_shift_right => mux41:muxloop:6:mux_n.s1
-i_shift_left => int_enable.IN1
-i_shift_left => mux41:mux_0.s0
-i_shift_left => mux41:mux_msb.s0
-i_shift_left => mux41:muxloop:1:mux_n.s0
-i_shift_left => mux41:muxloop:2:mux_n.s0
-i_shift_left => mux41:muxloop:3:mux_n.s0
-i_shift_left => mux41:muxloop:4:mux_n.s0
-i_shift_left => mux41:muxloop:5:mux_n.s0
-i_shift_left => mux41:muxloop:6:mux_n.s0
-serial_in => mux41:mux_0.x1
-serial_in => mux41:mux_msb.x2
-parallel_in[0] => mux41:mux_0.x0
-parallel_in[1] => mux41:muxloop:1:mux_n.x0
-parallel_in[2] => mux41:muxloop:2:mux_n.x0
-parallel_in[3] => mux41:muxloop:3:mux_n.x0
-parallel_in[4] => mux41:muxloop:4:mux_n.x0
-parallel_in[5] => mux41:muxloop:5:mux_n.x0
-parallel_in[6] => mux41:muxloop:6:mux_n.x0
-parallel_in[7] => mux41:mux_msb.x0
-o_Value[0] <= enardFF_2:regloop:0:bit_n.o_q
-o_Value[1] <= enardFF_2:regloop:1:bit_n.o_q
-o_Value[2] <= enardFF_2:regloop:2:bit_n.o_q
-o_Value[3] <= enardFF_2:regloop:3:bit_n.o_q
-o_Value[4] <= enardFF_2:regloop:4:bit_n.o_q
-o_Value[5] <= enardFF_2:regloop:5:bit_n.o_q
-o_Value[6] <= enardFF_2:regloop:6:bit_n.o_q
-o_Value[7] <= enardFF_2:regloop:7:bit_n.o_q
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|enARdFF_2:\regloop:0:bit_n
-i_resetBar => int_q.ACLR
-i_d => int_q.DATAIN
-i_enable => int_q.ENA
-i_clock => int_q.CLK
-o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
-o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|enARdFF_2:\regloop:1:bit_n
-i_resetBar => int_q.ACLR
-i_d => int_q.DATAIN
-i_enable => int_q.ENA
-i_clock => int_q.CLK
-o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
-o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|enARdFF_2:\regloop:2:bit_n
-i_resetBar => int_q.ACLR
-i_d => int_q.DATAIN
-i_enable => int_q.ENA
-i_clock => int_q.CLK
-o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
-o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|enARdFF_2:\regloop:3:bit_n
-i_resetBar => int_q.ACLR
-i_d => int_q.DATAIN
-i_enable => int_q.ENA
-i_clock => int_q.CLK
-o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
-o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|enARdFF_2:\regloop:4:bit_n
-i_resetBar => int_q.ACLR
-i_d => int_q.DATAIN
-i_enable => int_q.ENA
-i_clock => int_q.CLK
-o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
-o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|enARdFF_2:\regloop:5:bit_n
-i_resetBar => int_q.ACLR
-i_d => int_q.DATAIN
-i_enable => int_q.ENA
-i_clock => int_q.CLK
-o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
-o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|enARdFF_2:\regloop:6:bit_n
-i_resetBar => int_q.ACLR
-i_d => int_q.DATAIN
-i_enable => int_q.ENA
-i_clock => int_q.CLK
-o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
-o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|enARdFF_2:\regloop:7:bit_n
-i_resetBar => int_q.ACLR
-i_d => int_q.DATAIN
-i_enable => int_q.ENA
-i_clock => int_q.CLK
-o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
-o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|mux41:mux_0
-s0 => mux21:mux1.s
-s0 => mux21:mux2.s
-s1 => mux21:muxfinal.s
-x0 => mux21:mux1.x0
-x1 => mux21:mux1.x1
-x2 => mux21:mux2.x0
-x3 => mux21:mux2.x1
-y <= mux21:muxfinal.y
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|mux41:mux_0|mux21:mux1
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|mux41:mux_0|mux21:mux2
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|mux41:mux_0|mux21:muxfinal
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|mux41:mux_msb
-s0 => mux21:mux1.s
-s0 => mux21:mux2.s
-s1 => mux21:muxfinal.s
-x0 => mux21:mux1.x0
-x1 => mux21:mux1.x1
-x2 => mux21:mux2.x0
-x3 => mux21:mux2.x1
-y <= mux21:muxfinal.y
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|mux41:mux_msb|mux21:mux1
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|mux41:mux_msb|mux21:mux2
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|mux41:mux_msb|mux21:muxfinal
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|mux41:\muxloop:1:mux_n
-s0 => mux21:mux1.s
-s0 => mux21:mux2.s
-s1 => mux21:muxfinal.s
-x0 => mux21:mux1.x0
-x1 => mux21:mux1.x1
-x2 => mux21:mux2.x0
-x3 => mux21:mux2.x1
-y <= mux21:muxfinal.y
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|mux41:\muxloop:1:mux_n|mux21:mux1
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|mux41:\muxloop:1:mux_n|mux21:mux2
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|mux41:\muxloop:1:mux_n|mux21:muxfinal
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|mux41:\muxloop:2:mux_n
-s0 => mux21:mux1.s
-s0 => mux21:mux2.s
-s1 => mux21:muxfinal.s
-x0 => mux21:mux1.x0
-x1 => mux21:mux1.x1
-x2 => mux21:mux2.x0
-x3 => mux21:mux2.x1
-y <= mux21:muxfinal.y
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|mux41:\muxloop:2:mux_n|mux21:mux1
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|mux41:\muxloop:2:mux_n|mux21:mux2
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|mux41:\muxloop:2:mux_n|mux21:muxfinal
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|mux41:\muxloop:3:mux_n
-s0 => mux21:mux1.s
-s0 => mux21:mux2.s
-s1 => mux21:muxfinal.s
-x0 => mux21:mux1.x0
-x1 => mux21:mux1.x1
-x2 => mux21:mux2.x0
-x3 => mux21:mux2.x1
-y <= mux21:muxfinal.y
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|mux41:\muxloop:3:mux_n|mux21:mux1
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|mux41:\muxloop:3:mux_n|mux21:mux2
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|mux41:\muxloop:3:mux_n|mux21:muxfinal
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|mux41:\muxloop:4:mux_n
-s0 => mux21:mux1.s
-s0 => mux21:mux2.s
-s1 => mux21:muxfinal.s
-x0 => mux21:mux1.x0
-x1 => mux21:mux1.x1
-x2 => mux21:mux2.x0
-x3 => mux21:mux2.x1
-y <= mux21:muxfinal.y
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|mux41:\muxloop:4:mux_n|mux21:mux1
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|mux41:\muxloop:4:mux_n|mux21:mux2
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|mux41:\muxloop:4:mux_n|mux21:muxfinal
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|mux41:\muxloop:5:mux_n
-s0 => mux21:mux1.s
-s0 => mux21:mux2.s
-s1 => mux21:muxfinal.s
-x0 => mux21:mux1.x0
-x1 => mux21:mux1.x1
-x2 => mux21:mux2.x0
-x3 => mux21:mux2.x1
-y <= mux21:muxfinal.y
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|mux41:\muxloop:5:mux_n|mux21:mux1
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|mux41:\muxloop:5:mux_n|mux21:mux2
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|mux41:\muxloop:5:mux_n|mux21:muxfinal
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|mux41:\muxloop:6:mux_n
-s0 => mux21:mux1.s
-s0 => mux21:mux2.s
-s1 => mux21:muxfinal.s
-x0 => mux21:mux1.x0
-x1 => mux21:mux1.x1
-x2 => mux21:mux2.x0
-x3 => mux21:mux2.x1
-y <= mux21:muxfinal.y
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|mux41:\muxloop:6:mux_n|mux21:mux1
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|mux41:\muxloop:6:mux_n|mux21:mux2
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:divisor_reg|mux41:\muxloop:6:mux_n|mux21:muxfinal
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux21:inputA_mux
-s => mux21:muxloop:0:mux_n.s
-s => mux21:muxloop:1:mux_n.s
-s => mux21:muxloop:2:mux_n.s
-s => mux21:muxloop:3:mux_n.s
-s => mux21:muxloop:4:mux_n.s
-s => mux21:muxloop:5:mux_n.s
-s => mux21:muxloop:6:mux_n.s
-s => mux21:muxloop:7:mux_n.s
-x0[0] => mux21:muxloop:0:mux_n.x0
-x0[1] => mux21:muxloop:1:mux_n.x0
-x0[2] => mux21:muxloop:2:mux_n.x0
-x0[3] => mux21:muxloop:3:mux_n.x0
-x0[4] => mux21:muxloop:4:mux_n.x0
-x0[5] => mux21:muxloop:5:mux_n.x0
-x0[6] => mux21:muxloop:6:mux_n.x0
-x0[7] => mux21:muxloop:7:mux_n.x0
-x1[0] => mux21:muxloop:0:mux_n.x1
-x1[1] => mux21:muxloop:1:mux_n.x1
-x1[2] => mux21:muxloop:2:mux_n.x1
-x1[3] => mux21:muxloop:3:mux_n.x1
-x1[4] => mux21:muxloop:4:mux_n.x1
-x1[5] => mux21:muxloop:5:mux_n.x1
-x1[6] => mux21:muxloop:6:mux_n.x1
-x1[7] => mux21:muxloop:7:mux_n.x1
-y[0] <= mux21:muxloop:0:mux_n.y
-y[1] <= mux21:muxloop:1:mux_n.y
-y[2] <= mux21:muxloop:2:mux_n.y
-y[3] <= mux21:muxloop:3:mux_n.y
-y[4] <= mux21:muxloop:4:mux_n.y
-y[5] <= mux21:muxloop:5:mux_n.y
-y[6] <= mux21:muxloop:6:mux_n.y
-y[7] <= mux21:muxloop:7:mux_n.y
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux21:inputA_mux|mux21:\muxloop:0:mux_n
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux21:inputA_mux|mux21:\muxloop:1:mux_n
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux21:inputA_mux|mux21:\muxloop:2:mux_n
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux21:inputA_mux|mux21:\muxloop:3:mux_n
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux21:inputA_mux|mux21:\muxloop:4:mux_n
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux21:inputA_mux|mux21:\muxloop:5:mux_n
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux21:inputA_mux|mux21:\muxloop:6:mux_n
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux21:inputA_mux|mux21:\muxloop:7:mux_n
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux41:inputB_mux
-s0 => mux41:muxloop:0:mux_n.s0
-s0 => mux41:muxloop:1:mux_n.s0
-s0 => mux41:muxloop:2:mux_n.s0
-s0 => mux41:muxloop:3:mux_n.s0
-s0 => mux41:muxloop:4:mux_n.s0
-s0 => mux41:muxloop:5:mux_n.s0
-s0 => mux41:muxloop:6:mux_n.s0
-s0 => mux41:muxloop:7:mux_n.s0
-s1 => mux41:muxloop:0:mux_n.s1
-s1 => mux41:muxloop:1:mux_n.s1
-s1 => mux41:muxloop:2:mux_n.s1
-s1 => mux41:muxloop:3:mux_n.s1
-s1 => mux41:muxloop:4:mux_n.s1
-s1 => mux41:muxloop:5:mux_n.s1
-s1 => mux41:muxloop:6:mux_n.s1
-s1 => mux41:muxloop:7:mux_n.s1
-x0[0] => mux41:muxloop:0:mux_n.x0
-x0[1] => mux41:muxloop:1:mux_n.x0
-x0[2] => mux41:muxloop:2:mux_n.x0
-x0[3] => mux41:muxloop:3:mux_n.x0
-x0[4] => mux41:muxloop:4:mux_n.x0
-x0[5] => mux41:muxloop:5:mux_n.x0
-x0[6] => mux41:muxloop:6:mux_n.x0
-x0[7] => mux41:muxloop:7:mux_n.x0
-x1[0] => mux41:muxloop:0:mux_n.x1
-x1[1] => mux41:muxloop:1:mux_n.x1
-x1[2] => mux41:muxloop:2:mux_n.x1
-x1[3] => mux41:muxloop:3:mux_n.x1
-x1[4] => mux41:muxloop:4:mux_n.x1
-x1[5] => mux41:muxloop:5:mux_n.x1
-x1[6] => mux41:muxloop:6:mux_n.x1
-x1[7] => mux41:muxloop:7:mux_n.x1
-x2[0] => mux41:muxloop:0:mux_n.x2
-x2[1] => mux41:muxloop:1:mux_n.x2
-x2[2] => mux41:muxloop:2:mux_n.x2
-x2[3] => mux41:muxloop:3:mux_n.x2
-x2[4] => mux41:muxloop:4:mux_n.x2
-x2[5] => mux41:muxloop:5:mux_n.x2
-x2[6] => mux41:muxloop:6:mux_n.x2
-x2[7] => mux41:muxloop:7:mux_n.x2
-x3[0] => mux41:muxloop:0:mux_n.x3
-x3[1] => mux41:muxloop:1:mux_n.x3
-x3[2] => mux41:muxloop:2:mux_n.x3
-x3[3] => mux41:muxloop:3:mux_n.x3
-x3[4] => mux41:muxloop:4:mux_n.x3
-x3[5] => mux41:muxloop:5:mux_n.x3
-x3[6] => mux41:muxloop:6:mux_n.x3
-x3[7] => mux41:muxloop:7:mux_n.x3
-y[0] <= mux41:muxloop:0:mux_n.y
-y[1] <= mux41:muxloop:1:mux_n.y
-y[2] <= mux41:muxloop:2:mux_n.y
-y[3] <= mux41:muxloop:3:mux_n.y
-y[4] <= mux41:muxloop:4:mux_n.y
-y[5] <= mux41:muxloop:5:mux_n.y
-y[6] <= mux41:muxloop:6:mux_n.y
-y[7] <= mux41:muxloop:7:mux_n.y
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux41:inputB_mux|mux41:\muxloop:0:mux_n
-s0 => mux21:mux1.s
-s0 => mux21:mux2.s
-s1 => mux21:muxfinal.s
-x0 => mux21:mux1.x0
-x1 => mux21:mux1.x1
-x2 => mux21:mux2.x0
-x3 => mux21:mux2.x1
-y <= mux21:muxfinal.y
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux41:inputB_mux|mux41:\muxloop:0:mux_n|mux21:mux1
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux41:inputB_mux|mux41:\muxloop:0:mux_n|mux21:mux2
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux41:inputB_mux|mux41:\muxloop:0:mux_n|mux21:muxfinal
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux41:inputB_mux|mux41:\muxloop:1:mux_n
-s0 => mux21:mux1.s
-s0 => mux21:mux2.s
-s1 => mux21:muxfinal.s
-x0 => mux21:mux1.x0
-x1 => mux21:mux1.x1
-x2 => mux21:mux2.x0
-x3 => mux21:mux2.x1
-y <= mux21:muxfinal.y
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux41:inputB_mux|mux41:\muxloop:1:mux_n|mux21:mux1
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux41:inputB_mux|mux41:\muxloop:1:mux_n|mux21:mux2
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux41:inputB_mux|mux41:\muxloop:1:mux_n|mux21:muxfinal
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux41:inputB_mux|mux41:\muxloop:2:mux_n
-s0 => mux21:mux1.s
-s0 => mux21:mux2.s
-s1 => mux21:muxfinal.s
-x0 => mux21:mux1.x0
-x1 => mux21:mux1.x1
-x2 => mux21:mux2.x0
-x3 => mux21:mux2.x1
-y <= mux21:muxfinal.y
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux41:inputB_mux|mux41:\muxloop:2:mux_n|mux21:mux1
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux41:inputB_mux|mux41:\muxloop:2:mux_n|mux21:mux2
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux41:inputB_mux|mux41:\muxloop:2:mux_n|mux21:muxfinal
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux41:inputB_mux|mux41:\muxloop:3:mux_n
-s0 => mux21:mux1.s
-s0 => mux21:mux2.s
-s1 => mux21:muxfinal.s
-x0 => mux21:mux1.x0
-x1 => mux21:mux1.x1
-x2 => mux21:mux2.x0
-x3 => mux21:mux2.x1
-y <= mux21:muxfinal.y
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux41:inputB_mux|mux41:\muxloop:3:mux_n|mux21:mux1
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux41:inputB_mux|mux41:\muxloop:3:mux_n|mux21:mux2
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux41:inputB_mux|mux41:\muxloop:3:mux_n|mux21:muxfinal
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux41:inputB_mux|mux41:\muxloop:4:mux_n
-s0 => mux21:mux1.s
-s0 => mux21:mux2.s
-s1 => mux21:muxfinal.s
-x0 => mux21:mux1.x0
-x1 => mux21:mux1.x1
-x2 => mux21:mux2.x0
-x3 => mux21:mux2.x1
-y <= mux21:muxfinal.y
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux41:inputB_mux|mux41:\muxloop:4:mux_n|mux21:mux1
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux41:inputB_mux|mux41:\muxloop:4:mux_n|mux21:mux2
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux41:inputB_mux|mux41:\muxloop:4:mux_n|mux21:muxfinal
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux41:inputB_mux|mux41:\muxloop:5:mux_n
-s0 => mux21:mux1.s
-s0 => mux21:mux2.s
-s1 => mux21:muxfinal.s
-x0 => mux21:mux1.x0
-x1 => mux21:mux1.x1
-x2 => mux21:mux2.x0
-x3 => mux21:mux2.x1
-y <= mux21:muxfinal.y
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux41:inputB_mux|mux41:\muxloop:5:mux_n|mux21:mux1
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux41:inputB_mux|mux41:\muxloop:5:mux_n|mux21:mux2
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux41:inputB_mux|mux41:\muxloop:5:mux_n|mux21:muxfinal
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux41:inputB_mux|mux41:\muxloop:6:mux_n
-s0 => mux21:mux1.s
-s0 => mux21:mux2.s
-s1 => mux21:muxfinal.s
-x0 => mux21:mux1.x0
-x1 => mux21:mux1.x1
-x2 => mux21:mux2.x0
-x3 => mux21:mux2.x1
-y <= mux21:muxfinal.y
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux41:inputB_mux|mux41:\muxloop:6:mux_n|mux21:mux1
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux41:inputB_mux|mux41:\muxloop:6:mux_n|mux21:mux2
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux41:inputB_mux|mux41:\muxloop:6:mux_n|mux21:muxfinal
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux41:inputB_mux|mux41:\muxloop:7:mux_n
-s0 => mux21:mux1.s
-s0 => mux21:mux2.s
-s1 => mux21:muxfinal.s
-x0 => mux21:mux1.x0
-x1 => mux21:mux1.x1
-x2 => mux21:mux2.x0
-x3 => mux21:mux2.x1
-y <= mux21:muxfinal.y
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux41:inputB_mux|mux41:\muxloop:7:mux_n|mux21:mux1
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux41:inputB_mux|mux41:\muxloop:7:mux_n|mux21:mux2
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nbitmux41:inputB_mux|mux41:\muxloop:7:mux_n|mux21:muxfinal
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitAdderSubtractor:adder
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitAdderSubtractor:adder
 i_Ai[0] => oneBitAdderSubtractor:add_0.i_Ai
 i_Ai[1] => oneBitAdderSubtractor:loop_add:1:addrn.i_Ai
 i_Ai[2] => oneBitAdderSubtractor:loop_add:2:addrn.i_Ai
@@ -1440,7 +2031,7 @@ o_Sum[6] <= oneBitAdderSubtractor:loop_add:6:addrn.o_Sum
 o_Sum[7] <= oneBitAdderSubtractor:loop_add:7:addrn.o_Sum
 
 
-|dividerTopLevel|dividerDatapath:dataPath|nBitAdderSubtractor:adder|oneBitAdderSubtractor:add_0
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitAdderSubtractor:adder|oneBitAdderSubtractor:add_0
 i_CarryIn => carryFromBoth.IN0
 i_CarryIn => carryFromAi.IN0
 operationFlag => xor_Bi.IN0
@@ -1451,7 +2042,7 @@ o_Sum <= o_Sum.DB_MAX_OUTPUT_PORT_TYPE
 o_CarryOut <= o_CarryOut.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|dividerTopLevel|dividerDatapath:dataPath|nBitAdderSubtractor:adder|oneBitAdderSubtractor:\loop_add:1:addrn
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitAdderSubtractor:adder|oneBitAdderSubtractor:\loop_add:1:addrn
 i_CarryIn => carryFromBoth.IN0
 i_CarryIn => carryFromAi.IN0
 operationFlag => xor_Bi.IN0
@@ -1462,7 +2053,7 @@ o_Sum <= o_Sum.DB_MAX_OUTPUT_PORT_TYPE
 o_CarryOut <= o_CarryOut.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|dividerTopLevel|dividerDatapath:dataPath|nBitAdderSubtractor:adder|oneBitAdderSubtractor:\loop_add:2:addrn
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitAdderSubtractor:adder|oneBitAdderSubtractor:\loop_add:2:addrn
 i_CarryIn => carryFromBoth.IN0
 i_CarryIn => carryFromAi.IN0
 operationFlag => xor_Bi.IN0
@@ -1473,7 +2064,7 @@ o_Sum <= o_Sum.DB_MAX_OUTPUT_PORT_TYPE
 o_CarryOut <= o_CarryOut.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|dividerTopLevel|dividerDatapath:dataPath|nBitAdderSubtractor:adder|oneBitAdderSubtractor:\loop_add:3:addrn
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitAdderSubtractor:adder|oneBitAdderSubtractor:\loop_add:3:addrn
 i_CarryIn => carryFromBoth.IN0
 i_CarryIn => carryFromAi.IN0
 operationFlag => xor_Bi.IN0
@@ -1484,7 +2075,7 @@ o_Sum <= o_Sum.DB_MAX_OUTPUT_PORT_TYPE
 o_CarryOut <= o_CarryOut.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|dividerTopLevel|dividerDatapath:dataPath|nBitAdderSubtractor:adder|oneBitAdderSubtractor:\loop_add:4:addrn
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitAdderSubtractor:adder|oneBitAdderSubtractor:\loop_add:4:addrn
 i_CarryIn => carryFromBoth.IN0
 i_CarryIn => carryFromAi.IN0
 operationFlag => xor_Bi.IN0
@@ -1495,7 +2086,7 @@ o_Sum <= o_Sum.DB_MAX_OUTPUT_PORT_TYPE
 o_CarryOut <= o_CarryOut.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|dividerTopLevel|dividerDatapath:dataPath|nBitAdderSubtractor:adder|oneBitAdderSubtractor:\loop_add:5:addrn
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitAdderSubtractor:adder|oneBitAdderSubtractor:\loop_add:5:addrn
 i_CarryIn => carryFromBoth.IN0
 i_CarryIn => carryFromAi.IN0
 operationFlag => xor_Bi.IN0
@@ -1506,7 +2097,7 @@ o_Sum <= o_Sum.DB_MAX_OUTPUT_PORT_TYPE
 o_CarryOut <= o_CarryOut.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|dividerTopLevel|dividerDatapath:dataPath|nBitAdderSubtractor:adder|oneBitAdderSubtractor:\loop_add:6:addrn
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitAdderSubtractor:adder|oneBitAdderSubtractor:\loop_add:6:addrn
 i_CarryIn => carryFromBoth.IN0
 i_CarryIn => carryFromAi.IN0
 operationFlag => xor_Bi.IN0
@@ -1517,7 +2108,7 @@ o_Sum <= o_Sum.DB_MAX_OUTPUT_PORT_TYPE
 o_CarryOut <= o_CarryOut.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|dividerTopLevel|dividerDatapath:dataPath|nBitAdderSubtractor:adder|oneBitAdderSubtractor:\loop_add:7:addrn
+|multiplierTopLevel|multiplierDatapath:dataPath|nBitAdderSubtractor:adder|oneBitAdderSubtractor:\loop_add:7:addrn
 i_CarryIn => carryFromBoth.IN0
 i_CarryIn => carryFromAi.IN0
 operationFlag => xor_Bi.IN0
@@ -1528,519 +2119,7 @@ o_Sum <= o_Sum.DB_MAX_OUTPUT_PORT_TYPE
 o_CarryOut <= o_CarryOut.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:quotient_reg
-i_resetBar => enardFF_2:regloop:0:bit_n.i_resetBar
-i_resetBar => enardFF_2:regloop:1:bit_n.i_resetBar
-i_resetBar => enardFF_2:regloop:2:bit_n.i_resetBar
-i_resetBar => enardFF_2:regloop:3:bit_n.i_resetBar
-i_resetBar => enardFF_2:regloop:4:bit_n.i_resetBar
-i_resetBar => enardFF_2:regloop:5:bit_n.i_resetBar
-i_resetBar => enardFF_2:regloop:6:bit_n.i_resetBar
-i_resetBar => enardFF_2:regloop:7:bit_n.i_resetBar
-i_clock => enardFF_2:regloop:0:bit_n.i_clock
-i_clock => enardFF_2:regloop:1:bit_n.i_clock
-i_clock => enardFF_2:regloop:2:bit_n.i_clock
-i_clock => enardFF_2:regloop:3:bit_n.i_clock
-i_clock => enardFF_2:regloop:4:bit_n.i_clock
-i_clock => enardFF_2:regloop:5:bit_n.i_clock
-i_clock => enardFF_2:regloop:6:bit_n.i_clock
-i_clock => enardFF_2:regloop:7:bit_n.i_clock
-i_load => int_enable.IN1
-i_shift_right => int_enable.IN0
-i_shift_right => mux41:mux_0.s1
-i_shift_right => mux41:mux_msb.s1
-i_shift_right => mux41:muxloop:1:mux_n.s1
-i_shift_right => mux41:muxloop:2:mux_n.s1
-i_shift_right => mux41:muxloop:3:mux_n.s1
-i_shift_right => mux41:muxloop:4:mux_n.s1
-i_shift_right => mux41:muxloop:5:mux_n.s1
-i_shift_right => mux41:muxloop:6:mux_n.s1
-i_shift_left => int_enable.IN1
-i_shift_left => mux41:mux_0.s0
-i_shift_left => mux41:mux_msb.s0
-i_shift_left => mux41:muxloop:1:mux_n.s0
-i_shift_left => mux41:muxloop:2:mux_n.s0
-i_shift_left => mux41:muxloop:3:mux_n.s0
-i_shift_left => mux41:muxloop:4:mux_n.s0
-i_shift_left => mux41:muxloop:5:mux_n.s0
-i_shift_left => mux41:muxloop:6:mux_n.s0
-serial_in => mux41:mux_0.x1
-serial_in => mux41:mux_msb.x2
-parallel_in[0] => mux41:mux_0.x0
-parallel_in[1] => mux41:muxloop:1:mux_n.x0
-parallel_in[2] => mux41:muxloop:2:mux_n.x0
-parallel_in[3] => mux41:muxloop:3:mux_n.x0
-parallel_in[4] => mux41:muxloop:4:mux_n.x0
-parallel_in[5] => mux41:muxloop:5:mux_n.x0
-parallel_in[6] => mux41:muxloop:6:mux_n.x0
-parallel_in[7] => mux41:mux_msb.x0
-o_Value[0] <= enardFF_2:regloop:0:bit_n.o_q
-o_Value[1] <= enardFF_2:regloop:1:bit_n.o_q
-o_Value[2] <= enardFF_2:regloop:2:bit_n.o_q
-o_Value[3] <= enardFF_2:regloop:3:bit_n.o_q
-o_Value[4] <= enardFF_2:regloop:4:bit_n.o_q
-o_Value[5] <= enardFF_2:regloop:5:bit_n.o_q
-o_Value[6] <= enardFF_2:regloop:6:bit_n.o_q
-o_Value[7] <= enardFF_2:regloop:7:bit_n.o_q
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:quotient_reg|enARdFF_2:\regloop:0:bit_n
-i_resetBar => int_q.ACLR
-i_d => int_q.DATAIN
-i_enable => int_q.ENA
-i_clock => int_q.CLK
-o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
-o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:quotient_reg|enARdFF_2:\regloop:1:bit_n
-i_resetBar => int_q.ACLR
-i_d => int_q.DATAIN
-i_enable => int_q.ENA
-i_clock => int_q.CLK
-o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
-o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:quotient_reg|enARdFF_2:\regloop:2:bit_n
-i_resetBar => int_q.ACLR
-i_d => int_q.DATAIN
-i_enable => int_q.ENA
-i_clock => int_q.CLK
-o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
-o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:quotient_reg|enARdFF_2:\regloop:3:bit_n
-i_resetBar => int_q.ACLR
-i_d => int_q.DATAIN
-i_enable => int_q.ENA
-i_clock => int_q.CLK
-o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
-o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:quotient_reg|enARdFF_2:\regloop:4:bit_n
-i_resetBar => int_q.ACLR
-i_d => int_q.DATAIN
-i_enable => int_q.ENA
-i_clock => int_q.CLK
-o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
-o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:quotient_reg|enARdFF_2:\regloop:5:bit_n
-i_resetBar => int_q.ACLR
-i_d => int_q.DATAIN
-i_enable => int_q.ENA
-i_clock => int_q.CLK
-o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
-o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:quotient_reg|enARdFF_2:\regloop:6:bit_n
-i_resetBar => int_q.ACLR
-i_d => int_q.DATAIN
-i_enable => int_q.ENA
-i_clock => int_q.CLK
-o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
-o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:quotient_reg|enARdFF_2:\regloop:7:bit_n
-i_resetBar => int_q.ACLR
-i_d => int_q.DATAIN
-i_enable => int_q.ENA
-i_clock => int_q.CLK
-o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
-o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:quotient_reg|mux41:mux_0
-s0 => mux21:mux1.s
-s0 => mux21:mux2.s
-s1 => mux21:muxfinal.s
-x0 => mux21:mux1.x0
-x1 => mux21:mux1.x1
-x2 => mux21:mux2.x0
-x3 => mux21:mux2.x1
-y <= mux21:muxfinal.y
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:quotient_reg|mux41:mux_0|mux21:mux1
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:quotient_reg|mux41:mux_0|mux21:mux2
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:quotient_reg|mux41:mux_0|mux21:muxfinal
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:quotient_reg|mux41:mux_msb
-s0 => mux21:mux1.s
-s0 => mux21:mux2.s
-s1 => mux21:muxfinal.s
-x0 => mux21:mux1.x0
-x1 => mux21:mux1.x1
-x2 => mux21:mux2.x0
-x3 => mux21:mux2.x1
-y <= mux21:muxfinal.y
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:quotient_reg|mux41:mux_msb|mux21:mux1
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:quotient_reg|mux41:mux_msb|mux21:mux2
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:quotient_reg|mux41:mux_msb|mux21:muxfinal
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:quotient_reg|mux41:\muxloop:1:mux_n
-s0 => mux21:mux1.s
-s0 => mux21:mux2.s
-s1 => mux21:muxfinal.s
-x0 => mux21:mux1.x0
-x1 => mux21:mux1.x1
-x2 => mux21:mux2.x0
-x3 => mux21:mux2.x1
-y <= mux21:muxfinal.y
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:quotient_reg|mux41:\muxloop:1:mux_n|mux21:mux1
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:quotient_reg|mux41:\muxloop:1:mux_n|mux21:mux2
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:quotient_reg|mux41:\muxloop:1:mux_n|mux21:muxfinal
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:quotient_reg|mux41:\muxloop:2:mux_n
-s0 => mux21:mux1.s
-s0 => mux21:mux2.s
-s1 => mux21:muxfinal.s
-x0 => mux21:mux1.x0
-x1 => mux21:mux1.x1
-x2 => mux21:mux2.x0
-x3 => mux21:mux2.x1
-y <= mux21:muxfinal.y
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:quotient_reg|mux41:\muxloop:2:mux_n|mux21:mux1
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:quotient_reg|mux41:\muxloop:2:mux_n|mux21:mux2
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:quotient_reg|mux41:\muxloop:2:mux_n|mux21:muxfinal
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:quotient_reg|mux41:\muxloop:3:mux_n
-s0 => mux21:mux1.s
-s0 => mux21:mux2.s
-s1 => mux21:muxfinal.s
-x0 => mux21:mux1.x0
-x1 => mux21:mux1.x1
-x2 => mux21:mux2.x0
-x3 => mux21:mux2.x1
-y <= mux21:muxfinal.y
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:quotient_reg|mux41:\muxloop:3:mux_n|mux21:mux1
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:quotient_reg|mux41:\muxloop:3:mux_n|mux21:mux2
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:quotient_reg|mux41:\muxloop:3:mux_n|mux21:muxfinal
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:quotient_reg|mux41:\muxloop:4:mux_n
-s0 => mux21:mux1.s
-s0 => mux21:mux2.s
-s1 => mux21:muxfinal.s
-x0 => mux21:mux1.x0
-x1 => mux21:mux1.x1
-x2 => mux21:mux2.x0
-x3 => mux21:mux2.x1
-y <= mux21:muxfinal.y
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:quotient_reg|mux41:\muxloop:4:mux_n|mux21:mux1
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:quotient_reg|mux41:\muxloop:4:mux_n|mux21:mux2
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:quotient_reg|mux41:\muxloop:4:mux_n|mux21:muxfinal
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:quotient_reg|mux41:\muxloop:5:mux_n
-s0 => mux21:mux1.s
-s0 => mux21:mux2.s
-s1 => mux21:muxfinal.s
-x0 => mux21:mux1.x0
-x1 => mux21:mux1.x1
-x2 => mux21:mux2.x0
-x3 => mux21:mux2.x1
-y <= mux21:muxfinal.y
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:quotient_reg|mux41:\muxloop:5:mux_n|mux21:mux1
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:quotient_reg|mux41:\muxloop:5:mux_n|mux21:mux2
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:quotient_reg|mux41:\muxloop:5:mux_n|mux21:muxfinal
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:quotient_reg|mux41:\muxloop:6:mux_n
-s0 => mux21:mux1.s
-s0 => mux21:mux2.s
-s1 => mux21:muxfinal.s
-x0 => mux21:mux1.x0
-x1 => mux21:mux1.x1
-x2 => mux21:mux2.x0
-x3 => mux21:mux2.x1
-y <= mux21:muxfinal.y
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:quotient_reg|mux41:\muxloop:6:mux_n|mux21:mux1
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:quotient_reg|mux41:\muxloop:6:mux_n|mux21:mux2
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitShiftRegister:quotient_reg|mux41:\muxloop:6:mux_n|mux21:muxfinal
-s => selX1.IN0
-s => selX0.IN0
-x0 => selX0.IN1
-x1 => selX1.IN1
-y <= y.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitIncrementer:incrementer
-clk => nBitRegister:reg.i_clock
-reset => nBitRegister:reg.i_resetBar
-increment => nBitRegister:reg.i_load
-y[0] <= nBitRegister:reg.o_Value[0]
-y[1] <= nBitRegister:reg.o_Value[1]
-y[2] <= nBitRegister:reg.o_Value[2]
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitIncrementer:incrementer|nBitAdderSubtractor:adder
-i_Ai[0] => oneBitAdderSubtractor:add_0.i_Ai
-i_Ai[1] => oneBitAdderSubtractor:loop_add:1:addrn.i_Ai
-i_Ai[2] => oneBitAdderSubtractor:loop_add:2:addrn.i_Ai
-i_Bi[0] => oneBitAdderSubtractor:add_0.i_Bi
-i_Bi[1] => oneBitAdderSubtractor:loop_add:1:addrn.i_Bi
-i_Bi[2] => oneBitAdderSubtractor:loop_add:2:addrn.i_Bi
-operationFlag => oneBitAdderSubtractor:add_0.i_CarryIn
-operationFlag => oneBitAdderSubtractor:add_0.operationFlag
-operationFlag => oneBitAdderSubtractor:loop_add:1:addrn.operationFlag
-operationFlag => oneBitAdderSubtractor:loop_add:2:addrn.operationFlag
-o_CarryOut <= oneBitAdderSubtractor:loop_add:2:addrn.o_CarryOut
-o_Sum[0] <= oneBitAdderSubtractor:add_0.o_Sum
-o_Sum[1] <= oneBitAdderSubtractor:loop_add:1:addrn.o_Sum
-o_Sum[2] <= oneBitAdderSubtractor:loop_add:2:addrn.o_Sum
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitIncrementer:incrementer|nBitAdderSubtractor:adder|oneBitAdderSubtractor:add_0
-i_CarryIn => carryFromBoth.IN0
-i_CarryIn => carryFromAi.IN0
-operationFlag => xor_Bi.IN0
-i_Ai => carryFromBoth.IN1
-i_Ai => carryFromAi.IN1
-i_Bi => xor_Bi.IN1
-o_Sum <= o_Sum.DB_MAX_OUTPUT_PORT_TYPE
-o_CarryOut <= o_CarryOut.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitIncrementer:incrementer|nBitAdderSubtractor:adder|oneBitAdderSubtractor:\loop_add:1:addrn
-i_CarryIn => carryFromBoth.IN0
-i_CarryIn => carryFromAi.IN0
-operationFlag => xor_Bi.IN0
-i_Ai => carryFromBoth.IN1
-i_Ai => carryFromAi.IN1
-i_Bi => xor_Bi.IN1
-o_Sum <= o_Sum.DB_MAX_OUTPUT_PORT_TYPE
-o_CarryOut <= o_CarryOut.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitIncrementer:incrementer|nBitAdderSubtractor:adder|oneBitAdderSubtractor:\loop_add:2:addrn
-i_CarryIn => carryFromBoth.IN0
-i_CarryIn => carryFromAi.IN0
-operationFlag => xor_Bi.IN0
-i_Ai => carryFromBoth.IN1
-i_Ai => carryFromAi.IN1
-i_Bi => xor_Bi.IN1
-o_Sum <= o_Sum.DB_MAX_OUTPUT_PORT_TYPE
-o_CarryOut <= o_CarryOut.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitIncrementer:incrementer|nBitRegister:reg
-i_resetBar => enARdFF_2:reg_n_bits:0:b.i_resetBar
-i_resetBar => enARdFF_2:reg_n_bits:1:b.i_resetBar
-i_resetBar => enARdFF_2:reg_n_bits:2:b.i_resetBar
-i_load => enARdFF_2:reg_n_bits:0:b.i_enable
-i_load => enARdFF_2:reg_n_bits:1:b.i_enable
-i_load => enARdFF_2:reg_n_bits:2:b.i_enable
-i_clock => enARdFF_2:reg_n_bits:0:b.i_clock
-i_clock => enARdFF_2:reg_n_bits:1:b.i_clock
-i_clock => enARdFF_2:reg_n_bits:2:b.i_clock
-i_Value[0] => enARdFF_2:reg_n_bits:0:b.i_d
-i_Value[1] => enARdFF_2:reg_n_bits:1:b.i_d
-i_Value[2] => enARdFF_2:reg_n_bits:2:b.i_d
-o_Value[0] <= enARdFF_2:reg_n_bits:0:b.o_q
-o_Value[1] <= enARdFF_2:reg_n_bits:1:b.o_q
-o_Value[2] <= enARdFF_2:reg_n_bits:2:b.o_q
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitIncrementer:incrementer|nBitRegister:reg|enARdFF_2:\reg_n_bits:0:b
-i_resetBar => int_q.ACLR
-i_d => int_q.DATAIN
-i_enable => int_q.ENA
-i_clock => int_q.CLK
-o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
-o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitIncrementer:incrementer|nBitRegister:reg|enARdFF_2:\reg_n_bits:1:b
-i_resetBar => int_q.ACLR
-i_d => int_q.DATAIN
-i_enable => int_q.ENA
-i_clock => int_q.CLK
-o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
-o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|nBitIncrementer:incrementer|nBitRegister:reg|enARdFF_2:\reg_n_bits:2:b
-i_resetBar => int_q.ACLR
-i_d => int_q.DATAIN
-i_enable => int_q.ENA
-i_clock => int_q.CLK
-o_q <= int_q.DB_MAX_OUTPUT_PORT_TYPE
-o_qBar <= int_q.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|dividerTopLevel|dividerDatapath:dataPath|enARdFF_2:sign_reg
+|multiplierTopLevel|multiplierDatapath:dataPath|enARdFF_2:sign_reg
 i_resetBar => int_q.ACLR
 i_d => int_q.DATAIN
 i_enable => int_q.ENA

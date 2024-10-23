@@ -15,6 +15,7 @@ ARCHITECTURE func OF complement2s IS
     SIGNAL not_din : STD_LOGIC_VECTOR(7 downto 0);
 
     COMPONENT nBitAdderSubtractor 
+		  GENERIC(n: INTEGER := 4);
         PORT(
             i_Ai, i_Bi: IN  STD_LOGIC_VECTOR(7 downto 0);
             operationFlag: IN  STD_LOGIC;
@@ -30,7 +31,8 @@ BEGIN
 
  
     adder: nBitAdderSubtractor
-        PORT MAP (
+        GENERIC MAP(n => 8)
+		  PORT MAP (
             i_Ai => "00000001", 
             i_Bi => not_din,     
             operationFlag => '0', -- '0' for addition

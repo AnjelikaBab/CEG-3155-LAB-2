@@ -18,6 +18,7 @@ ARCHITECTURE structural OF multiplierDatapath IS
     SIGNAL eightbit_INA, eightbit_INB: STD_LOGIC_VECTOR(7 downto 0); 
     SIGNAL left_shift_A, right_shift_B, int_addr_out, reg_P_output: STD_LOGIC_VECTOR(7 downto 0);
     SIGNAL not_greset, int_sign_in: STD_LOGIC;
+    SIGNAL int_overflow: STD_LOGIC_VECTOR(3 downto 0);
 
     CONSTANT regWidth: INTEGER := 8;
 
@@ -100,21 +101,21 @@ BEGIN
     two_comp_A_inst: complement2s
         PORT MAP (
             din => eightbit_INA,        
-            overflow => overflow,
+            overflow => int_overflow(3),
             dout => two_comp_A         
         );
 
     two_comp_B_inst: complement2s
         PORT MAP (
             din => eightbit_INB,        
-            overflow => overflow,
+            overflow => int_overflow(2),
             dout => two_comp_B         
         );
 
     two_comp_P_inst: complement2s
         PORT MAP (
             din => int_addr_out,        
-            overflow => overflow,
+            overflow => int_overflow(1),
             dout => two_comp_P         
         );
 
@@ -178,7 +179,7 @@ BEGIN
             i_Ai => adder_mux_out, 
             i_Bi => reg_P_output, 
             operationFlag => '0', 
-            o_CarryOut => overflow, 
+            o_CarryOut => int_overflow(0), 
             o_Sum => int_addr_out
         );
 
@@ -188,6 +189,7 @@ BEGIN
     B_lsb <= INB(0);
     beq0 <= NOT (right_shift_B(7) OR right_shift_B(6) OR right_shift_B(5) OR right_shift_B(4) OR right_shift_B(3) OR right_shift_B(2) OR right_shift_B(1) OR right_shift_B(0));
     zero <= NOT (reg_P_output(7) OR reg_P_output(6) OR reg_P_output(5) OR reg_P_output(4) OR reg_P_output(3) OR reg_P_output(2) OR reg_P_output(1) OR reg_P_output(0));
+    overflow <= int_overflow(3) OR int_overflow(2) OR int_overflow(1) OR int_overflow(0);
 
     int_sign_in <= INA(3) XOR INB(3);
     sign_reg: enardFF_2
