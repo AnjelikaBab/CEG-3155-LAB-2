@@ -11,7 +11,7 @@ ENTITY multiplierControlpath IS
 END multiplierControlpath;
 
 ARCHITECTURE rtl OF multiplierControlpath IS
-    SIGNAL state_in, state_out: STD_LOGIC_VECTOR(9 downto 0);
+    SIGNAL state_in, state_out: STD_LOGIC_VECTOR(10 downto 0);
     SIGNAL control_path_reset: STD_LOGIC;
 
     COMPONENT enardff_2
@@ -35,7 +35,7 @@ BEGIN
     );
 
     -- State registers
-    stateRegloop: FOR i IN 1 TO 9 GENERATE
+    stateRegloop: FOR i IN 1 TO 10 GENERATE
         state_n: enardff_2 PORT MAP(
             i_resetBar => control_path_reset,
             i_d => state_in(i),
@@ -52,11 +52,12 @@ BEGIN
     state_in(2) <= state_out(0) AND (NOT A_msb);
     state_in(3) <= (state_out(1) OR state_out(2)) AND B_msb;
     state_in(4) <= (state_out(1) OR state_out(2)) AND (NOT B_msb);
-    state_in(5) <= (((state_out(3) OR state_out(4)) AND (NOT B_lsb)) OR state_out(7) OR (state_out(6) AND NOT(beq0) AND (NOT B_lsb))); 
+    state_in(5) <= ((state_out(10) AND (NOT B_lsb)) OR state_out(7) OR (state_out(6) AND NOT(beq0) AND (NOT B_lsb))); 
     state_in(6) <= state_out(5);
-    state_in(7) <= (((state_out(3) OR state_out(4)) AND B_lsb) OR (state_out(6) AND NOT(beq0) AND B_lsb)); 
+    state_in(7) <= ((state_out(10) AND B_lsb) OR (state_out(6) AND NOT(beq0) AND B_lsb)); 
     state_in(8) <= state_out(6) AND beq0 AND sgn;
     state_in(9) <= state_out(6) AND beq0 AND (NOT sgn);
+    state_in(10) <= (state_out(3) OR state_out(4));
 
     control_path_reset <= NOT reset;
 

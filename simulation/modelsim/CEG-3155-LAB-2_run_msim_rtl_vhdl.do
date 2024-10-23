@@ -6,6 +6,8 @@ vlib rtl_work
 vmap work rtl_work
 
 vcom -93 -work work {C:/Users/arnav/Desktop/CEG-3155-LAB-2/fixedPointALUStruct.vhd}
+vcom -93 -work work {C:/Users/arnav/Desktop/CEG-3155-LAB-2/bcd_7seg.vhd}
+vcom -93 -work work {C:/Users/arnav/Desktop/CEG-3155-LAB-2/bcdTopLevel.vhd}
 vcom -93 -work work {C:/Users/arnav/Desktop/CEG-3155-LAB-2/twosComplement.vhd}
 vcom -93 -work work {C:/Users/arnav/Desktop/CEG-3155-LAB-2/multiplierTopLevel.vhd}
 vcom -93 -work work {C:/Users/arnav/Desktop/CEG-3155-LAB-2/multiplierDatapath.vhd}
