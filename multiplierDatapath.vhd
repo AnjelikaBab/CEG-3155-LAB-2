@@ -168,7 +168,7 @@ BEGIN
             o_Value => reg_P_output
         );
 
-    -- Prepare adder input correctly
+
     mux_adder: nBitMux21
         GENERIC MAP (n => regWidth)
         PORT MAP (s => selOperand, x0 => (others => '0'), x1 => left_shift_A, y => adder_mux_out);

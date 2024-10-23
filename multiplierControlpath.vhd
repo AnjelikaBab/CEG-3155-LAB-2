@@ -4,7 +4,7 @@ USE ieee.std_logic_1164.ALL;
 ENTITY multiplierControlpath IS
     PORT(
         clk, reset: IN STD_LOGIC;
-        selA, selB, selOperand, p_neg, loadA, loadB, loadP, ldSign, shiftLA, shiftRB: OUT STD_LOGIC; -- Changed to OUT
+        selA, selB, selOperand, p_neg, loadA, loadB, loadP, ldSign, shiftLA, shiftRB: OUT STD_LOGIC;
         A_msb, B_msb, B_lsb, beq0, sgn: IN STD_LOGIC;
         greset: OUT STD_LOGIC
     ); 
@@ -52,9 +52,9 @@ BEGIN
     state_in(2) <= state_out(0) AND (NOT A_msb);
     state_in(3) <= (state_out(1) OR state_out(2)) AND B_msb;
     state_in(4) <= (state_out(1) OR state_out(2)) AND (NOT B_msb);
-    state_in(5) <= (((state_out(3) OR state_out(4)) AND (NOT B_lsb)) OR state_out(7) OR (state_out(6) AND NOT(beq0) AND (NOT B_lsb))); -- Fixed operator usage
+    state_in(5) <= (((state_out(3) OR state_out(4)) AND (NOT B_lsb)) OR state_out(7) OR (state_out(6) AND NOT(beq0) AND (NOT B_lsb))); 
     state_in(6) <= state_out(5);
-    state_in(7) <= (((state_out(3) OR state_out(4)) AND B_lsb) OR (state_out(6) AND NOT(beq0) AND B_lsb)); -- Fixed operator usage
+    state_in(7) <= (((state_out(3) OR state_out(4)) AND B_lsb) OR (state_out(6) AND NOT(beq0) AND B_lsb)); 
     state_in(8) <= state_out(6) AND beq0 AND sgn;
     state_in(9) <= state_out(6) AND beq0 AND (NOT sgn);
 
@@ -66,9 +66,9 @@ BEGIN
     selOperand <= state_out(7);
     loadP <= state_out(7) OR state_out(8);
     loadB <= state_out(3) OR state_out(4);
-    loadA <= state_out(1) OR state_out(2); -- Fixed operator usage
+    loadA <= state_out(1) OR state_out(2); 
     ldSign <= state_out(0);
-    p_neg <= state_out(8); -- Added missing semicolon
+    p_neg <= state_out(8); 
     shiftRB <= state_out(5);
     shiftLA <= state_out(6);
     greset <= state_out(0);

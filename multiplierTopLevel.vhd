@@ -6,12 +6,12 @@ ENTITY multiplierTopLevel is
         clk, reset: IN STD_LOGIC;
         INA, INB: IN STD_LOGIC_VECTOR(3 downto 0);  -- Input signals (4 bits each)
         zero, overflow: OUT STD_LOGIC;               -- Status output signals
-        product: OUT STD_LOGIC_VECTOR(7 downto 0)    -- Output for the product (8 bits)
+        product: OUT STD_LOGIC_VECTOR(7 downto 0)   
     );
 END multiplierTopLevel;
 
 ARCHITECTURE rtl OF multiplierTopLevel IS 
-    -- Internal control signals
+
     SIGNAL int_selA, int_selBComp, int_selOperand, int_p_neg: STD_LOGIC;
     SIGNAL int_loadA, int_loadB, int_loadP: STD_LOGIC;
     SIGNAL int_ldSign, int_shiftLA, int_shiftRB: STD_LOGIC;
@@ -21,7 +21,7 @@ ARCHITECTURE rtl OF multiplierTopLevel IS
     COMPONENT multiplierControlpath
         PORT(
             clk, reset: IN STD_LOGIC;
-            selA, selB, selOperand, p_neg, loadA, loadB, loadP, ldSign, shiftLA, shiftRB: OUT STD_LOGIC; -- Changed to OUT
+            selA, selB, selOperand, p_neg, loadA, loadB, loadP, ldSign, shiftLA, shiftRB: OUT STD_LOGIC; 
             A_msb, B_msb, B_lsb, beq0, sgn: IN STD_LOGIC;
             greset: OUT STD_LOGIC
         ); 
