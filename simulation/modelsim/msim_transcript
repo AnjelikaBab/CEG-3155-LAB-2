@@ -236,3 +236,700 @@ run
 run
 run
 run
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/twosComplement.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity complement2s
+# -- Compiling architecture func of complement2s
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/enardFF_2.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity enARdFF_2
+# -- Compiling architecture rtl of enARdFF_2
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/multiplierControlpath.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity multiplierControlpath
+# -- Compiling architecture rtl of multiplierControlpath
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/multiplierDatapath.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity multiplierDatapath
+# -- Compiling architecture structural of multiplierDatapath
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/multiplierTopLevel.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity multiplierTopLevel
+# -- Compiling architecture rtl of multiplierTopLevel
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/mux21.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux21
+# -- Compiling architecture structural of mux21
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/mux41.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux41
+# -- Compiling architecture structural of mux41
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/nBitAdderSubtractor.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nBitAdderSubtractor
+# -- Compiling architecture rtl of nBitAdderSubtractor
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/nbitmux21.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nbitmux21
+# -- Compiling architecture structural of nbitmux21
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/nbitregister.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nBitRegister
+# -- Compiling architecture rtl of nBitRegister
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/nBitShiftRegister.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nBitShiftRegister
+# -- Compiling architecture rtl of nBitShiftRegister
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/oneBitAdderSubtractor.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity oneBitAdderSubtractor
+# -- Compiling architecture rtl of oneBitAdderSubtractor
+vsim -voptargs=+acc work.multipliertoplevel
+# vsim -voptargs=+acc work.multipliertoplevel 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.multipliertoplevel(rtl)
+# Loading work.multipliercontrolpath(rtl)
+# Loading work.enardff_2(rtl)
+# Loading work.multiplierdatapath(structural)
+# Loading work.complement2s(func)
+# Loading work.nbitaddersubtractor(rtl)
+# Loading work.onebitaddersubtractor(rtl)
+# Loading work.nbitmux21(structural)
+# Loading work.mux21(structural)
+# Loading work.nbitshiftregister(rtl)
+# Loading work.mux41(structural)
+# Loading work.nbitregister(rtl)
+# WARNING: No extended dataflow license exists
+add wave -position insertpoint  \
+sim:/multipliertoplevel/INA \
+sim:/multipliertoplevel/INB \
+sim:/multipliertoplevel/clk \
+sim:/multipliertoplevel/reset \
+sim:/multipliertoplevel/overflow \
+sim:/multipliertoplevel/product \
+sim:/multipliertoplevel/zero
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+# 
+#           File in use by: arnav  Hostname: DESKTOP-CM3CCVC  ProcessID: 14056
+# 
+#           Attempting to use alternate WLF file "./wlft34ft56".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+# 
+#           Using alternate file: ./wlft34ft56
+# 
+force -freeze sim:/multipliertoplevel/INA 0100 0
+force -freeze sim:/multipliertoplevel/INB 0010 0
+force -freeze sim:/multipliertoplevel/clk 1 0, 0 {50 ps} -r 100
+force -freeze sim:/multipliertoplevel/reset 1 0
+run
+run
+force -freeze sim:/multipliertoplevel/reset 0 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+add wave -position insertpoint  \
+sim:/multipliertoplevel/int_A_msb \
+sim:/multipliertoplevel/int_B_lsb \
+sim:/multipliertoplevel/int_B_msb \
+sim:/multipliertoplevel/int_beq0 \
+sim:/multipliertoplevel/int_greset \
+sim:/multipliertoplevel/int_ldSign \
+sim:/multipliertoplevel/int_loadA \
+sim:/multipliertoplevel/int_loadB \
+sim:/multipliertoplevel/int_loadP \
+sim:/multipliertoplevel/int_p_neg \
+sim:/multipliertoplevel/int_selA \
+sim:/multipliertoplevel/int_selBComp \
+sim:/multipliertoplevel/int_selOperand \
+sim:/multipliertoplevel/int_sgn \
+sim:/multipliertoplevel/int_shiftLA \
+sim:/multipliertoplevel/int_shiftRB
+run
+run
+run
+run
+run
+# Can't move the Now cursor.
+vsim -voptargs=+acc work.multipliercontrolpath
+# vsim -voptargs=+acc work.multipliercontrolpath 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.multipliercontrolpath(rtl)
+# Loading work.enardff_2(rtl)
+# WARNING: No extended dataflow license exists
+add wave -position insertpoint  \
+sim:/multipliercontrolpath/A_msb \
+sim:/multipliercontrolpath/B_lsb \
+sim:/multipliercontrolpath/B_msb \
+sim:/multipliercontrolpath/beq0 \
+sim:/multipliercontrolpath/clk \
+sim:/multipliercontrolpath/reset \
+sim:/multipliercontrolpath/sgn \
+sim:/multipliercontrolpath/greset \
+sim:/multipliercontrolpath/ldSign \
+sim:/multipliercontrolpath/loadA \
+sim:/multipliercontrolpath/loadB \
+sim:/multipliercontrolpath/loadP \
+sim:/multipliercontrolpath/p_neg \
+sim:/multipliercontrolpath/selA \
+sim:/multipliercontrolpath/selB \
+sim:/multipliercontrolpath/selOperand \
+sim:/multipliercontrolpath/shiftLA \
+sim:/multipliercontrolpath/shiftRB \
+sim:/multipliercontrolpath/control_path_reset \
+sim:/multipliercontrolpath/state_in \
+sim:/multipliercontrolpath/state_out
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+# 
+#           File in use by: arnav  Hostname: DESKTOP-CM3CCVC  ProcessID: 14056
+# 
+#           Attempting to use alternate WLF file "./wlft6egf6f".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+# 
+#           Using alternate file: ./wlft6egf6f
+# 
+force -freeze sim:/multipliercontrolpath/clk 1 0, 0 {50 ps} -r 100
+force -freeze sim:/multipliercontrolpath/A_msb 0 0
+force -freeze sim:/multipliercontrolpath/B_lsb 0 0
+force -freeze sim:/multipliercontrolpath/B_msb 0 0
+force -freeze sim:/multipliercontrolpath/beq0 0 0
+force -freeze sim:/multipliercontrolpath/reset 1 0
+force -freeze sim:/multipliercontrolpath/sgn 0 0
+run
+run
+force -freeze sim:/multipliercontrolpath/reset 0 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/multipliercontrolpath/B_lsb 1 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/multipliercontrolpath/beq0 1 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+vsim -voptargs=+acc work.multipliertoplevel
+# vsim -voptargs=+acc work.multipliertoplevel 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.multipliertoplevel(rtl)
+# Loading work.multipliercontrolpath(rtl)
+# Loading work.enardff_2(rtl)
+# Loading work.multiplierdatapath(structural)
+# Loading work.complement2s(func)
+# Loading work.nbitaddersubtractor(rtl)
+# Loading work.onebitaddersubtractor(rtl)
+# Loading work.nbitmux21(structural)
+# Loading work.mux21(structural)
+# Loading work.nbitshiftregister(rtl)
+# Loading work.mux41(structural)
+# Loading work.nbitregister(rtl)
+# WARNING: No extended dataflow license exists
+add wave -position insertpoint  \
+sim:/multipliertoplevel/INA \
+sim:/multipliertoplevel/INB \
+sim:/multipliertoplevel/clk \
+sim:/multipliertoplevel/reset \
+sim:/multipliertoplevel/overflow \
+sim:/multipliertoplevel/product \
+sim:/multipliertoplevel/zero \
+sim:/multipliertoplevel/int_A_msb \
+sim:/multipliertoplevel/int_B_lsb \
+sim:/multipliertoplevel/int_B_msb \
+sim:/multipliertoplevel/int_beq0 \
+sim:/multipliertoplevel/int_greset \
+sim:/multipliertoplevel/int_ldSign \
+sim:/multipliertoplevel/int_loadA \
+sim:/multipliertoplevel/int_loadB \
+sim:/multipliertoplevel/int_loadP \
+sim:/multipliertoplevel/int_p_neg \
+sim:/multipliertoplevel/int_selA \
+sim:/multipliertoplevel/int_selBComp \
+sim:/multipliertoplevel/int_selOperand \
+sim:/multipliertoplevel/int_sgn \
+sim:/multipliertoplevel/int_shiftLA \
+sim:/multipliertoplevel/int_shiftRB
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+# 
+#           File in use by: arnav  Hostname: DESKTOP-CM3CCVC  ProcessID: 14056
+# 
+#           Attempting to use alternate WLF file "./wlft6dwygh".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+# 
+#           Using alternate file: ./wlft6dwygh
+# 
+force -freeze sim:/multipliertoplevel/INA 0100 0
+force -freeze sim:/multipliertoplevel/INB 0010 0
+force -freeze sim:/multipliertoplevel/clk 1 0, 0 {50 ps} -r 100
+force -freeze sim:/multipliertoplevel/reset 1 0
+run
+run
+force -freeze sim:/multipliertoplevel/reset 0 0
+run
+run
+run
+run
+run
+run
+run
+run
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/twosComplement.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity complement2s
+# -- Compiling architecture func of complement2s
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/enardFF_2.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity enARdFF_2
+# -- Compiling architecture rtl of enARdFF_2
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/multiplierControlpath.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity multiplierControlpath
+# -- Compiling architecture rtl of multiplierControlpath
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/multiplierDatapath.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity multiplierDatapath
+# -- Compiling architecture structural of multiplierDatapath
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/multiplierTopLevel.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity multiplierTopLevel
+# -- Compiling architecture rtl of multiplierTopLevel
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/mux21.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux21
+# -- Compiling architecture structural of mux21
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/mux41.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux41
+# -- Compiling architecture structural of mux41
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/nBitAdderSubtractor.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nBitAdderSubtractor
+# -- Compiling architecture rtl of nBitAdderSubtractor
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/nbitmux21.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nbitmux21
+# -- Compiling architecture structural of nbitmux21
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/nbitregister.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nBitRegister
+# -- Compiling architecture rtl of nBitRegister
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/nBitShiftRegister.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nBitShiftRegister
+# -- Compiling architecture rtl of nBitShiftRegister
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/oneBitAdderSubtractor.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity oneBitAdderSubtractor
+# -- Compiling architecture rtl of oneBitAdderSubtractor
+restart -f
+# Loading work.multipliertoplevel(rtl)
+# Loading work.multipliercontrolpath(rtl)
+# Loading work.enardff_2(rtl)
+# Loading work.multiplierdatapath(structural)
+# Loading work.complement2s(func)
+# Loading work.nbitaddersubtractor(rtl)
+# Loading work.onebitaddersubtractor(rtl)
+# Loading work.nbitmux21(structural)
+# Loading work.mux21(structural)
+# Loading work.nbitshiftregister(rtl)
+# Loading work.mux41(structural)
+# Loading work.nbitregister(rtl)
+force -freeze sim:/multipliertoplevel/INA 0100 0
+force -freeze sim:/multipliertoplevel/INB 0010 0
+force -freeze sim:/multipliertoplevel/reset 1 0
+force -freeze sim:/multipliertoplevel/clk 1 0, 0 {50 ps} -r 100
+run
+run
+force -freeze sim:/multipliertoplevel/reset 0 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/multipliertoplevel/INA 1100 0
+restart -f
+force -freeze sim:/multipliertoplevel/INA 1100 0
+force -freeze sim:/multipliertoplevel/INB 0010 0
+force -freeze sim:/multipliertoplevel/clk 1 0, 0 {50 ps} -r 100
+force -freeze sim:/multipliertoplevel/reset 1 0
+run
+run
+run
+force -freeze sim:/multipliertoplevel/reset 0 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/multipliertoplevel/INA 0101 0
+force -freeze sim:/multipliertoplevel/reset 1 0
+run
+run
+run
+run
+force -freeze sim:/multipliertoplevel/reset 0 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/multipliertoplevel/INA 0011 0
+force -freeze sim:/multipliertoplevel/reset 1 0
+run
+run
+run
+run
+run
+run
+force -freeze sim:/multipliertoplevel/reset 0 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/twosComplement.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity complement2s
+# -- Compiling architecture func of complement2s
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/enardFF_2.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity enARdFF_2
+# -- Compiling architecture rtl of enARdFF_2
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/multiplierControlpath.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity multiplierControlpath
+# -- Compiling architecture rtl of multiplierControlpath
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/multiplierDatapath.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity multiplierDatapath
+# -- Compiling architecture structural of multiplierDatapath
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/multiplierTopLevel.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity multiplierTopLevel
+# -- Compiling architecture rtl of multiplierTopLevel
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/mux21.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux21
+# -- Compiling architecture structural of mux21
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/mux41.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity mux41
+# -- Compiling architecture structural of mux41
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/nBitAdderSubtractor.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nBitAdderSubtractor
+# -- Compiling architecture rtl of nBitAdderSubtractor
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/nbitmux21.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nbitmux21
+# -- Compiling architecture structural of nbitmux21
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/nbitregister.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nBitRegister
+# -- Compiling architecture rtl of nBitRegister
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/nBitShiftRegister.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity nBitShiftRegister
+# -- Compiling architecture rtl of nBitShiftRegister
+vcom -93 -work work -O0 C:/Users/arnav/Desktop/CEG-3155-LAB-2/oneBitAdderSubtractor.vhd
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity oneBitAdderSubtractor
+# -- Compiling architecture rtl of oneBitAdderSubtractor
+restart -f
+# Loading work.multipliertoplevel(rtl)
+# Loading work.multipliercontrolpath(rtl)
+# Loading work.enardff_2(rtl)
+# Loading work.multiplierdatapath(structural)
+# Loading work.complement2s(func)
+# Loading work.nbitaddersubtractor(rtl)
+# Loading work.onebitaddersubtractor(rtl)
+# Loading work.nbitmux21(structural)
+# Loading work.mux21(structural)
+# Loading work.nbitshiftregister(rtl)
+# Loading work.mux41(structural)
+# Loading work.nbitregister(rtl)
+force -freeze sim:/multipliertoplevel/clk 1 0, 0 {50 ps} -r 100
+force -freeze sim:/multipliertoplevel/reset 1 0
+force -freeze sim:/multipliertoplevel/INA 0100 0
+force -freeze sim:/multipliertoplevel/INB 0010 0
+run
+run
+force -freeze sim:/multipliertoplevel/reset 0 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/multipliertoplevel/INA 0110 0
+force -freeze sim:/multipliertoplevel/reset 1 0
+run
+run
+force -freeze sim:/multipliertoplevel/reset 0 0
+run
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/multipliertoplevel/INB 0100 0
+force -freeze sim:/multipliertoplevel/reset 1 0
+run
+run
+run
+force -freeze sim:/multipliertoplevel/reset 0 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/multipliertoplevel/INA 0101 0
+force -freeze sim:/multipliertoplevel/INB 1110 0
+force -freeze sim:/multipliertoplevel/reset 1 0
+run
+run
+force -freeze sim:/multipliertoplevel/reset 0 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/multipliertoplevel/INA 1011 0
+force -freeze sim:/multipliertoplevel/reset 1 0
+run
+run
+run
+run
+run
+force -freeze sim:/multipliertoplevel/reset 0 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run

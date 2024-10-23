@@ -186,7 +186,7 @@ BEGIN
     -- Status Signals
     A_msb <= INA(3);
     B_msb <= INB(3);
-    B_lsb <= INB(0);
+    B_lsb <= right_shift_B(0);
     beq0 <= NOT (right_shift_B(7) OR right_shift_B(6) OR right_shift_B(5) OR right_shift_B(4) OR right_shift_B(3) OR right_shift_B(2) OR right_shift_B(1) OR right_shift_B(0));
     zero <= NOT (reg_P_output(7) OR reg_P_output(6) OR reg_P_output(5) OR reg_P_output(4) OR reg_P_output(3) OR reg_P_output(2) OR reg_P_output(1) OR reg_P_output(0));
     overflow <= int_overflow(3) OR int_overflow(2) OR int_overflow(1) OR int_overflow(0);

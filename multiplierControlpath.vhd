@@ -50,11 +50,11 @@ BEGIN
     state_in(0) <= reset;
     state_in(1) <= state_out(0) AND A_msb;
     state_in(2) <= state_out(0) AND (NOT A_msb);
-    state_in(3) <= state_out(0) AND B_msb;
-    state_in(4) <= state_out(0) AND (NOT B_msb);
-    state_in(5) <= (((state_out(1) OR state_out(2) OR state_out(3) OR state_out(4)) AND (NOT B_lsb)) OR state_out(7) OR (NOT(beq0) AND (NOT B_lsb))); -- Fixed operator usage
+    state_in(3) <= (state_out(1) OR state_out(2)) AND B_msb;
+    state_in(4) <= (state_out(1) OR state_out(2)) AND (NOT B_msb);
+    state_in(5) <= (((state_out(3) OR state_out(4)) AND (NOT B_lsb)) OR state_out(7) OR (state_out(6) AND NOT(beq0) AND (NOT B_lsb))); -- Fixed operator usage
     state_in(6) <= state_out(5);
-    state_in(7) <= (((state_out(1) OR state_out(2) OR state_out(3) OR state_out(4)) AND B_lsb) OR (NOT(beq0) AND B_lsb)); -- Fixed operator usage
+    state_in(7) <= (((state_out(3) OR state_out(4)) AND B_lsb) OR (state_out(6) AND NOT(beq0) AND B_lsb)); -- Fixed operator usage
     state_in(8) <= state_out(6) AND beq0 AND sgn;
     state_in(9) <= state_out(6) AND beq0 AND (NOT sgn);
 
@@ -69,8 +69,8 @@ BEGIN
     loadA <= state_out(1) OR state_out(2); -- Fixed operator usage
     ldSign <= state_out(0);
     p_neg <= state_out(8); -- Added missing semicolon
-    shiftRB <= state_out(6);
-    shiftLA <= state_out(5);
+    shiftRB <= state_out(5);
+    shiftLA <= state_out(6);
     greset <= state_out(0);
 
 END rtl;
