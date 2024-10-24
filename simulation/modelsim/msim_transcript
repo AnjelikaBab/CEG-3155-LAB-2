@@ -246,3 +246,275 @@ force -freeze sim:/bcdtoplevel/OperationSelect 11 0
 run
 run
 run
+quit -sim
+vsim -voptargs=+acc work.fixedpointalustruct
+# vsim -voptargs=+acc work.fixedpointalustruct 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.fixedpointalustruct(structural)
+# Loading work.nbitaddersubtractor(rtl)
+# Loading work.onebitaddersubtractor(rtl)
+# Loading work.multipliertoplevel(rtl)
+# Loading work.multipliercontrolpath(rtl)
+# Loading work.enardff_2(rtl)
+# Loading work.multiplierdatapath(structural)
+# Loading work.complement2s(func)
+# Loading work.nbitmux21(structural)
+# Loading work.mux21(structural)
+# Loading work.nbitshiftregister(rtl)
+# Loading work.mux41(structural)
+# Loading work.nbitregister(rtl)
+# Loading work.dividertoplevel(rtl)
+# Loading work.dividercontrolpath(rtl)
+# Loading work.dividerdatapath(structural)
+# Loading work.nbitmux41(structural)
+# Loading work.nbitincrementer(rtl)
+# ** Warning: Design size of 425 instances exceeds ModelSim ALTERA recommended capacity.
+# This may because you are loading cell libraries which are not recommended with
+# the ModelSim Altera version. Expect performance to be adversely affected.
+# WARNING: No extended dataflow license exists
+add wave -position insertpoint  \
+sim:/fixedpointalustruct/GClock \
+sim:/fixedpointalustruct/GReset \
+sim:/fixedpointalustruct/OperandA \
+sim:/fixedpointalustruct/OperandB \
+sim:/fixedpointalustruct/OperationSelect \
+sim:/fixedpointalustruct/CarryOut \
+sim:/fixedpointalustruct/MuxOut \
+sim:/fixedpointalustruct/OverflowOut \
+sim:/fixedpointalustruct/ZeroOut
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+# 
+#           File in use by: arnav  Hostname: DESKTOP-CM3CCVC  ProcessID: 14056
+# 
+#           Attempting to use alternate WLF file "./wlft9rg49m".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+# 
+#           Using alternate file: ./wlft9rg49m
+# 
+add wave -position insertpoint  \
+sim:/fixedpointalustruct/GClock \
+sim:/fixedpointalustruct/GReset \
+sim:/fixedpointalustruct/OperandA \
+sim:/fixedpointalustruct/OperandB \
+sim:/fixedpointalustruct/OperationSelect \
+sim:/fixedpointalustruct/CarryOut \
+sim:/fixedpointalustruct/MuxOut \
+sim:/fixedpointalustruct/OverflowOut \
+sim:/fixedpointalustruct/ZeroOut
+add wave -position insertpoint  \
+sim:/fixedpointalustruct/GClock \
+sim:/fixedpointalustruct/GReset \
+sim:/fixedpointalustruct/OperandA \
+sim:/fixedpointalustruct/OperandB \
+sim:/fixedpointalustruct/OperationSelect \
+sim:/fixedpointalustruct/CarryOut \
+sim:/fixedpointalustruct/MuxOut \
+sim:/fixedpointalustruct/OverflowOut \
+sim:/fixedpointalustruct/ZeroOut
+restart -f
+# ** Warning: Design size of 407 instances exceeds ModelSim ALTERA recommended capacity.
+# This may because you are loading cell libraries which are not recommended with
+# the ModelSim Altera version. Expect performance to be adversely affected.
+add wave -position insertpoint  \
+sim:/fixedpointalustruct/GClock \
+sim:/fixedpointalustruct/GReset \
+sim:/fixedpointalustruct/OperandA \
+sim:/fixedpointalustruct/OperandB \
+sim:/fixedpointalustruct/OperationSelect \
+sim:/fixedpointalustruct/CarryOut \
+sim:/fixedpointalustruct/MuxOut \
+sim:/fixedpointalustruct/OverflowOut \
+sim:/fixedpointalustruct/ZeroOut
+add wave -position insertpoint  \
+sim:/fixedpointalustruct/GClock \
+sim:/fixedpointalustruct/GReset \
+sim:/fixedpointalustruct/OperandA \
+sim:/fixedpointalustruct/OperandB \
+sim:/fixedpointalustruct/OperationSelect \
+sim:/fixedpointalustruct/CarryOut \
+sim:/fixedpointalustruct/MuxOut \
+sim:/fixedpointalustruct/OverflowOut \
+sim:/fixedpointalustruct/ZeroOut
+force -freeze sim:/fixedpointalustruct/OperandA 0001 0
+force -freeze sim:/fixedpointalustruct/OperandB 0001 0
+force -freeze sim:/fixedpointalustruct/GClock 1 0, 0 {50 ps} -r 100
+force -freeze sim:/fixedpointalustruct/OperationSelect 00 0
+run
+force -freeze sim:/fixedpointalustruct/GReset 1 0
+run
+force -freeze sim:/fixedpointalustruct/OperandA 0010 0
+force -freeze sim:/fixedpointalustruct/GReset 1 0
+run
+run
+run
+force -freeze sim:/fixedpointalustruct/GReset 0 0
+force -freeze sim:/fixedpointalustruct/OperationSelect 11 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/fixedpointalustruct/OperandA 0011 0
+force -freeze sim:/fixedpointalustruct/GReset 1 0
+run
+run
+run
+run
+force -freeze sim:/fixedpointalustruct/GReset 0 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/fixedpointalustruct/OperationSelect 10 0
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/fixedpointalustruct/OperandB 0011 0
+force -freeze sim:/fixedpointalustruct/GReset 1 0
+run
+run
+run
+force -freeze sim:/fixedpointalustruct/GReset 0 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/fixedpointalustruct/OperandA 0010 0
+force -freeze sim:/fixedpointalustruct/OperandB 0010 0
+force -freeze sim:/fixedpointalustruct/GReset 1 0
+run
+run
+run
+run
+force -freeze sim:/fixedpointalustruct/OperationSelect 11 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+force -freeze sim:/fixedpointalustruct/GReset 0 0
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+vsim -voptargs=+acc work.dividertoplevel
+# vsim -voptargs=+acc work.dividertoplevel 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.dividertoplevel(rtl)
+# Loading work.dividercontrolpath(rtl)
+# Loading work.enardff_2(rtl)
+# Loading work.dividerdatapath(structural)
+# Loading work.nbitmux21(structural)
+# Loading work.mux21(structural)
+# Loading work.nbitregister(rtl)
+# Loading work.nbitshiftregister(rtl)
+# Loading work.mux41(structural)
+# Loading work.nbitmux41(structural)
+# Loading work.nbitaddersubtractor(rtl)
+# Loading work.onebitaddersubtractor(rtl)
+# Loading work.nbitincrementer(rtl)
+# WARNING: No extended dataflow license exists

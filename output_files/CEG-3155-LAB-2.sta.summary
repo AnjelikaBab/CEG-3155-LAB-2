@@ -2,64 +2,64 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'GClock'
-Slack : -4.998
-TNS   : -178.975
+Type  : Slow 1200mV 85C Model Setup 'KEY[3]'
+Slack : -5.235
+TNS   : -187.100
 
-Type  : Slow 1200mV 85C Model Hold 'GClock'
-Slack : 0.402
+Type  : Slow 1200mV 85C Model Hold 'KEY[3]'
+Slack : 0.440
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Recovery 'GClock'
-Slack : -0.950
-TNS   : -40.779
+Type  : Slow 1200mV 85C Model Recovery 'KEY[3]'
+Slack : -0.614
+TNS   : -18.693
 
-Type  : Slow 1200mV 85C Model Removal 'GClock'
-Slack : 0.812
+Type  : Slow 1200mV 85C Model Removal 'KEY[3]'
+Slack : 0.478
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'GClock'
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'KEY[3]'
 Slack : -3.000
 TNS   : -89.095
 
-Type  : Slow 1200mV 0C Model Setup 'GClock'
-Slack : -4.505
-TNS   : -159.353
+Type  : Slow 1200mV 0C Model Setup 'KEY[3]'
+Slack : -4.696
+TNS   : -166.172
 
-Type  : Slow 1200mV 0C Model Hold 'GClock'
-Slack : 0.353
+Type  : Slow 1200mV 0C Model Hold 'KEY[3]'
+Slack : 0.387
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Recovery 'GClock'
-Slack : -0.753
-TNS   : -31.546
+Type  : Slow 1200mV 0C Model Recovery 'KEY[3]'
+Slack : -0.464
+TNS   : -11.568
 
-Type  : Slow 1200mV 0C Model Removal 'GClock'
-Slack : 0.741
+Type  : Slow 1200mV 0C Model Removal 'KEY[3]'
+Slack : 0.415
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'GClock'
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'KEY[3]'
 Slack : -3.000
 TNS   : -89.095
 
-Type  : Fast 1200mV 0C Model Setup 'GClock'
-Slack : -1.941
-TNS   : -56.751
+Type  : Fast 1200mV 0C Model Setup 'KEY[3]'
+Slack : -2.011
+TNS   : -58.808
 
-Type  : Fast 1200mV 0C Model Hold 'GClock'
-Slack : 0.181
+Type  : Fast 1200mV 0C Model Hold 'KEY[3]'
+Slack : 0.201
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Recovery 'GClock'
-Slack : 0.006
+Type  : Fast 1200mV 0C Model Recovery 'KEY[3]'
+Slack : 0.169
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Removal 'GClock'
-Slack : 0.391
+Type  : Fast 1200mV 0C Model Removal 'KEY[3]'
+Slack : 0.247
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'GClock'
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'KEY[3]'
 Slack : -3.000
-TNS   : -74.083
+TNS   : -77.362
 
 ------------------------------------------------------------
